@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:#e9edf3}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="width:1920px;height:1080px;overflow:hidden;position:relative;background:#f4f6fa;font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif,sans-serif;-webkit-font-smoothing:antialiased;color:#2b3242;">
+
+  <!-- ============ TOP BAR ============ -->
+  <header style="height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 44px;background:linear-gradient(90deg,#0e1526 0%,#161e33 60%,#1b243b 100%);">
+    <div style="display:flex;align-items:end;gap:9px;">
+      <span style="font:600 22px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.04em;color:#fff;">Yennefer</span>
+      <span style="font:300 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.7);padding-bottom:2px;">Studio</span>
+    </div>
+    <div style="display:flex;align-items:center;gap:24px;">
+      <div style="position:relative;width:22px;height:22px;">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="rgba(255,255,255,0.78)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg>
+        <span style="position:absolute;top:-1px;right:-1px;width:7px;height:7px;border-radius:50%;background:#f04b4b;border:1.5px solid #161e33;"></span>
+      </div>
+      <div style="width:1px;height:24px;background:rgba(255,255,255,0.12);"></div>
+      <div style="display:flex;align-items:center;gap:11px;">
+        <span style="width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.14);display:flex;align-items:center;justify-content:center;">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"></circle><path d="M5.5 20a6.5 6.5 0 0 1 13 0"></path></svg>
+        </span>
+        <span style="font:400 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#fff;">Mondrian AI</span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ NAV TABS ============ -->
+  <nav style="height:56px;background:#fff;border-bottom:1px solid #e9ebf0;display:flex;align-items:stretch;">
+    <div style="width:1200px;margin:0 auto;display:flex;align-items:stretch;gap:8px;">
+      <button data-nav style="height:56px;padding:0 6px;margin-right:38px;background:none;border:none;border-bottom:2px solid #15a986;color:#15a986;font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;cursor:pointer;">Home</button>
+      <button data-nav style="height:56px;padding:0 6px;margin-right:38px;background:none;border:none;border-bottom:2px solid transparent;color:#6b7280;font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;cursor:pointer;">Projects</button>
+      <button data-nav style="height:56px;padding:0 6px;margin-right:38px;background:none;border:none;border-bottom:2px solid transparent;color:#6b7280;font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;cursor:pointer;">Storage</button>
+      <button data-nav style="height:56px;padding:0 6px;margin-right:38px;background:none;border:none;border-bottom:2px solid transparent;color:#6b7280;font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;cursor:pointer;">Dataset</button>
+      <button data-nav style="height:56px;padding:0 6px;background:none;border:none;border-bottom:2px solid transparent;color:#6b7280;font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;cursor:pointer;">Support</button>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section style="height:452px;position:relative;overflow:hidden;background:radial-gradient(120% 140% at 78% 18%,#243150 0%,#1a2238 42%,#141b2e 100%);">
+    <!-- decorative rings, bleed right -->
+    <div style="position:absolute;top:50%;right:-130px;transform:translateY(-50%);width:760px;height:760px;pointer-events:none;">
+      <svg viewBox="0 0 760 760" width="760" height="760" fill="none">
+        <circle cx="430" cy="380" r="250" stroke="rgba(255,255,255,0.10)" stroke-width="1"></circle>
+        <circle cx="430" cy="380" r="318" stroke="rgba(255,255,255,0.06)" stroke-width="1"></circle>
+        <circle cx="660" cy="170" r="120" stroke="rgba(255,255,255,0.05)" stroke-width="1"></circle>
+        <circle cx="120" cy="250" r="5" fill="rgba(255,255,255,0.5)"></circle>
+        <circle cx="250" cy="160" r="3.5" fill="rgba(255,255,255,0.35)"></circle>
+        <circle cx="190" cy="470" r="4" fill="rgba(255,255,255,0.3)"></circle>
+        <circle cx="690" cy="470" r="4" fill="rgba(255,255,255,0.4)"></circle>
+        <!-- analytics monitor + magnifier (basic shapes) -->
+        <rect x="345" y="300" width="170" height="120" rx="8" stroke="rgba(255,255,255,0.55)" stroke-width="1.6"></rect>
+        <line x1="430" y1="420" x2="430" y2="438" stroke="rgba(255,255,255,0.55)" stroke-width="1.6"></line>
+        <line x1="405" y1="438" x2="455" y2="438" stroke="rgba(255,255,255,0.55)" stroke-width="1.6"></line>
+        <rect x="372" y="372" width="11" height="22" rx="2" fill="rgba(255,255,255,0.4)"></rect>
+        <rect x="392" y="356" width="11" height="38" rx="2" fill="rgba(255,255,255,0.4)"></rect>
+        <rect x="412" y="366" width="11" height="28" rx="2" fill="rgba(255,255,255,0.4)"></rect>
+        <circle cx="455" cy="345" r="22" stroke="#3fd6ad" stroke-width="2.4"></circle>
+        <line x1="471" y1="361" x2="492" y2="382" stroke="#3fd6ad" stroke-width="2.8" stroke-linecap="round"></line>
+        <circle cx="455" cy="345" r="8" fill="rgba(63,214,173,0.25)"></circle>
+      </svg>
+    </div>
+
+    <div style="width:1200px;margin:0 auto;height:100%;display:flex;flex-direction:column;justify-content:center;position:relative;">
+      <div style="font:300 30px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.9);margin-bottom:4px;">Welcome to</div>
+      <div style="display:flex;align-items:flex-end;gap:14px;margin-bottom:26px;">
+        <span style="font:600 56px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.045em;color:#fff;line-height:1;">Yennefer</span>
+        <span style="font:300 40px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.78);line-height:1.1;">Studio</span>
+      </div>
+      <div style="font:400 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.8);margin-bottom:16px;">\Yennefer Data Catalog&nbsp;&nbsp;·&nbsp;&nbsp;Yennefer Studio&nbsp;&nbsp;·&nbsp;&nbsp;Yennefer SharePoint</div>
+      <p style="font:400 15px/1.65 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.5);margin:0 0 34px;max-width:46ch;">Yennefer provides a unified set of tools and services and the most critical foundational infrastructure you need to bring data-driven AI.</p>
+      <div style="display:flex;gap:16px;">
+        <button style="height:48px;padding:0 30px;background:transparent;border:1px solid rgba(255,255,255,0.5);color:#fff;font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;border-radius:3px;cursor:pointer;transition:background .2s;" style-hover="background:rgba(255,255,255,0.08)">Get Started</button>
+        <button style="height:48px;padding:0 30px;background:#15a986;border:none;color:#fff;font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;border-radius:3px;cursor:pointer;transition:background .2s;" style-hover="background:#12977a">New Project</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section style="height:84px;background:#fff;border-bottom:1px solid #eceef3;display:flex;align-items:center;">
+    <div style="width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;">
+      <div style="display:flex;align-items:baseline;gap:18px;"><span style="font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#8b92a3;">Total Project</span><span style="font:600 30px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#2b3242;letter-spacing:-0.02em;">68</span></div>
+      <div style="display:flex;align-items:baseline;gap:18px;"><span style="font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#8b92a3;">Activated Project</span><span style="font:600 30px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#2b3242;letter-spacing:-0.02em;">21</span></div>
+      <div style="display:flex;align-items:baseline;gap:18px;"><span style="font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#8b92a3;">Sharing Project</span><span style="font:600 30px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#2b3242;letter-spacing:-0.02em;">3</span></div>
+      <div style="display:flex;align-items:baseline;gap:18px;"><span style="font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#8b92a3;">Published Report</span><span style="font:600 30px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#2b3242;letter-spacing:-0.02em;">32</span></div>
+    </div>
+  </section>
+
+  <!-- ============ RECENTLY UPDATED ============ -->
+  <section style="height:348px;background:#f4f6fa;">
+    <div style="width:1200px;margin:0 auto;padding-top:34px;">
+      <h2 style="font:600 23px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#2b3242;margin:0 0 20px;letter-spacing:-0.01em;">Recently Updated Projects</h2>
+      <div style="display:flex;align-items:center;gap:34px;border-bottom:1px solid #e3e6ec;margin-bottom:26px;">
+        <button data-ptab style="height:38px;padding:0 2px;background:none;border:none;border-bottom:2px solid #15a986;color:#15a986;font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;cursor:pointer;">Owned by me</button>
+        <button data-ptab style="height:38px;padding:0 2px;background:none;border:none;border-bottom:2px solid transparent;color:#8b92a3;font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;cursor:pointer;display:flex;align-items:center;gap:6px;">Shared with me<span style="width:6px;height:6px;border-radius:50%;background:#f04b4b;"></span></button>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px;">
+
+        <!-- CARD 1 -->
+        <article style="background:#fff;border:1px solid #eaecf1;border-radius:6px;box-shadow:0 1px 3px rgba(20,30,55,0.05);padding:22px 24px 24px;position:relative;">
+          <span style="position:absolute;top:18px;left:22px;width:9px;height:9px;border-radius:50%;background:#2ecb73;"></span>
+          <div style="padding-left:20px;">
+            <h3 style="font:600 17px/1.35 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#2b3242;margin:0 0 14px;min-height:46px;">Deploying a Decision Optimization Model with Yennefer Machine</h3>
+            <p style="font:400 13.5px/1.62 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#9098a6;margin:0;">This notebook contains steps and code to get data from the Yennefer Studio Community, create a predictive model, and start scoring new data. It introduces commands for getting data and for basic data cleaning, exploration, and pipeline …</p>
+          </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article style="background:#fff;border:1px solid #eaecf1;border-radius:6px;box-shadow:0 1px 3px rgba(20,30,55,0.05);padding:22px 24px 24px;position:relative;">
+          <span style="position:absolute;top:18px;left:22px;width:9px;height:9px;border-radius:50%;background:#2ecb73;"></span>
+          <div style="padding-left:20px;">
+            <h3 style="font:600 17px/1.35 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#2b3242;margin:0 0 22px;min-height:46px;">Training a Linear Classifier With Numerical and Categorical Features</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px 16px;">
+              <div><div style="font:400 12.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#a3aab8;margin-bottom:7px;">Role</div><div style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#3a4150;">Admin</div></div>
+              <div><div style="font:400 12.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#a3aab8;margin-bottom:7px;">Collaborators</div><div style="display:flex;gap:5px;"><span style="width:25px;height:25px;border-radius:50%;background:#3b6fb5;color:#fff;font:600 10px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;display:flex;align-items:center;justify-content:center;">SJ</span><span style="width:25px;height:25px;border-radius:50%;background:#1f9d7a;color:#fff;font:600 10px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;display:flex;align-items:center;justify-content:center;">SK</span><span style="width:25px;height:25px;border-radius:50%;background:#d9534f;color:#fff;font:600 10px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;display:flex;align-items:center;justify-content:center;">DY</span></div></div>
+              <div><div style="font:400 12.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#a3aab8;margin-bottom:7px;">Created date</div><div style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#3a4150;">2019.12.31</div></div>
+              <div><div style="font:400 12.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#a3aab8;margin-bottom:7px;">Last modified</div><div style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#3a4150;">2020.2.28 10:30</div></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article style="background:#fff;border:1px solid #eaecf1;border-radius:6px;box-shadow:0 1px 3px rgba(20,30,55,0.05);padding:22px 24px 24px;position:relative;">
+          <span style="position:absolute;top:18px;left:22px;width:9px;height:9px;border-radius:50%;background:#c7cdd9;"></span>
+          <div style="padding-left:20px;">
+            <h3 style="font:600 17px/1.35 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#2b3242;margin:0 0 22px;min-height:46px;">Improving Neural Net Performance</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px 16px;">
+              <div><div style="font:400 12.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#a3aab8;margin-bottom:7px;">Role</div><div style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#3a4150;">Admin</div></div>
+              <div><div style="font:400 12.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#a3aab8;margin-bottom:7px;">Collaborators</div><div style="display:flex;gap:5px;"><span style="width:25px;height:25px;border-radius:50%;background:#3b6fb5;color:#fff;font:600 10px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;display:flex;align-items:center;justify-content:center;">SJ</span><span style="width:25px;height:25px;border-radius:50%;background:#1f9d7a;color:#fff;font:600 10px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;display:flex;align-items:center;justify-content:center;">SK</span><span style="width:25px;height:25px;border-radius:50%;background:#d9534f;color:#fff;font:600 10px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;display:flex;align-items:center;justify-content:center;">DY</span></div></div>
+              <div><div style="font:400 12.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#a3aab8;margin-bottom:7px;">Created date</div><div style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#3a4150;">2019.12.31</div></div>
+              <div><div style="font:400 12.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#a3aab8;margin-bottom:7px;">Last modified</div><div style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#3a4150;">2020.2.28 10:30</div></div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1920,&quot;height&quot;:1080}}">
+class Component extends DCLogic {
+  rootRef = (el) => { this.root = el; if (el) this.setupTabs(); };
+
+  setupTabs() {
+    const acc = '#15a986';
+    const wire = (sel, activeWeight) => {
+      const tabs = Array.from(this.root.querySelectorAll(sel));
+      tabs.forEach(t => {
+        t.addEventListener('click', () => {
+          tabs.forEach(o => {
+            o.style.color = '#8b92a3';
+            o.style.borderBottom = '2px solid transparent';
+            o.style.fontWeight = '400';
+          });
+          t.style.color = acc;
+          t.style.borderBottom = '2px solid ' + acc;
+          t.style.fontWeight = activeWeight;
+        });
+      });
+    };
+    wire('[data-nav]', '600');
+    wire('[data-ptab]', '600');
+  }
+
+  renderVals() {
+    return { rootRef: this.rootRef };
+  }
+}
+</script>
+</body>
+</html>

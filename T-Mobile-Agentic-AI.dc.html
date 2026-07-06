@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:#0a0b0d;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:rgba(255,255,255,0.35);color:#fff}
+  @keyframes floatGlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+  @keyframes scrollLine{0%{transform:scaleY(.2);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}50.01%{transform-origin:bottom}100%{transform:scaleY(.2);transform-origin:bottom}}
+  a{color:inherit}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="position:relative;min-height:100vh;background:#0a0b0d;color:#f3f3f1;overflow-x:hidden;font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif,sans-serif;">
+
+  
+
+  <!-- NAV -->
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(10,11,13,0.55);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(24px,5vw,80px);">
+    <div style="max-width:1280px;margin:0 auto;padding:15px 0;display:flex;align-items:center;justify-content:space-between;">
+      <a href="Soojin Hwang - Home.dc.html" style="display:inline-flex;align-items:center;gap:9px;font:400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1"><span>←</span> All work</a>
+      <a href="Soojin Hwang - Home.dc.html" style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;text-decoration:none;">Soojin Hwang</a>
+      <a href="#contact" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section data-screen-label="Hero" style="position:relative;padding:clamp(120px,16vh,180px) clamp(24px,5vw,80px) clamp(60px,8vh,90px);">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+        <img src="assets/tmobile/tmobile-logo.png" alt="T-Mobile" style="height: 20px; width: auto; display: block">
+      </div>
+
+      <h1 data-reveal="" style="font: 600 clamp(46px,8vw,104px)/1.0 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; letter-spacing: -0.045em; color: #f3f3f1; margin: 0; max-width: 32ch; font-size: 44px"><i><span style="font-style: normal;"><strong style="font-weight: 700">Building a Multimodal AI Agent<br>— Tripling Conversion</strong>.</span></i></h1>
+      <div data-reveal="" style="width: 84px; height: 3px; background: rgba(243,243,241,0.55); border-radius: 2px; margin: 34px 0 26px; display: none"></div>
+      <p data-reveal="" style="font: 400 clamp(18px,1.7vw,23px)/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.62); max-width: 46ch; margin: 0; display: none">T-Mobile's first agentic AI assistant. Led 0→1 and rolling out across web, iOS, and Android.</p>
+
+      <!-- META ROW -->
+      <div data-reveal="" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-top:56px;">
+        <div style="background:#0c0d11;padding:24px 26px;">
+          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Role</div>
+          <div style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;line-height:1.3;">Lead Product Designer</div>
+          <div style="font: 400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.45); margin-top: 5px; display: none">0→1, end to end</div>
+        </div>
+        <div style="background:#0c0d11;padding:24px 26px;">
+          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Platforms</div>
+          <div style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;line-height:1.3;">Web · iOS · Android</div>
+          <div style="font: 400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.45); margin-top: 5px; display: none">One system</div>
+        </div>
+        <div style="background:#0c0d11;padding:24px 26px;">
+          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Timeline</div>
+          <div style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;line-height:1.3;">8months</div>
+          <div style="font: 400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.45); margin-top: 5px; display: none">≈ 4 months</div>
+        </div>
+        <div style="background:#0c0d11;padding:24px 26px;">
+          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Key outcome</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">↑</span>
+            <span style="font:600 22px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.02em;">3</span>
+            <span style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">× conversion</span>
+          </div>
+          <div style="font: 400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.32); margin-top: 7px; display: none">conversion lift</div>
+        </div>
+      </div>
+    <div style="position: fixed; inset: 0; pointer-events: none; z-index: 90; opacity: 0.4; mix-blend-mode: soft-light; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E&quot;); left: -35px; top: 198px"></div></div>
+
+    <!-- HERO SCREEN -->
+    <div data-reveal="" style="max-width:1280px;margin:clamp(70px,10vh,110px) auto 0;">
+      <div data-parallax="" style="position:relative;display:flex;justify-content:center;padding:60px 0;">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(760px,90%);height:680px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.28),rgba(255,255,255,0.05) 48%,transparent 70%);filter:blur(20px);pointer-events:none;animation:floatGlow 12s ease-in-out infinite;"></div>
+        <div style="position:relative;width:369.7px;height:760px;">
+          <!-- white screen backing (corners masked by the frame on top) -->
+          <div style="position:absolute;left:17.2px;top:16.1px;width:334.1px;height:726.7px;background:#fff;z-index:0;border-radius:44px;"></div>
+          <!-- app screen, cropped from gif, starting below the notch -->
+          <div style="position:absolute;left:23.25px;top:60px;width:322px;height:682.7px;overflow:hidden;z-index:1;border-radius:20px;">
+            <img src="assets/tmobile/tmobile-main.gif" alt="T-Mobile assistant, entry experience" style="position:absolute;top:-89.6px;left:-259px;width:840px;height:auto;display:block;image-rendering:auto;">
+          </div>
+          <!-- iOS status bar over the white strip beside the notch -->
+          <div style="position:absolute;left:17.2px;top:22px;width:334.1px;height:30px;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:0 24px;pointer-events:none;">
+            <span style="font:600 15px -apple-system,system-ui;color:#000;letter-spacing:0.2px;">9:41</span>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <svg width="18" height="11" viewBox="0 0 18 11"><rect x="0" y="6.5" width="3" height="4.5" rx="0.7" fill="#000"></rect><rect x="4.5" y="4.5" width="3" height="6.5" rx="0.7" fill="#000"></rect><rect x="9" y="2.5" width="3" height="8.5" rx="0.7" fill="#000"></rect><rect x="13.5" y="0" width="3" height="11" rx="0.7" fill="#000"></rect></svg>
+              <svg width="16" height="11" viewBox="0 0 17 12"><path d="M8.5 3.2C10.8 3.2 12.9 4.1 14.4 5.6L15.5 4.5C13.7 2.7 11.2 1.5 8.5 1.5C5.8 1.5 3.3 2.7 1.5 4.5L2.6 5.6C4.1 4.1 6.2 3.2 8.5 3.2Z" fill="#000"></path><path d="M8.5 6.8C9.9 6.8 11.1 7.3 12 8.2L13.1 7.1C11.8 5.9 10.2 5.1 8.5 5.1C6.8 5.1 5.2 5.9 3.9 7.1L5 8.2C5.9 7.3 7.1 6.8 8.5 6.8Z" fill="#000"></path><circle cx="8.5" cy="10.5" r="1.5" fill="#000"></circle></svg>
+              <svg width="25" height="12" viewBox="0 0 27 13"><rect x="0.5" y="0.5" width="23" height="12" rx="3.5" stroke="#000" stroke-opacity="0.35" fill="none"></rect><rect x="2" y="2" width="20" height="9" rx="2" fill="#000"></rect><path d="M25 4.5V8.5C25.8 8.2 26.5 7.2 26.5 6.5C26.5 5.8 25.8 4.8 25 4.5Z" fill="#000" fill-opacity="0.4"></path></svg>
+            </div>
+          </div>
+          <!-- device frame (transparent screen) on top -->
+          <img src="assets/tmobile/iphone-frame.png" alt="" aria-hidden="true" style="position:absolute;top:0;left:0;width:369.7px;height:auto;z-index:3;pointer-events:none;">
+          <!-- home indicator -->
+          <div style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:120px;height:5px;border-radius:100px;background:rgba(0,0,0,0.28);z-index:4;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROLE & SCOPE ============ -->
+  <section data-screen-label="Role and scope" style="padding:clamp(70px,10vh,120px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.7fr 1.3fr;gap:clamp(40px,6vw,90px);align-items:start;">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;padding-top:8px;">Role &amp; scope</div>
+      <div style="min-width:0;">
+        <h2 style="font:600 clamp(30px,3.6vw,46px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 28px;max-width:20ch;">Led 0→1 design through engineering handoff</h2>
+        <p style="font:400 clamp(17px,1.5vw,20px)/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0 0 40px;max-width:60ch;">As the sole designer in T-Mobile's AI Innovation Lab, I led the end-to-end design of its first agentic AI assistant, from concept and interaction model to the shipped product handed off to engineering. It is rolling out across web, iOS, and Android. I owned the design system, the conversational UX, and the evaluation framework behind the AI's responses.</p>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;max-width:560px;">
+          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">Conversational and agentic UX</div>
+          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">0→1 product design</div>
+          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">AI evaluation and red-teaming</div>
+          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">Design system</div>
+        </div>
+      </div>
+    </div>
+    <div data-reveal="" style="max-width: 1280px; margin: clamp(48px,7vh,80px) auto 0">
+      <image-slot id="tmo-system" style="display:block;width:100%;aspect-ratio:16/9;" shape="rounded" radius="16" placeholder="Drop: design-system overview · components, states, type, color · 1600×900"></image-slot>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM ============ -->
+  <section data-screen-label="Problem" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:26px;">Problem</div>
+      <h2 style="font: 600 clamp(32px,4.4vw,60px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; letter-spacing: -0.03em; color: #f3f3f1; margin: 0 0 28px">Switching carriers is overwhelming</h2>
+      <p style="font:400 clamp(17px,1.6vw,21px)/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;max-width:58ch;">65% of customers called changing to T-Mobile a hassle, and even with digital support, 80% of new customers still ended up in a store. People didn't need more information. They needed guidance.</p>
+
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:clamp(40px,6vh,64px) auto 0;">
+      <blockquote style="margin: 0; padding-left: clamp(20px,2.4vw,30px); border-left: 3px solid rgba(243,243,241,0.55)">
+        <p style="font:600 clamp(22px,2.6vw,34px)/1.28 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; letter-spacing: -0.02em; color: #f3f3f1; margin: 0 0 14px; width: 800px"><i style="font-size: 28px">There's too much to figure out on my own.<br>I just want someone to tell me what's right for me.</i></p>
+        <cite style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.08em;text-transform:uppercase;color:rgba(243,243,241,0.5);font-style:normal;">Research participant · switching study</cite>
+      </blockquote>
+    </div>
+
+    <!-- ANNOTATED REALITY -->
+    <div data-anno="" data-reveal="" style="max-width:1280px;margin:clamp(56px,8vh,96px) auto 0;position:relative;">
+
+      <!-- browser-framed screenshot, centered -->
+      <div style="max-width:600px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);box-shadow:0 40px 90px rgba(0,0,0,0.6);background:#1a1b1f;">
+        <div style="display:flex;align-items:center;gap:7px;padding:11px 15px;background:#1a1b1f;border-bottom:1px solid rgba(255,255,255,0.08);">
+          <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
+          <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
+          <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
+          <span style="margin:0 auto;font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.45);background:#0c0d11;padding:4px 16px;border-radius:6px;">t-mobile.com/deals</span>
+        </div>
+        <img src="assets/tmobile/tmobile-web.png" alt="The current T-Mobile shop page with the AI assistant open — a wall of promos and scripted prompts" style="display:block;width:100%;height:auto;">
+      </div>
+
+      <!-- annotation callouts (wide screens) -->
+      <!-- top-left -->
+      <div data-anno-side="" style="position:absolute;left:0;top:11%;width:210px;display:flex;align-items:center;gap:14px;">
+        <div style="flex:1;text-align:right;">
+          <div style="font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#f3f3f1;">A wall of promos</div>
+          <div style="font:400 13px/1.4 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);margin-top:3px;">Every deal competes for attention at once</div>
+        </div>
+        <div style="width:40px;height:1px;background:rgba(255,255,255,0.22);flex-shrink:0;position:relative;"><span style="position:absolute;right:-4px;top:-3px;width:7px;height:7px;border-radius:50%;background:#f3f3f1;"></span></div>
+      </div>
+
+      <!-- bottom-left -->
+      <div data-anno-side="" style="position:absolute;left:0;top:74%;width:210px;display:flex;align-items:center;gap:14px;">
+        <div style="flex:1;text-align:right;">
+          <div style="font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#f3f3f1;">Buried fine print</div>
+          <div style="font:400 13px/1.4 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);margin-top:3px;">Terms and conditions people must decode</div>
+        </div>
+        <div style="width:40px;height:1px;background:rgba(255,255,255,0.22);flex-shrink:0;position:relative;"><span style="position:absolute;right:-4px;top:-3px;width:7px;height:7px;border-radius:50%;background:#f3f3f1;"></span></div>
+      </div>
+
+      <!-- top-right -->
+      <div data-anno-side="" style="position:absolute;right:0;top:24%;width:210px;display:flex;align-items:center;gap:14px;">
+        <div style="width:40px;height:1px;background:rgba(255,255,255,0.22);flex-shrink:0;position:relative;"><span style="position:absolute;left:-4px;top:-3px;width:7px;height:7px;border-radius:50%;background:#f3f3f1;"></span></div>
+        <div style="flex:1;text-align:left;">
+          <div style="font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#f3f3f1;">An assistant that only lists</div>
+          <div style="font:400 13px/1.4 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);margin-top:3px;">Canned prompt buttons, not real guidance</div>
+        </div>
+      </div>
+
+      <!-- bottom-right -->
+      <div data-anno-side="" style="position:absolute;right:0;top:66%;width:210px;display:flex;align-items:center;gap:14px;">
+        <div style="width:40px;height:1px;background:rgba(255,255,255,0.22);flex-shrink:0;position:relative;"><span style="position:absolute;left:-4px;top:-3px;width:7px;height:7px;border-radius:50%;background:#f3f3f1;"></span></div>
+        <div style="flex:1;text-align:left;">
+          <div style="font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#f3f3f1;">You sort it out alone</div>
+          <div style="font:400 13px/1.4 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);margin-top:3px;">No one tells you what's right for you</div>
+        </div>
+      </div>
+
+      <!-- caption grid (narrow screens) -->
+      <div data-anno-list="" style="display:none;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px 34px;max-width:600px;margin:34px auto 0;">
+        <div style="display:flex;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:#f3f3f1;flex-shrink:0;margin-top:7px;"></span><div><div style="font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;">A wall of promos</div><div style="font:400 13.5px/1.45 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);margin-top:3px;">Every deal competes for attention at once</div></div></div>
+        <div style="display:flex;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:#f3f3f1;flex-shrink:0;margin-top:7px;"></span><div><div style="font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;">An assistant that only lists</div><div style="font:400 13.5px/1.45 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);margin-top:3px;">Canned prompt buttons, not real guidance</div></div></div>
+        <div style="display:flex;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:#f3f3f1;flex-shrink:0;margin-top:7px;"></span><div><div style="font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;">Buried fine print</div><div style="font:400 13.5px/1.45 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);margin-top:3px;">Terms and conditions people must decode</div></div></div>
+        <div style="display:flex;gap:12px;"><span style="width:7px;height:7px;border-radius:50%;background:#f3f3f1;flex-shrink:0;margin-top:7px;"></span><div><div style="font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;">You sort it out alone</div><div style="font:400 13.5px/1.45 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);margin-top:3px;">No one tells you what's right for you</div></div></div>
+      </div>
+
+    </div>
+
+    <!-- CURRENT ISSUES -->
+    <div data-reveal="" style="max-width:1280px;margin:clamp(64px,9vh,110px) auto 0;">
+      <div style="display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:clamp(28px,4vh,44px);">
+        <h3 style="font:600 clamp(22px,2.6vw,30px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0;">What the current chatbot does</h3>
+        <span style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);">T-Mobile's live assistant, 2024</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(20px,2.4vw,30px);">
+
+        <!-- 01 -->
+        <div style="display:flex;flex-direction:column;border:1px solid rgba(255,255,255,0.09);border-radius:18px;overflow:hidden;background:#0c0d11;">
+          
+          <div style="padding:22px 24px 26px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+              <span style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">01</span>
+              <span style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#f3f3f1;">Pre-scripted responses</span>
+            </div>
+            <p style="font:400 14.5px/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:0;">Ask for "the cheapest iPhone" and it stalls with "I didn't quite get that." It can't parse a plain request.</p>
+          </div>
+        </div>
+
+        <!-- 02 -->
+        <div style="display:flex;flex-direction:column;border:1px solid rgba(255,255,255,0.09);border-radius:18px;overflow:hidden;background:#0c0d11;">
+          
+          <div style="padding:22px 24px 26px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+              <span style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">02</span>
+              <span style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#f3f3f1;">Inefficient support</span>
+            </div>
+            <p style="font:400 14.5px/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:0;">When it can't help, it punts: browse devices yourself, or wait for a live expert. The bot defers instead of resolving.</p>
+          </div>
+        </div>
+
+        <!-- 03 -->
+        <div style="display:flex;flex-direction:column;border:1px solid rgba(255,255,255,0.09);border-radius:18px;overflow:hidden;background:#0c0d11;">
+          
+          <div style="padding:22px 24px 26px;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+              <span style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">03</span>
+              <span style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#f3f3f1;">Overwhelming info</span>
+            </div>
+            <p style="font:400 14.5px/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:0;">One question returns a wall of offers and fine print, leaving people to do the sorting themselves.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTION BEATS ============ -->
+  <section data-screen-label="Solution" style="padding:clamp(40px,6vh,80px) clamp(24px,5vw,80px) clamp(20px,4vh,40px);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(40px,6vh,70px);">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:18px;">Solution</div>
+      <h2 style="font:600 clamp(28px,3.4vw,44px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:24ch;">An assistant that guides, not a search box that responds</h2>
+    </div>
+
+    <!-- BEAT 1 (pinned media, caption scrolls) -->
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start;">
+      <div>
+        <div style="position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;">
+          <div style="position:relative;display:flex;justify-content:center;">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:80%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.22),transparent 68%);filter:blur(16px);pointer-events:none;animation:floatGlow 10s ease-in-out infinite;"></div>
+            <img src="assets/tmobile/tmobile-voice.gif" alt="Voice-led multi-modality" style="position:relative;height:min(720px,78vh);width:auto;display:block;border-radius:34px;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
+          </div>
+        </div>
+      </div>
+      <div style="min-height:150vh;display:flex;flex-direction:column;justify-content:center;">
+        <div data-reveal="" style="max-width:42ch;position:relative;top:-20px;">
+          <div style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:18px;">01</div>
+          <h3 style="font: 600 clamp(28px,3.2vw,42px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; letter-spacing: -0.03em; color: #f3f3f1; margin: 0 0 22px; width: 500px">Voice-led multi-modality</h3>
+          <p style="font:400 clamp(17px,1.6vw,21px)/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;">As the conversation moves, the interface follows. Visuals, options, and structure surface only when they help. People talk to it. They don't manage it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEAT 2 (pinned media right) -->
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start;">
+      <div style="min-height:150vh;display:flex;flex-direction:column;justify-content:center;">
+        <div data-reveal="" style="max-width:42ch;position:relative;top:-60px;">
+          <div style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:18px;">02</div>
+          <h3 style="font: 600 clamp(28px,3.2vw,42px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; letter-spacing: -0.03em; color: #f3f3f1; margin: 0 0 22px; width: 500px">Always within reach</h3>
+          <p style="font:400 clamp(17px,1.6vw,21px)/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;">The assistant stays present on every screen. While browsing devices, people can ask it to compare options, surface the promotions they qualify for, or start an upgrade — by voice or text — without leaving the flow they're in.</p>
+        </div>
+      </div>
+      <div>
+        <div style="position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;">
+          <div style="position:relative;display:flex;justify-content:center;">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:80%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.2),transparent 68%);filter:blur(16px);pointer-events:none;animation:floatGlow 13s ease-in-out infinite;"></div>
+            <div style="position:relative;height:min(760px,82vh);aspect-ratio:322/662;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
+              <div style="position:absolute;left:4.97%;right:4.97%;top:2.12%;bottom:2.12%;overflow:hidden;border-radius:calc(min(760px, 82vh) * 0.066);background:#ffffff;">
+                <video src="assets/tmobile/tmobile-shop.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Assistant present while shopping for a device" style="position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block;"></video>
+              </div>
+              <img src="assets/tmobile/iphone-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;display:block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEAT 3 (pinned media left) -->
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start;">
+      <div>
+        <div style="position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;">
+          <div style="position:relative;display:flex;justify-content:center;">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:80%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.2),transparent 68%);filter:blur(16px);pointer-events:none;animation:floatGlow 11s ease-in-out infinite;"></div>
+            <img src="assets/tmobile/tmobile-card.gif" alt="Guidance that feels human" style="position:relative;height:min(720px,78vh);width:auto;display:block;border-radius:34px;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
+          </div>
+        </div>
+      </div>
+      <div style="min-height:150vh;display:flex;flex-direction:column;justify-content:center;">
+        <div data-reveal="" style="max-width:42ch;position:relative;top:-20px;">
+          <div style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:18px;">03</div>
+          <h3 style="font:600 clamp(28px,3.2vw,42px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 22px;max-width:14ch;">Guidance that feels human</h3>
+          <p style="font:400 clamp(17px,1.6vw,21px)/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;">Modeled on the in-store Mobile Expert. The assistant asks, recommends, and reassures the way a person would, so a high-stakes choice feels low-stakes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE & AFTER (MVP TEST RESULTS) ============ -->
+  <section data-screen-label="Before &amp; after" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(48px,7vh,80px);">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:20px;">Before &amp; After</div>
+      <h2 style="font:600 clamp(28px,3.6vw,46px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:20ch;">What the MVP test changed</h2>
+      <p style="font:400 clamp(16px,1.5vw,19px)/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);margin:18px 0 0;max-width:54ch;">I shipped an MVP, watched how people actually used it, then redesigned the weak spots the data exposed. Each pair reads left to right: the problem the data surfaced, then the fix I shipped.</p>
+    </div>
+
+    <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(46px,7vh,84px);">
+
+      <!-- IMPROVEMENT 01 -->
+      <div data-reveal="">
+        <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.16em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:22px;">Improvement 01</div>
+        <div style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;">
+          <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;width:44px;height:44px;border-radius:50%;background:#0c0d11;border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font:400 18px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;box-shadow:0 8px 24px rgba(0,0,0,0.45);">→</div>
+          <!-- before -->
+          <div style="display:flex;flex-direction:column;border-radius:22px;border:1px solid rgba(255,255,255,0.08);background:#0c0d11;padding:clamp(26px,2.6vw,40px);overflow:hidden;">
+            <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:#ff7a7a;border:1px solid rgba(255,122,122,0.35);border-radius:20px;padding:5px 13px;margin-bottom:20px;"><span style="width:7px;height:7px;border-radius:50%;background:#ff5a5a;"></span>Before · The problem</span>
+            <h3 style="font:600 clamp(22px,2.4vw,30px)/1.12 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0 0 12px;">No existing design system</h3>
+            <p style="font: 400 15.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.55); margin: 0 0 30px; max-width: 400px">There were no components for the new feature, so early screens borrowed generic UI.</p>
+            <div style="margin-top:auto;display:flex;justify-content:center;">
+              <img src="assets/tmobile/ba-2-before.png" alt="Before: generic Google voice UI" style="display:block;width:auto;max-width:100%;max-height:520px;border-radius:14px;filter:drop-shadow(0 30px 60px rgba(0,0,0,0.5));">
+            </div>
+          </div>
+          <!-- after -->
+          <div style="display:flex;flex-direction:column;border-radius:22px;border:1px solid rgba(255,255,255,0.08);background:linear-gradient(150deg,#eef0f7 0%,#f6edf1 50%,#fbd9e4 100%);padding:clamp(26px,2.6vw,40px);overflow:hidden;">
+            <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:#0a7d3f;border:1px solid rgba(10,125,63,0.35);border-radius:20px;padding:5px 13px;margin-bottom:20px;white-space:nowrap;"><span style="width:7px;height:7px;border-radius:50%;background:#0a7d3f;"></span>After · How I improved it</span>
+            <h3 style="font:600 clamp(22px,2.4vw,30px)/1.12 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#15161b;margin:0 0 12px;">Created design-system components</h3>
+            <p style="font: 400 15.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(21,22,27,0.6); margin: 0 0 30px; max-width: 400px">I built a component set that aligns with T-Mobile branding and scales across the flow.</p>
+            <div style="margin-top:auto;display:flex;justify-content:center;">
+              <img src="assets/tmobile/tmobile-voice.gif" alt="After: branded voice component" style="display: block; width: auto; max-width: 100%; max-height: 520px; border-radius: 28px; filter: drop-shadow(0 30px 60px rgba(120,40,70,0.22))">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMPROVEMENT 02 -->
+      <div data-reveal="">
+        <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.16em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:22px;">Improvement 02</div>
+        <div style="position:relative;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch;">
+          <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;width:44px;height:44px;border-radius:50%;background:#0c0d11;border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font:400 18px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;box-shadow:0 8px 24px rgba(0,0,0,0.45);">→</div>
+          <!-- before -->
+          <div style="display:flex;flex-direction:column;border-radius:22px;border:1px solid rgba(255,255,255,0.08);background:#0c0d11;padding:clamp(26px,2.6vw,40px);overflow:hidden;">
+            <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:#ff7a7a;border:1px solid rgba(255,122,122,0.35);border-radius:20px;padding:5px 13px;margin-bottom:20px;"><span style="width:7px;height:7px;border-radius:50%;background:#ff5a5a;"></span>Before · The problem</span>
+            <h3 style="font:600 clamp(22px,2.4vw,30px)/1.12 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0 0 12px;">Too many follow-up questions</h3>
+            <p style="font: 400 15.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.55); margin: 0 0 30px; width: 400px">The assistant needed data to personalize, so it kept asking — and people dropped off.</p><div style="margin-top:auto;display:flex;justify-content:center;">
+              <img src="assets/tmobile/ba-1-before.png" alt="Before: long chat full of follow-up questions" style="display: block; max-height: 520px; border-radius: 14px; filter: drop-shadow(0 30px 60px rgba(0,0,0,0.5))">
+            </div>
+            
+          </div>
+          <!-- after -->
+          <div style="display:flex;flex-direction:column;border-radius:22px;border:1px solid rgba(255,255,255,0.08);background:linear-gradient(150deg,#eef0f7 0%,#f6edf1 50%,#fbd9e4 100%);padding:clamp(26px,2.6vw,40px);overflow:hidden;">
+            <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:#0a7d3f;border:1px solid rgba(10,125,63,0.35);border-radius:20px;padding:5px 13px;margin-bottom:20px;white-space:nowrap;"><span style="width:7px;height:7px;border-radius:50%;background:#0a7d3f;"></span>After · How I improved it</span>
+            <h3 style="font:600 clamp(22px,2.4vw,30px)/1.12 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#15161b;margin:0 0 12px;">Replaced with a quiz format</h3>
+            <p style="font: 400 15.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(21,22,27,0.6); margin: 0 0 30px">A tappable quiz captured the same signals in seconds.<br>Users responded far better to it.</p>
+            <div style="margin-top:auto;display:flex;justify-content:center;">
+              
+            <img src="assets/tmobile/tmobile-card.gif" alt="After: tap-to-answer quiz format" style="display:block;width:auto;max-width:100%;max-height:520px;border-radius:28px;filter:drop-shadow(0 30px 60px rgba(120,40,70,0.22));"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ AI EVALUATION (DARK CINEMATIC) ============ -->
+  <section data-screen-label="AI evaluation" style="position:relative;background:#050507;padding:clamp(90px,14vh,170px) clamp(24px,5vw,80px);margin-top:clamp(40px,6vh,80px);overflow:hidden;border-top:1px solid rgba(255,255,255,0.06);">
+    <div style="position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.12),transparent 62%);pointer-events:none;"></div>
+    <div style="position:relative;max-width:1280px;margin:0 auto;">
+      <div data-reveal="" style="max-width:760px;">
+        <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:24px;">AI evaluation</div>
+        <h2 style="font:600 clamp(32px,4.4vw,60px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 26px;max-width:20ch;">I owned how good the AI actually was</h2>
+        <p style="font:400 clamp(17px,1.6vw,21px)/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);margin:0;max-width:54ch;">A great chat UI means nothing if the answer is wrong. I built the evaluation and red-teaming that made the responses trustworthy.</p>
+      </div>
+
+      <!-- HOW: TWO LEVERS -->
+      <div data-reveal="" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:clamp(52px,8vh,96px);">
+        <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.09);background:#0c0d11;padding:clamp(26px,2.6vw,38px);">
+          <div style="font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.14em;text-transform:uppercase;color:#f3f3f1;margin-bottom:16px;">Lever 01 — AI evaluation</div>
+          <h3 style="font:600 clamp(20px,2.2vw,27px)/1.18 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0 0 12px;">Measure it before we ship it</h3>
+          <p style="font:400 15.5px/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.58);margin:0 0 20px;max-width:46ch;">I built a red-team set of 300+ real customer questions and scored every answer against ground-truth plan data — catching wrong prices, missing discounts, and invented benefits before a customer ever saw them.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:6px 13px;">Ground-truth checks</span>
+            <span style="font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:6px 13px;">Red-team scenarios</span>
+            <span style="font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:6px 13px;">Rubric scoring</span>
+            <span style="font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:6px 13px;">Regression on every change</span>
+          </div>
+        </div>
+        <div style="border-radius:20px;border:1px solid rgba(255,255,255,0.09);background:#0c0d11;padding:clamp(26px,2.6vw,38px);">
+          <div style="font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.14em;text-transform:uppercase;color:#f3f3f1;margin-bottom:16px;">Lever 02 — AI design principles</div>
+          <h3 style="font:600 clamp(20px,2.2vw,27px)/1.18 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0 0 12px;">Rules that keep answers honest</h3>
+          <p style="font:400 15.5px/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.58);margin:0 0 20px;max-width:46ch;">Every failure became a principle the model and the UI both follow — so the assistant stays accurate, admits what it doesn't know, and stays easy to read under pressure.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:6px 13px;">Ground every number</span>
+            <span style="font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:6px 13px;">Admit uncertainty</span>
+            <span style="font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:6px 13px;">Structure for scanning</span>
+            <span style="font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:6px 13px;">Speak T-Mobile's voice</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXAMPLES INTRO -->
+      <div data-reveal="" style="margin-top:clamp(60px,9vh,110px);">
+        <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.16em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:10px;">Before → After</div>
+        <p style="font:400 clamp(16px,1.5vw,19px)/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);margin:0;max-width:52ch;">Real cases the evaluation surfaced — and how the refined response fixed them.</p>
+      </div>
+
+      <!-- EXAMPLE 01: BAD UX ANSWER -->
+      <div data-reveal="" style="margin-top:28px;border-radius:22px;border:1px solid rgba(255,255,255,0.09);background:#0a0b0e;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:18px clamp(20px,2.4vw,34px);border-bottom:1px solid rgba(255,255,255,0.07);">
+          <span style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">01</span>
+          <span style="font:600 clamp(16px,1.7vw,20px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#f3f3f1;">Bad UX answer</span>
+          <span style="margin-left:auto;font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#ff7a7a;border:1px solid rgba(255,122,122,0.4);border-radius:20px;padding:5px 13px;white-space:nowrap;">Wall of text → scannable</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+          <!-- BEFORE -->
+          <div style="padding:clamp(22px,2.6vw,36px);border-right:1px solid rgba(255,255,255,0.07);">
+            <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#ff5a5a;"></span>
+              <span style="font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#ff7a7a;">Before · AI response</span>
+            </div>
+            <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,122,122,0.22);">
+              <div style="background:#ececee;padding:16px;display:flex;flex-direction:column;gap:11px;min-height:300px;">
+                <div style="align-self:flex-end;max-width:80%;background:#e20074;color:#fff;font:600 12.5px/1.4 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;padding:9px 13px;border-radius:15px 15px 4px 15px;">How much is GoGo Next for 4 lines?</div>
+                <div style="align-self:flex-start;max-width:92%;background:#fff;color:#2a2a2a;font:400 12px/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;padding:11px 14px;border-radius:15px 15px 15px 4px;box-shadow:0 1px 2px rgba(0,0,0,0.06);">The GoGo Next plan is one of our premium options, and the total monthly cost can depend on several factors including how many lines you have, whether you're enrolled in AutoPay, whether you qualify for any current promotions such as a third-line discount for new customers, and the taxes and fees that apply in your area, but as a general guideline the plan is around $100 per line per month before any applicable discounts, and additional savings may be available depending on your eligibility…</div>
+              </div>
+            </div>
+            <p style="font:400 14.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:16px 0 0;">A correct answer buried in a dense paragraph. Customers couldn't scan it, compare options, or act — so they dropped off.</p>
+          </div>
+          <!-- AFTER -->
+          <div style="padding:clamp(22px,2.6vw,36px);position:relative;background:radial-gradient(circle at 80% 0%,rgba(255,255,255,0.08),transparent 60%);">
+            <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#22d39a;"></span>
+              <span style="font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#f3f3f1;">After · refined</span>
+            </div>
+            <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.28);">
+              <div style="background:#ececee;padding:16px;display:flex;flex-direction:column;gap:11px;min-height:300px;">
+                <div style="align-self:flex-end;max-width:80%;background:#e20074;color:#fff;font:600 12.5px/1.4 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;padding:9px 13px;border-radius:15px 15px 4px 15px;">How much is GoGo Next for 4 lines?</div>
+                <div style="align-self:flex-start;max-width:93%;background:#fff;color:#2a2a2a;font:400 12px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;padding:12px 14px;border-radius:15px 15px 15px 4px;box-shadow:0 1px 2px rgba(0,0,0,0.06);">
+                  <div style="font:700 14px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#111;">$100/mo per line</div>
+                  <div style="font:400 11.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#666;margin-top:2px;">4 lines · AutoPay · taxes &amp; fees included</div>
+                  <div style="border:1px solid #ececec;border-radius:10px;padding:10px 12px;margin-top:10px;display:flex;flex-direction:column;gap:7px;">
+                    <div style="display:flex;justify-content:space-between;font:600 11.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#333;"><span>4 lines total</span><span style="font-weight:700;">$400/mo</span></div>
+                    <div style="display:flex;justify-content:space-between;font:600 11.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#0a7d3f;"><span>3rd line discount</span><span style="font-weight:700;">Included</span></div>
+                    <div style="display:flex;justify-content:space-between;font:600 11.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#333;"><span>Taxes &amp; fees</span><span style="font-weight:700;">Included</span></div>
+                  </div>
+                  <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:11px;">
+                    <span style="background:#fff;border:1px solid rgba(243,243,241,0.55);color:rgba(243,243,241,0.55);font:600 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;padding:6px 11px;border-radius:16px;">Compare plans</span>
+                    <span style="background:#fff;border:1px solid rgba(243,243,241,0.55);color:rgba(243,243,241,0.55);font:600 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;padding:6px 11px;border-radius:16px;">Add a line</span>
+                    <span style="background:#fff;border:1px solid rgba(243,243,241,0.55);color:rgba(243,243,241,0.55);font:600 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;padding:6px 11px;border-radius:16px;">See discount</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p style="font:400 14.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:16px 0 0;">The same answer, restructured: a one-line summary, a clear comparison, and tap-to-act options — so the next step is obvious.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXAMPLE 02: HALLUCINATION -->
+      <div data-reveal="" style="margin-top:20px;border-radius:22px;border:1px solid rgba(255,255,255,0.09);background:#0a0b0e;overflow:hidden;">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:18px clamp(20px,2.4vw,34px);border-bottom:1px solid rgba(255,255,255,0.07);">
+          <span style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">02</span>
+          <span style="font:600 clamp(16px,1.7vw,20px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#f3f3f1;">Hallucination &amp; wrong data</span>
+          <span style="margin-left:auto;font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#ff7a7a;border:1px solid rgba(255,122,122,0.4);border-radius:20px;padding:5px 13px;white-space:nowrap;">Quoted $105 · real price $100</span>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
+          <!-- AI RESPONSE (WRONG) -->
+          <div style="padding:clamp(22px,2.6vw,36px);border-right:1px solid rgba(255,255,255,0.07);">
+            <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#ff5a5a;"></span>
+              <span style="font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#ff7a7a;">AI response · hallucinated</span>
+            </div>
+            <div style="border-radius:14px;border:1px solid rgba(255,122,122,0.22);background:#0c0d11;padding:16px;">
+              <div style="background:#3c4256;border-radius:8px;padding:14px 15px;">
+                <div style="font:700 12.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#fff;margin-bottom:11px;">Plan Information</div>
+                <div style="display:grid;grid-template-columns:0.85fr 0.95fr 0.75fr 2.1fr;gap:1px;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.14);border-radius:5px;overflow:hidden;">
+                  <div style="background:rgba(255,255,255,0.08);padding:7px 8px;font:700 9px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(255,255,255,0.85);">Plan Name</div>
+                  <div style="background:rgba(255,255,255,0.08);padding:7px 8px;font:700 9px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.85);">Monthly Price</div>
+                  <div style="background:rgba(255,255,255,0.08);padding:7px 8px;font:700 9px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.85);">Number of Lines</div>
+                  <div style="background:rgba(255,255,255,0.08);padding:7px 8px;font:700 9px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.85);">Description</div>
+                  <div style="background:#3c4256;padding:10px 8px;font:600 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#e2e6f0;align-self:center;">GoGo Next</div>
+                  <div style="background:#3c4256;position:relative;display:flex;align-items:center;justify-content:center;padding:12px 8px;">
+                    <span style="font:800 16px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#fff;">$105</span>
+                    <span style="position:absolute;left:10px;right:10px;top:4px;bottom:4px;border:2.5px solid #ff2d2d;border-radius:50%;"></span>
+                  </div>
+                  <div style="background:#3c4256;padding:10px 8px;font:600 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#e2e6f0;text-align:center;align-self:center;">4</div>
+                  <div style="background:#3c4256;padding:9px 8px;font:400 9px/1.42 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(226,230,240,0.82);">Upgrade your phone as often as every year. Enjoy great device deals for new &amp; existing customers and all the amazing benefits like unlimited premium data and entertainment on us.</div>
+                </div>
+                <div style="font:italic 400 8.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.5);margin-top:9px;">Note: The monthly price does not include taxes and fees or any discounts/promotions.</div>
+              </div>
+            </div>
+            <p style="font:400 14.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:16px 0 0;">The model returned <span style="color:#ff9d9d;font-weight:600;">$105/mo</span> with no source — a number the customer had no way to check.</p>
+          </div>
+          <!-- REAL DATA (GROUND TRUTH) -->
+          <div style="padding:clamp(22px,2.6vw,36px);position:relative;background:radial-gradient(circle at 80% 0%,rgba(255,255,255,0.08),transparent 60%);">
+            <div style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;">
+              <span style="width:8px;height:8px;border-radius:50%;background:#22d39a;"></span>
+              <span style="font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#22d39a;">Real data · ground truth</span>
+            </div>
+            <div style="border-radius:14px;border:1px solid rgba(34,211,154,0.3);background:#ffffff;padding:18px 20px;">
+              <div style="font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#1a1a1a;">
+                <div style="display:flex;align-items:center;gap:7px;padding-bottom:9px;border-bottom:1px solid #e6e6e6;margin-bottom:13px;">
+                  <span style="width:9px;height:9px;background:#12a150;border-radius:2px;transform:rotate(45deg);flex:none;"></span>
+                  <span style="font:600 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#0a7d3f;text-decoration:underline;">Get a 3rd line DISCOUNT for new customers</span>
+                </div>
+                <div style="font:700 18px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#151515;margin-bottom:9px;">GoGo Next</div>
+                <div style="display:flex;align-items:baseline;gap:9px;position:relative;width:fit-content;">
+                  <span style="font:800 33px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#111;letter-spacing:-0.02em;">$100</span>
+                  <span style="font:600 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#555;">/mo.</span>
+                  <span style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#9a9a9a;text-decoration:line-through;">$105/mo.</span>
+                  <span style="position:absolute;left:-9px;top:-5px;width:78px;height:46px;border:2.5px solid #ff2d2d;border-radius:50%;"></span>
+                </div>
+                <div style="font:400 11px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#555;margin-top:11px;">for 4 lines · $100/line w/ AutoPay discount using eligible payment method.</div>
+                <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#555;margin-top:3px;">Requires an <span style="text-decoration:underline;">eligible payment method</span></div>
+                <div style="position:relative;display:inline-block;margin-top:13px;">
+                  <span style="display:inline-block;background:#111;color:#fff;font:600 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;padding:6px 11px;border-radius:4px;">Taxes &amp; fees included</span>
+                  <span style="position:absolute;left:0;right:0;bottom:-5px;height:2.5px;background:#ff2d2d;border-radius:2px;"></span>
+                </div>
+              </div>
+            </div>
+            <p style="font:400 14.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:16px 0 0;">Actual GoGo Next price was <span style="color:#f3f3f1;font-weight:600;">$100/mo</span>. My eval compared every answer to real plan data and flagged the $105 before launch.</p>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal="" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:clamp(44px,6vh,72px);padding-top:26px;border-top:1px solid rgba(255,255,255,0.08);">
+        <span style="font:400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);">Result:</span>
+        <span style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">60% → 99% LLM accuracy</span>
+        <span style="font:400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);">across</span>
+        <span style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">300+ red-team scenarios</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PLATFORM BREADTH ============ -->
+  <section data-screen-label="Platforms" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(50px,7vh,80px);">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:20px;">Platforms</div>
+      <h2 style="font:600 clamp(28px,3.6vw,46px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:20ch;">One assistant, three platforms, one system</h2>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(28px,3vw,40px);align-items:stretch;">
+      <!-- WEB browser frame -->
+      <div data-parallax="" style="align-self:start;position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 50px 110px -44px rgba(0,0,0,0.85);">
+        <div style="height:44px;display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:1px solid rgba(255,255,255,0.07);background:#15161c;">
+          <div style="display:flex;gap:7px;flex:none;">
+            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
+          </div>
+          <div style="flex:1;max-width:340px;margin:0 auto;background:#0a0b0f;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:6px 14px;font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);text-align:center;">t-mobile.com / assistant</div>
+          <div style="width:40px;flex:none;"></div>
+        </div>
+        <img src="assets/tmobile/tmobile-web-chat.png" alt="T-Mobile.com with the AI assistant open in a side panel" style="display:block;width:100%;aspect-ratio:1257/930;object-fit:cover;object-position:top;background:#f2f2f2;">
+      </div>
+
+      <!-- MOBILE phone frame -->
+      <div data-parallax="" style="position:relative;display:flex;justify-content:center;align-items:center;border-radius:16px;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,0.12),transparent 62%);padding:30px 0;">
+        <div style="position:relative;height:min(560px,72vh);aspect-ratio:322/662;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
+          <div style="position:absolute;left:4.97%;right:4.97%;top:2.12%;bottom:2.12%;overflow:hidden;border-radius:calc(min(560px, 72vh) * 0.066);background:#ffffff;">
+            <video src="assets/tmobile/tmobile-shop.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Assistant present while shopping for a device" style="position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block;"></video>
+          </div>
+          <img src="assets/tmobile/iphone-frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%;display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT ============ -->
+  <section data-screen-label="Impact" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:24px;">Impact</div>
+      <h2 style="font:600 clamp(32px,4.4vw,60px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 clamp(50px,7vh,80px);max-width:18ch;">A calmer path to a confident decision</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;">
+        <div style="background:#0c0d11;padding:clamp(28px,3vw,40px);">
+          <div style="margin-bottom:18px;">
+            <span style="font: 600 clamp(46px,5.4vw,72px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; color: #f3f3f1; letter-spacing: -0.03em; font-size: 45px">3×</span>
+          </div>
+          <div style="font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);">higher customer conversion</div>
+        </div>
+        <div style="background:#0c0d11;padding:clamp(28px,3vw,40px);">
+          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:18px;">
+            <span style="font:600 clamp(34px,3.8vw,50px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.03em;">12.5m</span>
+            <span style="font:600 22px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">→</span>
+            <span style="font:600 clamp(34px,3.8vw,50px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.03em;">2.5m</span>
+          </div>
+          <div style="font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);">task and decision time, down</div>
+        </div>
+        <div style="background:#0c0d11;padding:clamp(28px,3vw,40px);">
+          <div style="font: 600 clamp(26px,2.8vw,38px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; color: #f3f3f1; letter-spacing: -0.02em; margin-bottom: 18px; max-width: 12ch; font-size: 45px">Contributed to 3 AI design patents</div>
+          <div style="font:400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.42);">Recognition</div>
+        </div>
+      </div>
+
+      <blockquote style="margin: clamp(60px,9vh,100px) 0 0; padding-left: clamp(24px,3vw,40px); border-left: 3px solid rgba(243,243,241,0.55); max-width: 80%">
+        <p style="font:600 clamp(26px,3.4vw,46px)/1.2 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; letter-spacing: -0.02em; color: #f3f3f1; margin: 0; width: 100%; font-size: 32px">Won executive approval to ship. The work scaled org-wide <br>and led T-Mobile to stand up a dedicated AI design team.</p>
+      </blockquote>
+
+      <div data-reveal="" style="margin:clamp(60px,9vh,100px) 0 0;max-width:1000px;">
+        <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:28px;">From leadership</div>
+        <div style="display:flex;gap:clamp(18px,2.4vw,32px);align-items:flex-start;">
+          <span style="font:600 clamp(64px,8vw,110px)/0.7 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);flex:none;">“</span>
+          <div>
+            <p style="font:600 clamp(26px,3.2vw,44px)/1.22 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0;">Soojin bridged our AI and Product organizations and set the standard for how design leads at the intersection of the two.</p>
+            <div style="display:flex;align-items:center;gap:16px;margin-top:clamp(28px,4vh,40px);flex-wrap:wrap;">
+              <img src="assets/tmobile/bethany.png" alt="" style="width:48px;height:48px;border-radius:50%;object-fit:cover;flex:none;border:1px solid rgba(255,255,255,0.14);">
+              <div style="font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);">Senior Vice President</div>
+              <span style="width:1px;height:30px;background:rgba(255,255,255,0.14);"></span>
+              <img src="assets/tmobile/tmobile-logo.png" alt="T-Mobile" style="height:18px;width:auto;display:block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><div data-reveal="" style="position:relative;width:100vw;margin-left:calc(50% - 50vw);margin-top:clamp(70px,10vh,120px);height:min(74vh,800px);overflow:hidden;">
+      <image-slot id="tmo-impact" style="position:absolute;inset:0;display:block;width:100%;height:100%;" shape="rect" placeholder="Drop: the shipped assistant in context · phone in hand / live on T-Mobile · 2000×1125"></image-slot>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" style="border-top:1px solid rgba(255,255,255,0.08);padding:clamp(60px,10vh,110px) clamp(24px,5vw,80px) 40px;">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div data-reveal="" style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:clamp(50px,8vh,80px);">
+        <div>
+          <div style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:18px;">Next</div>
+          <a href="T-Mobile-Coverage-Map.dc.html" style="font:600 clamp(30px,4vw,52px)/1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;text-decoration:none;display:inline-flex;align-items:center;gap:16px;transition:gap .25s;" style-hover="gap:24px">T-Mobile Coverage Map <span style="color:#f3f3f1;">→</span></a>
+        </div>
+        <a href="Soojin Hwang - Home.dc.html" style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:4px;transition:color .25s,border-color .25s;" style-hover="color:#f3f3f1;border-color:rgba(255,255,255,0.5)">Back to all work</a>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.08);">
+        <span style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;">Soojin Hwang</span>
+        <span style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);">© 2026 · T-Mobile Agentic AI case study</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;pace&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;standard&quot;,&quot;options&quot;:[&quot;calm&quot;,&quot;standard&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  rootRef = (el) => { this.root = el; };
+
+  componentDidMount() {
+    this.setupReveal();
+    this.setupParallax();
+    this.setupAnno();
+  }
+  componentWillUnmount() {
+    if (this._onScroll) { window.removeEventListener('scroll', this._onScroll); window.removeEventListener('resize', this._onScroll); }
+    if (this._onPar) { window.removeEventListener('scroll', this._onPar); window.removeEventListener('resize', this._onPar); }
+    if (this._onAnno) { window.removeEventListener('resize', this._onAnno); }
+  }
+
+  setupAnno() {
+    const root = this.root;
+    if (!root) return;
+    const sides = Array.from(root.querySelectorAll('[data-anno-side]'));
+    const list = root.querySelector('[data-anno-list]');
+    if (!sides.length || !list) return;
+    const apply = () => {
+      const wide = window.innerWidth > 1200;
+      sides.forEach(el => { el.style.display = wide ? 'flex' : 'none'; });
+      list.style.display = wide ? 'none' : 'grid';
+    };
+    this._onAnno = apply;
+    window.addEventListener('resize', this._onAnno, { passive: true });
+    apply();
+  }
+
+  setupReveal() {
+    const root = this.root;
+    if (!root) return;
+    const calm = this.props.pace === 'calm';
+    const els = Array.from(root.querySelectorAll('[data-reveal]'));
+    if (this.props.reduceMotion) {
+      els.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+      return;
+    }
+    const pending = [];
+    const vh0 = window.innerHeight || document.documentElement.clientHeight;
+    const dur = calm ? '1.1s' : '.85s';
+    els.forEach(el => {
+      el.style.transition = 'opacity ' + dur + ' ease, transform ' + (calm ? '1.2s' : '1s') + ' cubic-bezier(.2,.8,.2,1)';
+      el.style.willChange = 'opacity, transform';
+      const r = el.getBoundingClientRect();
+      const inView = r.top < vh0 * 0.94 && r.bottom > 0;
+      if (inView) { el.style.opacity = '1'; el.style.transform = 'none'; }
+      else { el.style.opacity = '0'; el.style.transform = 'translateY(34px)'; pending.push(el); }
+    });
+    const reveal = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      for (let i = pending.length - 1; i >= 0; i--) {
+        const el = pending[i];
+        const r = el.getBoundingClientRect();
+        if (r.top < vh * 0.9 && r.bottom > 0) {
+          el.style.opacity = '1'; el.style.transform = 'none';
+          pending.splice(i, 1);
+        }
+      }
+      if (!pending.length && this._onScroll) {
+        window.removeEventListener('scroll', this._onScroll);
+        this._onScroll = null;
+      }
+    };
+    this._onScroll = () => window.requestAnimationFrame(reveal);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll, { passive: true });
+  }
+
+  setupParallax() {
+    const root = this.root;
+    if (!root || this.props.reduceMotion) return;
+    const items = Array.from(root.querySelectorAll('[data-parallax]'));
+    if (!items.length) return;
+    let ticking = false;
+    const apply = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      items.forEach(el => {
+        const r = el.getBoundingClientRect();
+        const center = r.top + r.height / 2;
+        const off = (center - vh / 2) / vh;
+        el.style.transform = 'translate3d(0,' + (off * -26).toFixed(2) + 'px,0)';
+      });
+      ticking = false;
+    };
+    this._onPar = () => { if (!ticking) { ticking = true; window.requestAnimationFrame(apply); } };
+    window.addEventListener('scroll', this._onPar, { passive: true });
+    window.addEventListener('resize', this._onPar, { passive: true });
+    apply();
+  }
+
+  renderVals() {
+    return { rootRef: this.rootRef };
+  }
+}
+</script>
+</body>
+</html>

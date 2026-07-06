@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#111113"/><text x="50" y="50" font-family="Georgia, serif" font-size="28" fill="#f3f3f1" text-anchor="middle" dominant-baseline="central">SH</text></svg></template>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:#0a0b0d;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:rgba(255,255,255,0.32);color:#fff}
+  @keyframes pulseDot{0%,100%{opacity:1}50%{opacity:.3}}
+  @keyframes floatGlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes scrollLine{0%{transform:scaleY(.2);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}50.01%{transform-origin:bottom}100%{transform:scaleY(.2);transform-origin:bottom}}
+  a{color:inherit}
+  [data-gallery]{-ms-overflow-style:none;scrollbar-width:none}
+  [data-gallery]::-webkit-scrollbar{display:none}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="position:relative;background:#0a0b0d;color:#f3f3f1;overflow-x:hidden;font-family:'Hanken Grotesk',sans-serif;">
+
+  <div style="position:fixed;inset:0;pointer-events:none;z-index:80;opacity:0.4;mix-blend-mode:soft-light;background-image:url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxODAnIGhlaWdodD0nMTgwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC44NScgbnVtT2N0YXZlcz0nMicgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbHRlcj0ndXJsKCNuKScgb3BhY2l0eT0nMC41NScvPjwvc3ZnPg==&quot;);"></div>
+
+  <!-- NAV -->
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(10,11,13,0.55);border-bottom:1px solid rgba(255,255,255,0.06);">
+    <div style="padding:0 clamp(24px,5vw,80px);">
+    <div style="max-width:1280px;margin:0 auto;padding:15px 0;display:flex;align-items:center;justify-content:space-between;">
+      <a href="#top" style="font:600 18px 'Space Grotesk';letter-spacing:-0.02em;color:#f3f3f1;text-decoration:none;">Soojin Hwang</a>
+      <div style="display:flex;align-items:center;gap:clamp(18px,2.4vw,32px);">
+        <a href="#work" style="font:400 14px 'Hanken Grotesk';color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Work</a>
+        <a href="Soojin%20Hwang%20-%20About.dc.html" style="font:400 14px 'Hanken Grotesk';color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">About</a>
+        <a href="https://drive.google.com/file/d/1wS5KY6bGeMACrAiQ7BWfPOluyu9D1HRZ/view?usp=sharing" target="_blank" rel="noopener" style="font:400 14px 'Hanken Grotesk';color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Resume</a>
+        <a href="#contact" style="font:500 14px 'Hanken Grotesk';color:#0a0b0d;background:#f3f3f1;padding:9px 17px;border-radius:22px;text-decoration:none;transition:background .25s;" style-hover="background:#fff">Contact</a>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="top" style="position:relative;overflow:hidden;padding:0 clamp(24px,5vw,80px);">
+    <div style="position:relative;max-width:1280px;margin:0 auto;display:flex;flex-direction:column;justify-content:center;height:650px;padding:100px 0 32px;">
+      <div style="position:absolute;top:6%;right:-10%;width:640px;height:640px;max-width:85%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.16),rgba(255,255,255,0.04) 50%,transparent 72%);filter:blur(30px);pointer-events:none;animation:floatGlow 11s ease-in-out infinite;"></div>
+
+      <div style="position:relative;">
+        
+
+        <h1 style="font: 600 clamp(38px,5.2vw,60px)/1.06 'Space Grotesk'; letter-spacing: -0.035em; color: #f3f3f1; margin: 0; max-width: 18ch; display: none">Hi I'm Soojin, I design where AI meets <span style="color:#f4f4f2;">human intuition—for everyone.</span></h1>
+
+        <p style="font:400 clamp(17px,1.5vw,21px)/1.55 'Hanken Grotesk';color:rgba(243,243,241,0.6);max-width:54ch;margin:30px 0 0;">Seven years designing AI people can trust, from agentic assistants to enterprise model tooling. I lead 0→1 product design end to end and own it through engineering handoff.</p>
+
+        <div style="display: none; align-items: center; gap: 16px; margin-top: 40px; flex-wrap: wrap">
+          <a href="#work" style="display: none; align-items: center; gap: 10px; font: 500 15px 'Hanken Grotesk'; color: #0a0b0d; background: #f3f3f1; padding: 13px 24px; border-radius: 26px; text-decoration: none; transition: background .25s" style-hover="background:#fff">View work <span style="color:#f4f4f2;">→</span></a>
+          <a href="#contact" style="display:inline-flex;align-items:center;font:500 15px 'Hanken Grotesk';color:#f3f3f1;border:1px solid rgba(255,255,255,0.2);padding:13px 24px;border-radius:26px;text-decoration:none;transition:border-color .25s,background .25s;" style-hover="border-color:rgba(255,255,255,0.4);background:rgba(255,255,255,0.04)">Get in touch</a>
+          <div style="display:flex;align-items:center;gap:9px;margin-left:6px;font:400 12.5px 'Space Mono';color:rgba(243,243,241,0.42);">
+            <span style="width:6px;height:6px;border-radius:50%;background:#f4f4f2;box-shadow:0 0 10px rgba(255,255,255,0.85);flex:none;"></span>
+            Currently shipping T-Mobile's first agentic AI
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:26px;border-top:1px solid rgba(255,255,255,0.08);font:400 12px 'Space Mono';letter-spacing:0.08em;text-transform:uppercase;color:rgba(243,243,241,0.46);">
+          <span>Agentic AI</span>
+          <span style="width:3px;height:3px;border-radius:50%;background:rgba(243,243,241,0.3);"></span>
+          <span>0→1 Product</span>
+          <span style="width:3px;height:3px;border-radius:50%;background:rgba(243,243,241,0.3);"></span>
+          <span>Consumer Craft</span>
+          <span style="width:3px;height:3px;border-radius:50%;background:rgba(243,243,241,0.3);"></span>
+          <span>Enterprise AI Tooling</span>
+        </div>
+      </div>
+
+    </div>
+    </section></div>
+  
+
+  <!-- WORK -->
+  <section id="work" style="padding:clamp(24px,4vh,56px) clamp(24px,5vw,80px) 60px;">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div data-reveal="" style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:64px;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:24px;">
+        <h2 style="font:600 clamp(28px,3.4vw,42px)/1 'Space Grotesk';letter-spacing:-0.03em;color:#f3f3f1;margin:0;">Selected work</h2>
+        <span style="font:400 12px 'Space Mono';color:rgba(243,243,241,0.45);">Three 0→1 systems · 2020–2026</span>
+      </div>
+
+      <!-- TILE 01 -->
+      <article data-reveal="" style="margin-bottom:clamp(120px,18vh,210px);">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:42px;">
+          <div style="min-width:0;max-width:940px;">
+            <div style="font:700 13px 'Space Mono';color:#f4f4f2;letter-spacing:0.04em;margin-bottom:16px;">01</div>
+            <h3 style="font:600 clamp(28px,3.2vw,40px)/1.05 'Space Grotesk';letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 16px;">T-Mobile Agentic AI</h3>
+            <p style="font:400 clamp(16px,1.5vw,18.5px)/1.55 'Hanken Grotesk';color:rgba(243,243,241,0.6);margin:0 0 20px;max-width:98ch;">Led 0→1 design of T-Mobile's first AI assistant, turning the overwhelming switching journey into a guided conversation. Three moments from the shipped product, across web, iOS, and Android.</p>
+            <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+              <span style="font:400 12px 'Space Mono';color:rgba(243,243,241,0.42);">Lead Product Designer · 2024–2026</span>
+              <a href="T-Mobile-Agentic-AI.dc.html" style="display:inline-flex;align-items:center;gap:9px;font:500 14px 'Hanken Grotesk';color:#f3f3f1;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:4px;transition:border-color .25s;" style-hover="border-color:rgba(255,255,255,0.6)">View case study <span>→</span></a>
+            </div>
+          </div>
+          <div data-nav="" style="display:flex;align-items:center;gap:18px;flex:none;">
+            <div style="position:relative;width:64px;height:2px;background:rgba(255,255,255,0.14);border-radius:2px;">
+              <div data-progress="" style="position:absolute;left:0;top:0;height:100%;width:33%;background:rgba(255,255,255,0.7);border-radius:2px;transition:left .25s ease;"></div>
+            </div>
+            <button onClick="{{ scrollPrev }}" aria-label="Previous" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:transparent;color:#f3f3f1;font:400 17px 'Hanken Grotesk';cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;" style-hover="border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05)">←</button>
+            <button onClick="{{ scrollNext }}" aria-label="Next" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:transparent;color:#f3f3f1;font:400 17px 'Hanken Grotesk';cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;" style-hover="border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05)">→</button>
+          </div>
+        </div>
+
+        <div data-gallery="" style="display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;padding:6px 2px 20px;margin:0 calc(50% - 50vw) 0 -2px;align-items:flex-start;">
+          <div data-card="" style="flex:none;width:auto;scroll-snap-align:start;">
+            <div style="width:440px;height:600px;border-radius:28px;background:#141518;border:1px solid rgba(255,255,255,0.05);overflow:hidden;display:flex;align-items:center;justify-content:center;">
+              <div style="transform:scale(0.934);transform-origin:center;">
+              <div style="width:292px;height:600px;position:relative;">
+              <div style="position:absolute;top:0;left:0;width:369.7px;height:760px;transform:scale(0.789);transform-origin:top left;">
+                <div style="position:absolute;left:17.2px;top:16.1px;width:334.1px;height:726.7px;background:#fff;z-index:0;border-radius:44px;"></div>
+                <div style="position:absolute;left:23.25px;top:60px;width:322px;height:682.7px;overflow:hidden;z-index:1;border-radius:20px;">
+                  <video src="assets/tmobile/tmobile-main.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="T-Mobile assistant, entry experience" style="position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block;"></video>
+                </div>
+                <div style="position:absolute;left:17.2px;top:22px;width:334.1px;height:30px;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:0 24px;pointer-events:none;">
+                  <span style="font:600 15px -apple-system,system-ui;color:#000;letter-spacing:0.2px;">9:41</span>
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <svg width="18" height="11" viewBox="0 0 18 11"><rect x="0" y="6.5" width="3" height="4.5" rx="0.7" fill="#000"></rect><rect x="4.5" y="4.5" width="3" height="6.5" rx="0.7" fill="#000"></rect><rect x="9" y="2.5" width="3" height="8.5" rx="0.7" fill="#000"></rect><rect x="13.5" y="0" width="3" height="11" rx="0.7" fill="#000"></rect></svg>
+                    <svg width="16" height="11" viewBox="0 0 17 12"><path d="M8.5 3.2C10.8 3.2 12.9 4.1 14.4 5.6L15.5 4.5C13.7 2.7 11.2 1.5 8.5 1.5C5.8 1.5 3.3 2.7 1.5 4.5L2.6 5.6C4.1 4.1 6.2 3.2 8.5 3.2Z" fill="#000"></path><path d="M8.5 6.8C9.9 6.8 11.1 7.3 12 8.2L13.1 7.1C11.8 5.9 10.2 5.1 8.5 5.1C6.8 5.1 5.2 5.9 3.9 7.1L5 8.2C5.9 7.3 7.1 6.8 8.5 6.8Z" fill="#000"></path><circle cx="8.5" cy="10.5" r="1.5" fill="#000"></circle></svg>
+                    <svg width="25" height="12" viewBox="0 0 27 13"><rect x="0.5" y="0.5" width="23" height="12" rx="3.5" stroke="#000" stroke-opacity="0.35" fill="none"></rect><rect x="2" y="2" width="20" height="9" rx="2" fill="#000"></rect><path d="M25 4.5V8.5C25.8 8.2 26.5 7.2 26.5 6.5C26.5 5.8 25.8 4.8 25 4.5Z" fill="#000" fill-opacity="0.4"></path></svg>
+                  </div>
+                </div>
+                <img src="assets/tmobile/iphone-frame.png" alt="" aria-hidden="true" style="position:absolute;top:0;left:0;width:369.7px;height:auto;z-index:3;pointer-events:none;">
+                <div style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:120px;height:5px;border-radius:100px;background:rgba(0,0,0,0.28);z-index:4;"></div>
+              </div>
+              </div>
+            </div>
+            </div>
+            <div style="margin-top:22px;max-width:400px;">
+              <p style="font:400 15px/1.5 'Hanken Grotesk';color:rgba(243,243,241,0.55);margin:0;"><span style="font-weight:600;color:#f3f3f1;">Agentic bill assistant. </span>The entry moment: the assistant reads the bill, explains what changed, and stays ready for follow-ups. One tap, one clear answer.</p>
+            </div>
+          </div>
+
+          <div data-card="" style="flex:none;width:auto;scroll-snap-align:start;">
+            <div style="width:440px;height:600px;border-radius:28px;background:#141518;border:1px solid rgba(255,255,255,0.05);overflow:hidden;display:flex;align-items:center;justify-content:center;">
+              <video src="assets/tmobile/tmobile-voice.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="T-Chat voice mode" style="height:560px;width:auto;display:block;border-radius:30px;filter:drop-shadow(0 22px 44px rgba(0,0,0,0.5));"></video>
+            </div>
+            <div style="margin-top:22px;max-width:400px;">
+              <p style="font:400 15px/1.5 'Hanken Grotesk';color:rgba(243,243,241,0.55);margin:0;"><span style="font-weight:600;color:#f3f3f1;">Voice-led multimodality. </span>As the conversation moves, the interface follows. Options and visuals surface only when they help. People talk to it, they do not manage it.</p>
+            </div>
+          </div>
+
+          <div data-card="" style="flex:none;width:auto;scroll-snap-align:start;">
+            <div style="width:440px;height:600px;border-radius:28px;background:#141518;border:1px solid rgba(255,255,255,0.05);overflow:hidden;display:flex;align-items:center;justify-content:center;">
+              <div style="position:relative;height:560px;aspect-ratio:322/662;filter:drop-shadow(0 22px 44px rgba(0,0,0,0.5));">
+                <div style="position:absolute;left:4.97%;right:4.97%;top:2.12%;bottom:2.12%;overflow:hidden;border-radius:calc(500px * 0.066);background:#ffffff;">
+                  <video src="assets/tmobile/tmobile-shop.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Assistant present while shopping for a device" style="position:absolute;inset:0;width:100%;height:100%;object-fit:fill;display:block;"></video>
+                </div>
+                <img src="assets/tmobile/iphone-frame.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+              </div>
+            </div>
+            <div style="margin-top:22px;max-width:400px;">
+              <p style="font:400 15px/1.5 'Hanken Grotesk';color:rgba(243,243,241,0.55);margin:0;"><span style="font-weight:600;color:#f3f3f1;">Always within reach. </span>The assistant stays present on every screen. While browsing devices, people can compare options, surface the promotions they qualify for, or start an upgrade — without leaving the flow they're in.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TILE 02 -->
+      <article data-reveal="" style="margin-bottom:clamp(120px,18vh,210px);">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:42px;">
+          <div style="min-width:0;max-width:940px;">
+            <div style="font:700 13px 'Space Mono';color:#f4f4f2;letter-spacing:0.04em;margin-bottom:16px;">02</div>
+            <h3 style="font:600 clamp(28px,3.2vw,40px)/1.05 'Space Grotesk';letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 16px;">T-Mobile Coverage Map</h3>
+            <p style="font:400 clamp(16px,1.5vw,18.5px)/1.55 'Hanken Grotesk';color:rgba(243,243,241,0.6);margin:0 0 20px;max-width:84ch;">Redesigned how the millions who check T-Mobile's coverage each year read network data, turning dense signal maps into something anyone understands at a glance.</p>
+            <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+              <span style="font:400 12px 'Space Mono';color:rgba(243,243,241,0.42);">Lead Product Designer · Web · 6.2M annual visitors</span>
+              <a href="T-Mobile-Coverage-Map.dc.html" style="display:inline-flex;align-items:center;gap:9px;font:500 14px 'Hanken Grotesk';color:#f3f3f1;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:4px;transition:border-color .25s;" style-hover="border-color:rgba(255,255,255,0.6)">View case study <span>→</span></a>
+            </div>
+          </div>
+          <div data-nav="" style="display:flex;align-items:center;gap:18px;flex:none;">
+            <div style="position:relative;width:64px;height:2px;background:rgba(255,255,255,0.14);border-radius:2px;">
+              <div data-progress="" style="position:absolute;left:0;top:0;height:100%;width:33%;background:rgba(255,255,255,0.7);border-radius:2px;transition:left .25s ease;"></div>
+            </div>
+            <button onClick="{{ scrollPrev }}" aria-label="Previous" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:transparent;color:#f3f3f1;font:400 17px 'Hanken Grotesk';cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;" style-hover="border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05)">←</button>
+            <button onClick="{{ scrollNext }}" aria-label="Next" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:transparent;color:#f3f3f1;font:400 17px 'Hanken Grotesk';cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;" style-hover="border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05)">→</button>
+          </div>
+        </div>
+
+        <div data-gallery="" style="display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;padding:6px 2px 20px;margin:0 calc(50% - 50vw) 0 -2px;align-items:flex-start;">
+          <div data-card="" style="flex:none;width:auto;scroll-snap-align:start;">
+            <div style="width:440px;height:600px;border-radius:28px;background:#141518;border:1px solid rgba(255,255,255,0.05);overflow:hidden;display:flex;align-items:center;justify-content:center;">
+              <div style="position:relative;height:576px;aspect-ratio:322/662;filter:drop-shadow(0 34px 70px rgba(0,0,0,0.6));">
+                <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;">
+                  <video src="assets/coverage/coverage-search.webm" data-rate="0.5" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Coverage map address search on mobile" style="width:100%;height:100%;object-fit:cover;display:block;"></video>
+                </div>
+                <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+              </div>
+            </div>
+            <div style="margin-top:20px;max-width:400px;">
+              <p style="font:400 15px/1.5 'Hanken Grotesk';color:rgba(243,243,241,0.55);margin:0;"><span style="font-weight:600;color:#f3f3f1;">Will this work where I live. </span>Search an address and see your exact block. The map answers the one question people actually have.</p>
+            </div>
+          </div>
+
+          <div data-card="" style="flex:none;width:auto;scroll-snap-align:start;">
+            <div style="height:600px;border-radius:28px;background:#141518;border:1px solid rgba(255,255,255,0.05);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:0 48px;">
+              <video src="assets/coverage/coverage-desktop.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="National coverage map on web" style="display:block;height:500px;width:auto;border-radius:14px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 30px 70px -30px rgba(0,0,0,0.7);"></video>
+            </div>
+            <div style="margin-top:20px;max-width:520px;">
+              <p style="font:400 15px/1.5 'Hanken Grotesk';color:rgba(243,243,241,0.55);margin:0;"><span style="font-weight:600;color:#f3f3f1;">Dense data, read at a glance. </span>National signal data redesigned to be legible in seconds, for the 6.2M people who check it every year.</p>
+            </div>
+          </div>
+
+          <div data-card="" style="flex:none;width:auto;scroll-snap-align:start;">
+            <div style="width:440px;height:600px;border-radius:28px;background:#141518;border:1px solid rgba(255,255,255,0.05);overflow:hidden;display:flex;align-items:center;justify-content:center;">
+              <div style="position:relative;height:576px;aspect-ratio:322/662;filter:drop-shadow(0 34px 70px rgba(0,0,0,0.6));">
+                <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;">
+                  <img src="assets/coverage/coverage-people.png" alt="Coverage inside the everyday app map" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+                <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+              </div>
+            </div>
+            <div style="margin-top:20px;max-width:400px;">
+              <p style="font:400 15px/1.5 'Hanken Grotesk';color:rgba(243,243,241,0.55);margin:0;"><span style="font-weight:600;color:#f3f3f1;">Where the app already lives. </span>Coverage sits alongside the everyday map people use to find family and places—one tap from where they already are.</p>
+            </div>
+          </div>
+
+          <div data-card="" style="flex:none;width:auto;scroll-snap-align:start;">
+            <div style="width:440px;height:600px;border-radius:28px;background:#141518;border:1px solid rgba(255,255,255,0.05);overflow:hidden;display:flex;align-items:center;justify-content:center;">
+              <div style="position:relative;height:576px;aspect-ratio:322/662;filter:drop-shadow(0 34px 70px rgba(0,0,0,0.6));">
+                <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;">
+                  <img src="assets/coverage/coverage-5g.png" alt="5G coverage result for a searched address" style="width:100%;height:100%;object-fit:cover;display:block;">
+                </div>
+                <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+              </div>
+            </div>
+            <div style="margin-top:20px;max-width:400px;">
+              <p style="font:400 15px/1.5 'Hanken Grotesk';color:rgba(243,243,241,0.55);margin:0;"><span style="font-weight:600;color:#f3f3f1;">A verdict, not a legend. </span>A searched address returns one plain answer—strong outdoors, limited indoors—instead of a color key to decode.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- TILE 03 -->
+      <article data-reveal="" style="margin-bottom:30px;">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:42px;">
+          <div style="min-width:0;max-width:940px;">
+            <div style="font:700 13px 'Space Mono';color:#f4f4f2;letter-spacing:0.04em;margin-bottom:16px;">03</div>
+            <h3 style="font:600 clamp(28px,3.2vw,40px)/1.05 'Space Grotesk';letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 16px;">Mondrian AI</h3>
+            <p style="font:400 clamp(16px,1.5vw,18.5px)/1.55 'Hanken Grotesk';color:rgba(243,243,241,0.6);margin:0 0 20px;max-width:80ch;">Founding designer of a B2B AI platform that made complex model tooling usable for enterprise teams. Grew revenue 300%, adopted by Samsung and Hyundai.</p>
+            <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+              <span style="font:400 12px 'Space Mono';color:rgba(243,243,241,0.42);">Founding Product Designer · Enterprise web · 300% revenue growth</span>
+              <a href="Mondrian-AI.dc.html" style="display:inline-flex;align-items:center;gap:9px;font:500 14px 'Hanken Grotesk';color:#f3f3f1;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:4px;transition:border-color .25s;" style-hover="border-color:rgba(255,255,255,0.6)">View case study <span>→</span></a>
+            </div>
+          </div>
+          <div data-nav="" style="display:flex;align-items:center;gap:18px;flex:none;">
+            <div style="position:relative;width:64px;height:2px;background:rgba(255,255,255,0.14);border-radius:2px;">
+              <div data-progress="" style="position:absolute;left:0;top:0;height:100%;width:33%;background:rgba(255,255,255,0.7);border-radius:2px;transition:left .25s ease;"></div>
+            </div>
+            <button onClick="{{ scrollPrev }}" aria-label="Previous" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:transparent;color:#f3f3f1;font:400 17px 'Hanken Grotesk';cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;" style-hover="border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05)">←</button>
+            <button onClick="{{ scrollNext }}" aria-label="Next" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,0.18);background:transparent;color:#f3f3f1;font:400 17px 'Hanken Grotesk';cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .2s,background .2s;" style-hover="border-color:rgba(255,255,255,0.5);background:rgba(255,255,255,0.05)">→</button>
+          </div>
+        </div>
+
+        <div data-gallery="" style="display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x proximity;padding:6px 2px 20px;margin:0 calc(50% - 50vw) 0 -2px;align-items:flex-start;">
+          <div data-card="" style="flex:none;width:auto;scroll-snap-align:start;">
+            <div style="width:996px;height:560px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 40px 90px -36px rgba(0,0,0,0.8);position:relative;background:#141b2e;">
+              <iframe src="Mondrian%20AI%20-%20Dashboard.dc.html" scrolling="no" tabindex="-1" title="Yennefer Studio home dashboard" style="border:0;width:1920px;height:1080px;transform:scale(0.51875);transform-origin:top left;position:absolute;top:0;left:0;pointer-events:none;"></iframe>
+            </div>
+            <div style="margin-top:20px;max-width:600px;">
+              <p style="font:400 15px/1.5 'Hanken Grotesk';color:rgba(243,243,241,0.55);margin:0;"><span style="font-weight:600;color:#f3f3f1;">One home for the whole platform. </span>The redesigned dashboard for enterprise ML teams. Data Catalog, Studio, and SharePoint unified behind a single, scannable entry point.</p>
+            </div>
+          </div>
+
+          <div data-card="" style="flex:none;width:auto;scroll-snap-align:start;">
+            <div style="width:896px;height:560px;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 40px 90px -36px rgba(0,0,0,0.8);position:relative;background:#1a2236;">
+              <iframe src="Mondrian%20AI%20-%20Report.dc.html" scrolling="no" tabindex="-1" title="Published report with inline comments" style="border:0;width:1440px;height:900px;transform:scale(0.62222);transform-origin:top left;position:absolute;top:0;left:0;pointer-events:none;"></iframe>
+            </div>
+            <div style="margin-top:20px;max-width:600px;">
+              <p style="font:400 15px/1.5 'Hanken Grotesk';color:rgba(243,243,241,0.55);margin:0;"><span style="font-weight:600;color:#f3f3f1;">Reports people actually read. </span>Published notebooks become legible reports with inline discussion, so insights get shared and discussed, not buried.</p>
+            </div>
+          </div>
+
+          <div data-card="" style="flex:none;width:auto;scroll-snap-align:start;">
+            <video src="assets/mondrian/studio-home.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Yennefer Studio home dashboard walkthrough" style="display:block;height:560px;width:auto;border-radius:14px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 40px 90px -36px rgba(0,0,0,0.8);"></video>
+            <div style="margin-top:20px;max-width:600px;">
+              <p style="font:400 15px/1.5 'Hanken Grotesk';color:rgba(243,243,241,0.55);margin:0;"><span style="font-weight:600;color:#f3f3f1;">The flow, in motion. </span>A recorded walkthrough of the live product, from the welcome state through recently updated projects.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ABOUT / EXPERIENCE -->
+  <section id="about" style="padding:clamp(70px,9vh,120px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div data-reveal="" style="display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:start;">
+        <div style="min-width:0;">
+          <div style="font:400 12px 'Space Mono';letter-spacing:0.18em;text-transform:uppercase;color:#f4f4f2;margin-bottom:22px;">Now</div>
+          <h2 style="font:600 clamp(26px,3vw,38px)/1.12 'Space Grotesk';letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 20px;">Senior Product Designer, <br>T-Mobile</h2>
+          <p style="font:400 17px/1.6 'Hanken Grotesk';color:rgba(243,243,241,0.6);margin:0;max-width:34ch;">AI Innovation Lab and Foundations. I lead 0→1 product design end to end and own it through engineering handoff. Three times, across three different problem types.</p>
+        </div>
+        <div style="min-width:0;">
+          <div style="font:400 12px 'Space Mono';letter-spacing:0.18em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:4px;">Recognition</div>
+          <div style="display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.08);"><span style="font:400 15.5px 'Hanken Grotesk';color:rgba(243,243,241,0.84);">4 AI design patents</span><span style="font:400 11px 'Space Mono';color:rgba(243,243,241,0.4);align-self:center;">Patents</span></div>
+          <div style="display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.08);"><span style="font:400 15.5px 'Hanken Grotesk';color:rgba(243,243,241,0.84);">5 HCI papers, IEEE / ACM · Best Paper Award</span><span style="font:400 11px 'Space Mono';color:rgba(243,243,241,0.4);align-self:center;">Research</span></div>
+          <div style="display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.08);"><span style="font:400 15.5px 'Hanken Grotesk';color:rgba(243,243,241,0.84);">Lecturer, Fast Campus · Mentor, Google Developers Group</span><span style="font:400 11px 'Space Mono';color:rgba(243,243,241,0.4);align-self:center;">Teaching</span></div>
+          <div style="display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.08);"><span style="font:400 15.5px 'Hanken Grotesk';color:rgba(243,243,241,0.84);">M.S. Computer Science, UW · M.S. Design Intelligence, Yonsei</span><span style="font:400 11px 'Space Mono';color:rgba(243,243,241,0.4);align-self:center;">Education</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="padding:clamp(90px,14vh,180px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
+      <div style="font:400 12px 'Space Mono';letter-spacing:0.18em;text-transform:uppercase;color:#f4f4f2;margin-bottom:26px;">Contact</div>
+      <h2 style="font:600 clamp(40px,6.5vw,86px)/1 'Space Grotesk';letter-spacing:-0.035em;color:#f3f3f1;margin:0 0 22px;">Let's talk.</h2>
+      <p style="font:400 clamp(18px,1.8vw,22px)/1.4 'Hanken Grotesk';color:rgba(243,243,241,0.6);max-width:34ch;margin:0 0 56px;">Open to senior product design roles on teams who treat craft as the work, not the polish.</p>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;">
+        <a href="mailto:soojin.ux@gmail.com" style="display:block;padding:26px 28px;background:#0c0d11;text-decoration:none;transition:background .25s;" style-hover="background:#121419">
+          <div style="font:400 11px 'Space Mono';letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:12px;">Email</div>
+          <div style="font:500 clamp(16px,1.5vw,19px) 'Hanken Grotesk';color:#f3f3f1;word-break:break-word;">soojin.ux@gmail.com</div>
+        </a>
+        <a href="tel:+14257490557" style="display:block;padding:26px 28px;background:#0c0d11;text-decoration:none;transition:background .25s;" style-hover="background:#121419">
+          <div style="font:400 11px 'Space Mono';letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:12px;">Phone</div>
+          <div style="font:500 clamp(16px,1.5vw,19px) 'Hanken Grotesk';color:#f3f3f1;">425.749.0557</div>
+        </a>
+        <a href="https://linkedin.com/in/hwangsoojin" target="_blank" rel="noopener" style="display:block;padding:26px 28px;background:#0c0d11;text-decoration:none;transition:background .25s;" style-hover="background:#121419">
+          <div style="font:400 11px 'Space Mono';letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:12px;">LinkedIn</div>
+          <div style="font:500 clamp(16px,1.5vw,19px) 'Hanken Grotesk';color:#f3f3f1;">in/hwangsoojin</div>
+        </a>
+        <a href="https://drive.google.com/file/d/1wS5KY6bGeMACrAiQ7BWfPOluyu9D1HRZ/view?usp=sharing" target="_blank" rel="noopener" style="display:block;padding:26px 28px;background:#0c0d11;text-decoration:none;transition:background .25s;" style-hover="background:#121419">
+          <div style="font:400 11px 'Space Mono';letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:12px;">Resume</div>
+          <div style="display:flex;align-items:center;gap:8px;font:500 clamp(16px,1.5vw,19px) 'Hanken Grotesk';color:#f3f3f1;">Download PDF <span style="color:#f4f4f2;">↗</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top:1px solid rgba(255,255,255,0.08);padding:36px clamp(24px,5vw,80px);">
+    <div style="max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <span style="font:600 16px 'Space Grotesk';letter-spacing:-0.02em;color:#f3f3f1;">Soojin Hwang</span>
+      <span style="font:400 12px 'Space Mono';color:rgba(243,243,241,0.4);">© 2026 · Designed and built by Soojin Hwang</span>
+      <div style="display:flex;gap:24px;">
+        <a href="#work" style="font:400 13px 'Hanken Grotesk';color:rgba(243,243,241,0.5);text-decoration:none;" style-hover="color:#f3f3f1">Work</a>
+        <a href="#about" style="font:400 13px 'Hanken Grotesk';color:rgba(243,243,241,0.5);text-decoration:none;" style-hover="color:#f3f3f1">About</a>
+        <a href="#contact" style="font:400 13px 'Hanken Grotesk';color:rgba(243,243,241,0.5);text-decoration:none;" style-hover="color:#f3f3f1">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;pace&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;standard&quot;,&quot;options&quot;:[&quot;calm&quot;,&quot;standard&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  state = { step: 0 };
+
+  rootRef = (el) => { this.root = el; };
+
+  setupGalleries() {
+    const sync = () => {
+      document.querySelectorAll('[data-gallery]').forEach(g => {
+        const art = g.closest('article');
+        const prog = art ? art.querySelector('[data-progress]') : null;
+        const nav = art ? art.querySelector('[data-nav]') : null;
+        const max = g.scrollWidth - g.clientWidth;
+        if (nav) nav.style.display = max > 2 ? 'flex' : 'none';
+        if (prog) {
+          const ratio = max > 0 ? Math.min(1, Math.max(0, g.scrollLeft / max)) : 0;
+          const travel = 100 - (parseFloat(prog.style.width) || 33);
+          prog.style.left = (ratio * travel) + '%';
+        }
+      });
+    };
+    this._galSync = sync;
+    const ro = window.ResizeObserver ? new ResizeObserver(() => sync()) : null;
+    document.querySelectorAll('[data-gallery]').forEach(g => {
+      g.addEventListener('scroll', () => requestAnimationFrame(sync), { passive: true });
+      if (ro) ro.observe(g);
+    });
+    document.querySelectorAll('[data-gallery] img, [data-gallery] video').forEach(m => {
+      m.addEventListener('load', sync);
+      m.addEventListener('loadedmetadata', sync);
+    });
+    window.addEventListener('resize', sync, { passive: true });
+    this._galRO = ro;
+    sync();
+    requestAnimationFrame(sync);
+    setTimeout(sync, 300);
+    setTimeout(sync, 1200);
+  }
+  scrollGal(e, dir) {
+    const art = e && e.currentTarget ? e.currentTarget.closest('article') : null;
+    const g = art ? art.querySelector('[data-gallery]') : null;
+    if (!g) return;
+    const card = g.querySelector('[data-card]');
+    const step = card ? card.getBoundingClientRect().width + 20 : g.clientWidth * 0.85;
+    const start = g.scrollLeft;
+    const max = g.scrollWidth - g.clientWidth;
+    const target = Math.max(0, Math.min(max, start + dir * step));
+    if (g._raf) cancelAnimationFrame(g._raf);
+    const t0 = performance.now(), dur = 440;
+    const ease = (t) => 1 - Math.pow(1 - t, 3);
+    const tick = (now) => {
+      const p = Math.min(1, (now - t0) / dur);
+      g.scrollLeft = start + (target - start) * ease(p);
+      if (p < 1) g._raf = requestAnimationFrame(tick);
+    };
+    g._raf = requestAnimationFrame(tick);
+  }
+  scrollPrev = (e) => this.scrollGal(e, -1);
+  scrollNext = (e) => this.scrollGal(e, 1);
+  waveRef = (el) => { this.canvas = el; if (el) this.startWave(); };
+
+  componentDidMount() {
+    this.setupReveal();
+    this.setupGalleries();
+    document.querySelectorAll('video[data-rate]').forEach((v) => { v.playbackRate = parseFloat(v.dataset.rate); });
+  }
+
+  componentWillUnmount() {
+    if (this._onScroll) {
+      window.removeEventListener('scroll', this._onScroll);
+      window.removeEventListener('resize', this._onScroll);
+    }
+  }
+
+  setupReveal() {
+    const root = this.root;
+    if (!root) return;
+    const els = Array.from(root.querySelectorAll('[data-reveal]'));
+    if (this.props.reduceMotion) {
+      els.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+      return;
+    }
+    const pending = [];
+    const vh0 = window.innerHeight || document.documentElement.clientHeight;
+    els.forEach(el => {
+      el.style.transition = 'opacity .9s ease, transform 1s cubic-bezier(.2,.8,.2,1)';
+      el.style.willChange = 'opacity, transform';
+      const r = el.getBoundingClientRect();
+      const inView = r.top < vh0 * 0.92 && r.bottom > 0;
+      if (inView) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      } else {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        pending.push(el);
+      }
+    });
+    const reveal = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      for (let i = pending.length - 1; i >= 0; i--) {
+        const el = pending[i];
+        const r = el.getBoundingClientRect();
+        if (r.top < vh * 0.88 && r.bottom > 0) {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+          pending.splice(i, 1);
+        }
+      }
+      if (!pending.length && this._onScroll) {
+        window.removeEventListener('scroll', this._onScroll);
+        this._onScroll = null;
+      }
+    };
+    this._onScroll = () => window.requestAnimationFrame(reveal);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll, { passive: true });
+  }
+
+  startWave() {
+    if (this._raf) return;
+    const ctx = this.canvas.getContext('2d');
+    const resize = () => {
+      const cv = this.canvas;
+      if (!cv) return;
+      const dpr = window.devicePixelRatio || 1;
+      const w = cv.clientWidth, h = cv.clientHeight;
+      cv.width = Math.max(1, Math.round(w * dpr));
+      cv.height = Math.max(1, Math.round(h * dpr));
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    };
+    resize();
+    this._onResize = resize;
+    window.addEventListener('resize', resize);
+    const reduce = !!this.props.reduceMotion;
+    let t = 0;
+    const loop = () => {
+      const cv = this.canvas;
+      if (!cv) { this._raf = null; return; }
+      const w = cv.clientWidth, h = cv.clientHeight;
+      ctx.clearRect(0, 0, w, h);
+      const gap = 5, bw = 2.6;
+      const bars = Math.max(8, Math.floor(w / gap));
+      const mid = h / 2;
+      const speaking = (this.state.step >= 1 && this.state.step <= 3) ? 1 : 0.5;
+      for (let i = 0; i < bars; i++) {
+        const x = i * gap + 2;
+        const p = bars > 1 ? i / (bars - 1) : 0;
+        const env = Math.sin(p * Math.PI);
+        const wob = reduce ? 0.4 : (Math.sin(t * 0.05 + i * 0.55) * 0.5 + 0.5);
+        const amp = (0.25 + 0.75 * wob) * h * 0.4 * env * speaking + 1.4;
+        ctx.fillStyle = 'rgba(255,255,255,' + (0.3 + 0.55 * env).toFixed(3) + ')';
+        ctx.fillRect(x, mid - amp, bw, amp * 2);
+      }
+      t += reduce ? 0.3 : 1;
+      this._raf = requestAnimationFrame(loop);
+    };
+    this._raf = requestAnimationFrame(loop);
+  }
+
+  renderVals() {
+    const s = this.state.step;
+    const rv = (on) => ({
+      opacity: on ? 1 : 0,
+      transform: on ? 'translateY(0) scale(1)' : 'translateY(16px) scale(.97)',
+      transition: 'opacity .55s ease, transform .6s cubic-bezier(.2,.85,.2,1)'
+    });
+    const statusText = s >= 4 ? 'Ready' : (s >= 2 ? 'Answering' : 'Listening');
+    return {
+      rootRef: this.rootRef,
+      scrollPrev: this.scrollPrev,
+      scrollNext: this.scrollNext,
+      waveRef: this.waveRef,
+      userReveal: rv(s >= 1),
+      answerReveal: rv(s >= 2),
+      planReveal: rv(s >= 3),
+      chipReveal: rv(s >= 4),
+      statusText
+    };
+  }
+}
+</script>
+</body>
+</html>
