@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "WebFetch(domain:www.soojinhwang.com)",
+      "WebFetch(domain:azumbrunnen.me)",
+      "WebFetch(domain:www.christinasliu.com)",
+      "WebFetch(domain:cameronsimony.com)",
+      "WebFetch(domain:www.caicharniga.com)",
+      "Bash(npm install *)",
+      "Bash(npx next *)",
+      "Bash(PORT=3015 npx next dev -p 3015)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(kill be8qie6rf *)",
+      "Bash(xargs -r kill)",
+      "WebFetch(domain:claude.ai)",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git remote *)",
+      "Bash(git fetch *)",
+      "Bash(git ls-remote *)",
+      "Bash(git ls-tree *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Rebuild portfolio as Next.js app *)",
+      "Bash(git branch *)",
+      "Bash(git merge *)"
+    ]
+  }
+}

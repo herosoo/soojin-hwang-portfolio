@@ -1,0 +1,195 @@
+/* ============================================================================
+   SOOJIN HWANG — DESIGN TOKENS
+   ----------------------------------------------------------------------------
+   This file is the SINGLE SOURCE OF TRUTH for the design system.
+   Change a value here and it updates everywhere on the site.
+
+   • Review the whole system visually at:  /style-guide
+   • Read the written guideline at:         DESIGN_SYSTEM.md
+   • Theme: permanent dark mode (Apple iPhone-Pro depth × Brandon Hook restraint)
+
+   How to read this file
+   ---------------------
+   Surface colors are stored as RGB CHANNELS ("6 7 11") — not hex — so that
+   opacity modifiers like `bg-ink-900/40` keep working through Tailwind.
+   Everything else is stored in its final CSS form.
+
+   Sections:  1 Color · 2 Typography · 3 Spacing · 4 Radius ·
+              5 Elevation · 6 Border · 7 Motion · 8 Layout · 9 Z-index
+   ========================================================================== */
+
+:root {
+  /* =========================================================================
+     1 · COLOR
+     ========================================================================= */
+
+  /* -- 1a. Surfaces — near-black "ink" ramp (RGB channels, dark → less dark) --
+     Consumed by Tailwind as `bg-ink-950 … bg-ink-500` (+ opacity, e.g. /40).  */
+  --ink-950: 6 7 11;      /* #06070B — page background            */
+  --ink-900: 10 12 18;    /* #0A0C12 — raised surface / nav       */
+  --ink-800: 16 19 28;    /* #10131C — card base                  */
+  --ink-700: 22 26 38;    /* #161A26 — card hover / inset         */
+  --ink-600: 31 36 51;    /* #1F2433 — divider surface            */
+  --ink-500: 42 49 71;    /* #2A3147 — muted / disabled surface   */
+
+  /* -- 1b. Text ramp — layered white for hierarchy on dark surfaces -- */
+  --text-100: #f4f5fb;    /* headings / high emphasis             */
+  --text-300: #c8ccd9;    /* body copy                            */
+  --text-500: #8a90a3;    /* secondary / captions                 */
+  --text-700: #4a5063;    /* faint / disabled                     */
+
+  /* -- 1c. Accents — highlights, gradients, per-project color -- */
+  --accent-violet: #8b5cf6;
+  --accent-indigo: #6366f1;
+  --accent-blue:   #3b82f6;
+  --accent-cyan:   #22d3ee;
+  --accent-mint:   #34d399;
+  --accent-rose:   #fb7185;
+  --accent-amber:  #f59e0b;
+
+  /* -- 1d. Semantic aliases — re-point these to re-theme without hunting -- */
+  --color-bg:       rgb(var(--ink-950));
+  --color-surface:  rgb(var(--ink-900));
+  --color-primary:  var(--accent-indigo);   /* primary interactive accent */
+  --color-focus:    var(--accent-violet);   /* focus ring                 */
+  --color-success:  var(--accent-mint);     /* live / positive status     */
+
+  /* -- 1e. Legacy names — kept so existing CSS keeps resolving. Don't remove. */
+  --bg-deep: rgb(var(--ink-950));
+  --bg-soft: rgb(var(--ink-900));
+  --ink-100: var(--text-100);
+  --ink-300: var(--text-300);
+
+  /* =========================================================================
+     2 · TYPOGRAPHY
+     ========================================================================= */
+
+  /* -- 2a. Font families (full fallback stacks) --
+     `font-display`, `font-sans`, `font-mono` in Tailwind read these vars.     */
+  --font-display: "Söhne", "Inter", "SF Pro Display", -apple-system,
+                  BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-sans:    "Inter", "SF Pro Text", -apple-system,
+                  BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", "SF Mono", ui-monospace, Menlo, monospace;
+
+  /* -- 2b. Font weights -- */
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;   /* default for all display/headings */
+  --weight-bold:     700;
+
+  /* -- 2c. Type scale (font-size / line-height / letter-spacing) --
+     Exposed as Tailwind `text-display-xl … text-label`.
+     px kept for designer familiarity; use rem in code if you prefer.          */
+  --fs-display-xl: 72px;   --lh-display-xl: 1.02;   /* hero headline           */
+  --fs-display-lg: 60px;   --lh-display-lg: 1.03;   /* section hero            */
+  --fs-display-md: 48px;   --lh-display-md: 1.05;   /* large heading           */
+  --fs-heading-lg: 40px;   --lh-heading-lg: 1.05;   /* project title           */
+  --fs-heading-md: 32px;   --lh-heading-md: 1.10;   /* subsection              */
+  --fs-heading-sm: 24px;   --lh-heading-sm: 1.20;   /* card title              */
+  --fs-title:      20px;   --lh-title:      1.30;   /* lead-in / large label   */
+  --fs-body-lg:    18px;   --lh-body-lg:    1.60;   /* intro paragraph         */
+  --fs-body:       16px;   --lh-body:       1.60;   /* default body            */
+  --fs-body-sm:    15px;   --lh-body-sm:    1.60;   /* dense body / captions   */
+  --fs-caption:    13px;   --lh-caption:    1.50;   /* meta / footnote         */
+  --fs-label:      11px;   --lh-label:      1.40;   /* uppercase eyebrow       */
+
+  /* -- 2d. Letter-spacing (tracking) --
+     Uppercase labels ride WIDE tracking; big display type rides TIGHT.        */
+  --tracking-tightest: -0.045em;   /* display-xl                  */
+  --tracking-tighter:  -0.035em;   /* display / headings          */
+  --tracking-tight:    -0.020em;   /* small headings              */
+  --tracking-normal:    0em;       /* body                        */
+  --tracking-wide:      0.18em;    /* uppercase labels            */
+  --tracking-wider:     0.22em;    /* uppercase eyebrows          */
+
+  /* -- 2e. Line-height primitives -- */
+  --leading-none:    1;
+  --leading-tight:   1.05;
+  --leading-snug:    1.20;
+  --leading-normal:  1.50;
+  --leading-relaxed: 1.60;
+
+  /* =========================================================================
+     3 · SPACING   (4px base grid — same scale Tailwind uses)
+     ========================================================================= */
+  --space-1:  0.25rem;   /*  4px */
+  --space-2:  0.5rem;    /*  8px */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+
+  /* Rhythm — vertical breathing room between page sections */
+  --section-y:      7rem;    /* 112px — desktop section padding-top   */
+  --section-y-sm:   4.5rem;  /*  72px — mobile section padding-top    */
+  --block-gap:      1.5rem;  /*  24px — gap between blocks in a card   */
+
+  /* =========================================================================
+     4 · RADIUS   (corner rounding)
+     -------------------------------------------------------------------------
+     The site uses Tailwind's default `rounded-*` scale for most elements:
+        rounded-md  =  6px   rounded-lg  =  8px   rounded-xl  = 12px
+        rounded-2xl = 16px   rounded-3xl = 24px   rounded-full = pill
+     The vars below drive the SEMANTIC classes `rounded-card`, `rounded-panel`,
+     `rounded-pill` (change these to restyle cards/panels globally).
+     ========================================================================= */
+  --radius-xl:   24px;    /* rounded-card  — feature cards        */
+  --radius-2xl:  32px;    /* rounded-panel — hero panels          */
+  --radius-full: 9999px;  /* rounded-pill  — buttons, chips        */
+
+  /* =========================================================================
+     5 · ELEVATION   (depth via shadow, not borders)
+     ========================================================================= */
+  --shadow-soft:
+    0 1px 0 rgba(255, 255, 255, 0.04) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 30px 60px -30px rgba(0, 0, 0, 0.6);
+  --shadow-card:
+    0 20px 50px -24px rgba(0, 0, 0, 0.65);
+  --shadow-glow:                    /* colored halo — set --glow to an accent */
+    0 30px 80px -30px var(--glow, rgba(139, 92, 246, 0.5));
+
+  /* =========================================================================
+     6 · BORDER   (hairlines on dark = translucent white)
+     ========================================================================= */
+  --border-subtle:  rgba(255, 255, 255, 0.06);   /* dividers          */
+  --border-default: rgba(255, 255, 255, 0.10);   /* card edges        */
+  --border-strong:  rgba(255, 255, 255, 0.14);   /* emphasis / hover  */
+  --border-width:   1px;
+
+  /* =========================================================================
+     7 · MOTION
+     ========================================================================= */
+  --ease-out-expo: cubic-bezier(0.2, 0.8, 0.2, 1);   /* house easing  */
+  --ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --duration-fast: 0.3s;    /* hovers, taps          */
+  --duration-base: 0.6s;    /* entrances             */
+  --duration-slow: 0.9s;    /* hero / large reveals  */
+
+  /* =========================================================================
+     8 · LAYOUT
+     ========================================================================= */
+  --container-wide:   1440px;   /* full-width sections        */
+  --container-narrow: 1080px;   /* reading-width sections     */
+  --gutter:      1.5rem;        /* 24px — mobile side padding */
+  --gutter-md:   2.5rem;        /* 40px — tablet              */
+  --gutter-lg:   3.5rem;        /* 56px — desktop             */
+
+  /* =========================================================================
+     9 · Z-INDEX
+     ========================================================================= */
+  --z-base:    0;
+  --z-content: 10;
+  --z-nav:     50;
+  --z-overlay: 90;
+  --z-skip:    100;   /* skip-to-content link */
+
+  color-scheme: dark;
+}
