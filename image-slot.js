@@ -49,7 +49,11 @@
 /* END USAGE */
 
 (() => {
-  const STATE_FILE = '.image-slots.state.json';
+  const STATE_FILE = 'image-slots.state.json';
+  // Legacy dotfile name — read as a fallback so images saved before the
+  // rename still load. (Dotfiles aren't served by every static host, e.g.
+  // GitHub Pages/Jekyll, which is why the canonical name is now non-dot.)
+  const LEGACY_STATE_FILE = '.image-slots.state.json';
   // 2× a ~600px slot in a 1920-wide deck — retina-sharp without making the
   // sidecar enormous. A 1200px WebP at q=0.85 is ~150-300KB.
   const MAX_DIM = 1200;
@@ -76,7 +80,8 @@
   function load() {
     if (loadP) return loadP;
     loadP = fetch(STATE_FILE)
-      .then((r) => (r.ok ? r.json() : null))
+      .then((r) => (r.ok ? r.json()
+        : fetch(LEGACY_STATE_FILE).then((r2) => (r2.ok ? r2.json() : null)).catch(() => null)))
       .then((j) => {
         // Merge: sidecar loses to any in-memory change that raced ahead of
         // the fetch (drop or clear) so neither is clobbered by hydration.
