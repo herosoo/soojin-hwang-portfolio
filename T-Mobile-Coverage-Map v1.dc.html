@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:#0a0b0d;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  ::selection{background:rgba(255,255,255,0.35);color:#fff}
+  @keyframes floatGlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
+  a{color:inherit}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="position:relative;min-height:100vh;background:#0a0b0d;color:#f3f3f1;overflow-x:hidden;font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif,sans-serif;">
+
+  <div style="position: fixed; inset: 0px; pointer-events: none; z-index: 90; opacity: 0.4; mix-blend-mode: soft-light; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E&quot;);"></div>
+
+  <!-- NAV -->
+  <nav style="position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(10,11,13,0.55);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(24px,5vw,80px);">
+    <div style="max-width:1280px;margin:0 auto;padding:15px 0;display:flex;align-items:center;justify-content:space-between;">
+      <a href="Soojin Hwang - Home.dc.html" style="display:inline-flex;align-items:center;gap:9px;font:400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1"><span>←</span> All work</a>
+      <a href="Soojin Hwang - Home.dc.html" style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;text-decoration:none;">Soojin Hwang</a>
+      <a href="#contact" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <section data-screen-label="Hero" style="position:relative;padding:clamp(120px,16vh,180px) clamp(24px,5vw,80px) clamp(60px,8vh,90px);">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
+        <img src="assets/tmobile/tmobile-logo.png" alt="T-Mobile" style="height:20px;width:auto;display:block;">
+      </div>
+
+      <h1 data-reveal="" style="font: 600 clamp(44px,7vw,96px)/1.0 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; letter-spacing: -0.045em; color: #f3f3f1; margin: 0; max-width: 20ch; font-size: 48px">Reimagining Network Coverage for Millions</h1>
+
+      <!-- META ROW -->
+      <div data-reveal="" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-top:56px;">
+        <div style="background:#0c0d11;padding:24px 26px;">
+          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Role</div>
+          <div style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;line-height:1.3;">Lead Product Designer</div>
+          <div style="font: 400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.45); margin-top: 5px; display: none">0→1, end to end</div>
+        </div>
+        <div style="background:#0c0d11;padding:24px 26px;">
+          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Platforms</div>
+          <div style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;line-height:1.3;">Web · iOS · Android</div>
+          <div style="font: 400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.45); margin-top: 5px; display: none">One system</div>
+        </div>
+        <div style="background:#0c0d11;padding:24px 26px;">
+          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Timeline</div>
+          <div style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;line-height:1.3;">8 months</div>
+          <div style="font: 400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.45); margin-top: 5px; display: none">≈ 8 months</div>
+        </div>
+        <div style="background:#0c0d11;padding:24px 26px;">
+          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Key outcome</div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">↑</span>
+            <span style="font:600 22px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.02em;">65%</span>
+            <span style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">comprehension</span>
+          </div>
+          <div style="font: 400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.32); margin-top: 7px; display: none">map comprehension</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HERO SCREEN (mobile final map) -->
+    <div data-reveal="" style="max-width:1280px;margin:clamp(70px,10vh,110px) auto 0;">
+      <div data-parallax="" style="position:relative;display:flex;justify-content:center;">
+        <div style="position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);width:min(760px,92%);height:80%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.26),rgba(255,255,255,0.05) 48%,transparent 70%);filter:blur(24px);pointer-events:none;animation:floatGlow 12s ease-in-out infinite;"></div>
+        <div style="position:relative;height:min(780px,84vh);aspect-ratio:322/662;filter:drop-shadow(0 60px 120px rgba(0,0,0,0.85));">
+          <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;">
+            <video src="assets/coverage/coverage-mobile.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="The redesigned national coverage map on mobile" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"></video>
+          </div>
+          <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ROLE & SCOPE ============ -->
+  <section data-screen-label="Role and scope" style="padding:clamp(70px,10vh,120px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.7fr 1.3fr;gap:clamp(40px,6vw,90px);align-items:start;">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;padding-top:8px;">Role &amp; scope</div>
+      <div style="min-width:0;">
+        <h2 style="font:600 clamp(30px,3.6vw,46px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 28px;max-width:20ch;">Made a dense network map readable at a glance</h2>
+        <p style="font:400 clamp(17px,1.5vw,20px)/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0 0 40px;max-width:60ch;">I led the end-to-end redesign of T-Mobile's coverage map across web, iOS, and Android, from research through engineering handoff. The work turned complex network and signal data into a map a normal person can read and trust.</p>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;max-width:560px;">
+          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">Data visualization</div>
+          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">Information design</div>
+          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">0→1 redesign</div>
+          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">Cross-platform design system</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROBLEM ============ -->
+  <section data-screen-label="Problem" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:26px;">Problem</div>
+      <h2 style="font:600 clamp(32px,4.4vw,60px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 28px;">High traffic, low understanding</h2>
+      <p style="font:400 clamp(17px,1.6vw,21px)/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;max-width:60ch;">6.2M people check T-Mobile's coverage every year, and 3.6M are prospective customers deciding whether to switch. But the map had a 55% churn rate, because people couldn't read it well enough to answer the one question that matters.</p>
+    </div>
+
+    <!-- ANNOTATED EXHIBIT: the old map, dissected -->
+    <div data-reveal="" style="max-width:1120px;margin:clamp(56px,8vh,96px) auto 0;">
+      <div style="position:relative;background:#f4f3ef;border-radius:28px;padding:clamp(48px,5.5vw,88px) clamp(60px,9vw,150px);box-shadow:0 40px 90px -40px rgba(0,0,0,0.7);">
+        <div style="text-align:center;margin-bottom:clamp(28px,4vh,44px);">
+          <div style="font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#a39e97;margin-bottom:9px;">Before</div>
+          <div style="font:600 clamp(18px,2vw,24px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#1c1b1a;">The map people actually met</div>
+        </div>
+
+        <!-- STAGE: phone centered, callouts anchored to the phone edges -->
+        <div style="position:relative;display:flex;justify-content:center;">
+          <div style="position:relative;height:min(640px,74vh);aspect-ratio:322/662;filter:drop-shadow(0 30px 55px rgba(0,0,0,0.28));">
+
+            <!-- SCREEN: recreation of the legacy coverage map -->
+            <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;display:flex;flex-direction:column;font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif,sans-serif;color:#111;">
+
+              <!-- top bar -->
+              <div style="flex:none;display:flex;align-items:center;gap:8px;padding:7px 11px;border-bottom:1px solid #eee;">
+                <div style="width:21px;height:21px;border-radius:4px;background:#e20074;display:flex;align-items:center;justify-content:center;font:800 12px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#fff;">T</div>
+                <div style="flex:1;"></div>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="#111"><circle cx="12" cy="8" r="4"></circle><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="none" stroke="#111" stroke-width="2"></path></svg>
+                <span style="font:600 9px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#111;">Log in</span>
+                <div style="display:flex;flex-direction:column;gap:2.5px;margin-left:2px;">
+                  <span style="width:15px;height:1.6px;background:#111;border-radius:2px;"></span>
+                  <span style="width:15px;height:1.6px;background:#111;border-radius:2px;"></span>
+                  <span style="width:15px;height:1.6px;background:#111;border-radius:2px;"></span>
+                </div>
+              </div>
+
+              <!-- heading -->
+              <div style="flex:none;padding:8px 12px 6px;">
+                <div style="font:700 6px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.03em;color:#555;margin-bottom:4px;">CHECK 4G &amp; 5G COVERAGE AVAILABILITY IN YOUR AREA</div>
+                <div style="font:800 19px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#0a0a0a;line-height:1.02;">4G &amp; 5G Coverage map</div>
+                <div style="font:400 9px/1.35 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#3a3a3a;margin-top:5px;">Enter your address, zip code, or use the map's location icon to explore coverage in your service area.</div>
+              </div>
+
+              <!-- search -->
+              <div style="flex:none;margin:2px 12px 8px;height:29px;border:1px solid #d9d9d9;border-radius:4px;display:flex;align-items:center;gap:8px;padding:0 10px;">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><circle cx="12" cy="12" r="7"></circle><line x1="12" y1="1" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="23"></line><line x1="1" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="23" y2="12"></line></svg>
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.5" y2="16.5"></line></svg>
+                <span style="font:400 10px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#8a8a8a;">Search address or location</span>
+              </div>
+
+              <!-- map -->
+              <div style="flex:1;position:relative;overflow:hidden;background:#c2185b;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,0.14) 0 1px,transparent 1px 27px),repeating-linear-gradient(90deg,rgba(255,255,255,0.14) 0 1px,transparent 1px 27px);">
+                <!-- darker ultra-capacity patches -->
+                <div style="position:absolute;top:0;right:0;width:46%;height:58%;background:rgba(120,0,66,0.55);"></div>
+                <div style="position:absolute;bottom:0;left:0;width:52%;height:40%;background:rgba(120,0,66,0.32);"></div>
+                <!-- street labels -->
+                <div style="position:absolute;top:12%;left:9%;font:600 6.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.72);">W 42nd Ave</div>
+                <div style="position:absolute;bottom:20%;right:12%;font:600 6.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.72);">W 35th Ave</div>
+                <div style="position:absolute;top:44%;left:6%;font:600 6.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.6);transform:rotate(-90deg);transform-origin:left;">Xavier St</div>
+
+                <!-- 5G ON toggle -->
+                <div style="position:absolute;top:8px;left:8px;background:#fff;border-radius:6px;padding:3px 6px;display:flex;align-items:center;gap:5px;box-shadow:0 1px 3px rgba(0,0,0,0.2);">
+                  <span style="font:800 9px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#111;">5G</span>
+                  <span style="position:relative;width:22px;height:12px;border-radius:7px;background:#e20074;display:inline-flex;align-items:center;">
+                    <span style="font:700 6px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#fff;margin-left:4px;">ON</span>
+                    <span style="position:absolute;right:1px;width:10px;height:10px;border-radius:50%;background:#fff;"></span>
+                  </span>
+                </div>
+
+                <!-- zoom / controls -->
+                <div style="position:absolute;top:8px;right:8px;display:flex;flex-direction:column;align-items:center;gap:5px;">
+                  <div style="width:16px;height:16px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font:700 8px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#333;box-shadow:0 1px 2px rgba(0,0,0,0.2);">©</div>
+                  <div style="width:18px;height:18px;background:#fff;border-radius:3px;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 2px rgba(0,0,0,0.2);">
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path></svg>
+                  </div>
+                  <div style="width:18px;background:#fff;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,0.2);">
+                    <div style="height:16px;display:flex;align-items:center;justify-content:center;font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#333;border-bottom:1px solid #eee;">+</div>
+                    <div style="height:16px;display:flex;align-items:center;justify-content:center;font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#333;">−</div>
+                  </div>
+                </div>
+
+                <!-- tooltip -->
+                <div style="position:absolute;top:34%;left:50%;transform:translateX(-50%);width:150px;background:#fff;border-radius:7px;box-shadow:0 6px 20px rgba(0,0,0,0.28);padding:9px 10px;">
+                  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:6px;">
+                    <div style="font:400 8.5px/1.3 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#222;">4455 West 36th Avenue, Denver, CO</div>
+                    <div style="flex:none;width:12px;height:12px;border-radius:50%;background:#111;color:#fff;display:flex;align-items:center;justify-content:center;font:700 8px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;">×</div>
+                  </div>
+                  <div style="font:800 15px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#111;margin-top:6px;">5G</div>
+                  <div style="font:400 9px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#444;">Ultra Capacity</div>
+                  <div style="font:600 8.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#111;text-decoration:underline;margin-top:6px;">Skip to details</div>
+                </div>
+                <div style="position:absolute;top:calc(34% + 62px);left:50%;transform:translateX(-50%);width:12px;height:12px;border-radius:50% 50% 50% 0;background:#111;transform:translateX(-50%) rotate(45deg);"></div>
+
+                <!-- attributions -->
+                <div style="position:absolute;bottom:5px;left:7px;display:flex;align-items:center;gap:3px;font:600 7px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.85);">
+                  <span style="width:8px;height:8px;border-radius:50%;border:1.5px solid #fff;"></span>mapbox
+                </div>
+                <div style="position:absolute;bottom:5px;right:7px;font:400 7px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(255,255,255,0.85);text-decoration:underline;">Map and service info</div>
+              </div>
+
+              <!-- legend -->
+              <div style="flex:none;padding:8px 10px 10px;display:flex;flex-wrap:wrap;gap:5px 9px;align-items:center;">
+                <div style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:#98004e;"></span><span style="font:400 8px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#222;">5G Ultra Capacity</span></div>
+                <div style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:#e20074;"></span><span style="font:400 8px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#222;">5G Extended Range</span></div>
+                <div style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:#ff4da6;"></span><span style="font:400 8px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#222;">4G LTE</span></div>
+                <div style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:#f7a8d0;"></span><span style="font:400 8px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#222;">3G/2G</span></div>
+                <div style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background-image:repeating-linear-gradient(45deg,#333 0 2px,#fff 2px 4px);border:1px solid #ccc;"></span><span style="font:400 8px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#222;">Partner</span></div>
+                <div style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:#6b2c6b;"></span><span style="font:400 8px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#222;">Partner: Canada and Mexico</span></div>
+                <div style="display:flex;align-items:center;gap:4px;"><span style="width:10px;height:10px;background:#fff;border:1px solid #bbb;"></span><span style="font:400 8px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#222;">No coverage</span></div>
+                <span style="width:11px;height:11px;border-radius:50%;border:1px solid #999;display:flex;align-items:center;justify-content:center;font:700 7px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#666;">i</span>
+              </div>
+            </div>
+
+            <!-- phone bezel -->
+            <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+
+            <!-- CALLOUTS (anchored to phone edges) -->
+            <!-- left top: header -->
+            <div style="position:absolute;top:15%;right:100%;width:clamp(170px,23vw,270px);height:0;">
+              <div style="position:absolute;right:0;top:0;width:100%;border-top:1px solid #cbc7bf;"></div>
+              <div style="position:absolute;right:2px;bottom:11px;text-align:right;">
+                <div style="font:600 clamp(15px,1.2vw,19px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#1c1b1a;">Instructions eat the screen</div>
+                <div style="font:400 clamp(12px,0.95vw,14px)/1.4 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#6f6b64;margin-top:5px;max-width:26ch;margin-left:auto;">A title, subtitle and search bar push the map below the fold.</div>
+              </div>
+              <div style="position:absolute;right:-3.5px;top:-3.5px;width:7px;height:7px;border-radius:50%;background:#1c1b1a;"></div>
+            </div>
+
+            <!-- left bottom: legend -->
+            <div style="position:absolute;top:90%;right:100%;width:clamp(170px,23vw,270px);height:0;">
+              <div style="position:absolute;right:0;top:0;width:100%;border-top:1px solid #cbc7bf;"></div>
+              <div style="position:absolute;right:2px;bottom:11px;text-align:right;">
+                <div style="font:600 clamp(15px,1.2vw,19px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#1c1b1a;">A legend to memorize</div>
+                <div style="font:400 clamp(12px,0.95vw,14px)/1.4 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#6f6b64;margin-top:5px;max-width:26ch;margin-left:auto;">Seven color codes to decode before the map means anything.</div>
+              </div>
+              <div style="position:absolute;right:-3.5px;top:-3.5px;width:7px;height:7px;border-radius:50%;background:#1c1b1a;"></div>
+            </div>
+
+            <!-- right top: tooltip -->
+            <div style="position:absolute;top:42%;left:100%;width:clamp(170px,23vw,270px);height:0;">
+              <div style="position:absolute;left:0;top:0;width:100%;border-top:1px solid #cbc7bf;"></div>
+              <div style="position:absolute;left:2px;bottom:11px;text-align:left;">
+                <div style="font:600 clamp(15px,1.2vw,19px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#1c1b1a;">The answer hides in a tooltip</div>
+                <div style="font:400 clamp(12px,0.95vw,14px)/1.4 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#6f6b64;margin-top:5px;max-width:26ch;">You only learn what you get by tapping a spot and reading a popup.</div>
+              </div>
+              <div style="position:absolute;left:-3.5px;top:-3.5px;width:7px;height:7px;border-radius:50%;background:#1c1b1a;"></div>
+            </div>
+
+            <!-- right bottom: cramped map -->
+            <div style="position:absolute;top:70%;left:100%;width:clamp(170px,23vw,270px);height:0;">
+              <div style="position:absolute;left:0;top:0;width:100%;border-top:1px solid #cbc7bf;"></div>
+              <div style="position:absolute;left:2px;bottom:11px;text-align:left;">
+                <div style="font:600 clamp(15px,1.2vw,19px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.01em;color:#1c1b1a;">The map barely fits</div>
+                <div style="font:400 clamp(12px,0.95vw,14px)/1.4 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#6f6b64;margin-top:5px;max-width:26ch;">Chrome and controls crowd out the one thing people came to see.</div>
+              </div>
+              <div style="position:absolute;left:-3.5px;top:-3.5px;width:7px;height:7px;border-radius:50%;background:#1c1b1a;"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:clamp(48px,7vh,80px) auto 0;">
+      <blockquote style="margin:0;padding-left:clamp(20px,2.4vw,30px);border-left:3px solid rgba(243,243,241,0.55);">
+        <p style="font:600 clamp(26px,3.6vw,48px)/1.18 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.025em;color:#f3f3f1;margin:0;max-width:22ch;"><i>Will T-Mobile actually work where I live?</i></p>
+        <cite style="display:block;margin-top:18px;font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.08em;text-transform:uppercase;color:rgba(243,243,241,0.5);font-style:normal;">The question behind every visit</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ SOLUTION BEATS ============ -->
+  <section data-screen-label="Solution" style="padding:clamp(40px,6vh,80px) clamp(24px,5vw,80px) clamp(20px,4vh,40px);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(40px,6vh,70px);">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:18px;">Solution</div>
+      <h2 style="font:600 clamp(28px,3.4vw,44px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:22ch;">A map you can read without decoding a legend</h2>
+    </div>
+
+    <!-- BEAT 1 (pinned media left) -->
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start;">
+      <div>
+        <div style="position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;">
+          <div style="position:relative;display:flex;justify-content:center;">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:80%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.22),transparent 68%);filter:blur(16px);pointer-events:none;animation:floatGlow 10s ease-in-out infinite;"></div>
+            <div style="position:relative;height:min(720px,80vh);aspect-ratio:322/662;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
+              <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;">
+                <video src="assets/coverage/coverage-mobile.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="The national coverage map on mobile web" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"></video>
+              </div>
+              <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="min-height:150vh;display:flex;flex-direction:column;justify-content:center;">
+        <div data-reveal="" style="max-width:42ch;position:relative;top:-20px;">
+          <div style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:18px;">01</div>
+          <h3 style="font:600 clamp(28px,3.2vw,42px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 22px;max-width:16ch;">Readable coverage layers</h3>
+          <p style="font:400 clamp(17px,1.6vw,21px)/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;">Signal strength and network type read instantly, without hunting through a legend.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEAT 2 (pinned media right) -->
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start;">
+      <div style="min-height:150vh;display:flex;flex-direction:column;justify-content:center;">
+        <div data-reveal="" style="max-width:42ch;position:relative;top:-60px;">
+          <div style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:18px;">02</div>
+          <h3 style="font:600 clamp(28px,3.2vw,42px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 22px;max-width:16ch;">Plain language over jargon</h3>
+          <p style="font:400 clamp(17px,1.6vw,21px)/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;">Search an address and get a verdict in plain words, not a color key to interpret.</p>
+        </div>
+      </div>
+      <div>
+        <div style="position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;">
+          <div style="position:relative;display:flex;justify-content:center;">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:80%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.2),transparent 68%);filter:blur(16px);pointer-events:none;animation:floatGlow 13s ease-in-out infinite;"></div>
+            <div style="position:relative;height:min(720px,80vh);aspect-ratio:322/662;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
+              <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;">
+                <video src="assets/coverage/coverage-search.webm" data-rate="0.75" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Searching an address returns a plain-language coverage verdict" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"></video>
+              </div>
+              <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEAT 3 (pinned media left) -->
+    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:start;">
+      <div>
+        <div style="position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;">
+          <div style="position:relative;display:flex;justify-content:center;">
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120%;height:80%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.2),transparent 68%);filter:blur(16px);pointer-events:none;animation:floatGlow 11s ease-in-out infinite;"></div>
+            <div style="position:relative;height:min(720px,80vh);aspect-ratio:322/662;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
+              <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;">
+                <img src="assets/coverage/coverage-5g.png" alt="In-app coverage: a clear outdoors and indoors verdict for the searched location" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+              </div>
+              <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="min-height:150vh;display:flex;flex-direction:column;justify-content:center;">
+        <div data-reveal="" style="max-width:42ch;position:relative;top:-20px;">
+          <div style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:18px;">03</div>
+          <h3 style="font:600 clamp(28px,3.2vw,42px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 22px;max-width:14ch;">A confident answer</h3>
+          <p style="font:400 clamp(17px,1.6vw,21px)/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;">Indoors and outdoors, spelled out. People leave knowing it will work for them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BEFORE & AFTER ============ -->
+  <section data-screen-label="Before &amp; after" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(48px,7vh,80px);">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:20px;">Before &amp; after</div>
+      <h2 style="font:600 clamp(28px,3.6vw,46px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:20ch;">The same location, read two ways</h2>
+    </div>
+
+    <div data-reveal="" style="position:relative;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.5vw,32px);align-items:stretch;">
+      <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:5;width:44px;height:44px;border-radius:50%;background:#0c0d11;border:1px solid rgba(255,255,255,0.25);display:flex;align-items:center;justify-content:center;font:400 18px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;box-shadow:0 8px 24px rgba(0,0,0,0.45);">→</div>
+      <!-- BEFORE -->
+      <div style="display:flex;flex-direction:column;border-radius:22px;border:1px solid rgba(255,255,255,0.08);background:#0c0d11;padding:clamp(26px,2.6vw,40px);">
+        <div style="display:flex;justify-content:center;margin-bottom:24px;">
+          <span style="display:inline-flex;align-items:center;gap:7px;font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:#ff7a7a;border:1px solid rgba(255,122,122,0.35);border-radius:20px;padding:5px 13px;"><span style="width:7px;height:7px;border-radius:50%;background:#ff5a5a;"></span>Before · The problem</span>
+        </div>
+        <div style="display:flex;justify-content:center;">
+          <img src="assets/coverage/coverage-before-web.png" alt="Before: the previous T-Mobile coverage map with a dense magenta legend" style="display:block;height:min(680px,74vh);width:auto;max-width:100%;filter:drop-shadow(0 40px 80px rgba(0,0,0,0.55));">
+        </div>
+        <p style="font:400 15px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:24px auto 0;max-width:34ch;text-align:center;"><span style="font-weight:600;color:#f3f3f1;">Limited usability, low comprehension.</span><br>People struggled to interpret the coverage layers and details.</p>
+      </div>
+
+      <!-- AFTER -->
+      <div style="display:flex;flex-direction:column;border-radius:22px;border:1px solid rgba(255,255,255,0.08);background:#0c0d11;padding:clamp(26px,2.6vw,40px);">
+        <div style="display:flex;justify-content:center;margin-bottom:24px;">
+          <span style="display:inline-flex;align-items:center;gap:7px;font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:#22d39a;border:1px solid rgba(34,211,154,0.35);border-radius:20px;padding:5px 13px;"><span style="width:7px;height:7px;border-radius:50%;background:#22d39a;"></span>After · How I improved it</span>
+        </div>
+        <div style="display:flex;justify-content:center;">
+          <div style="position:relative;height:min(680px,74vh);aspect-ratio:322/662;filter:drop-shadow(0 40px 80px rgba(0,0,0,0.55));">
+            <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;">
+              <video src="assets/coverage/coverage-search.webm" data-rate="0.75" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="The redesigned coverage map with a plain-language verdict" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;"></video>
+            </div>
+            <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+          </div>
+        </div>
+        <p style="font:400 15px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:24px auto 0;max-width:34ch;text-align:center;"><span style="font-weight:600;color:#f3f3f1;">A clearer map, a plain answer.</span><br><span style="font-weight:600;color:#22d39a;">+65% comprehension · +35% usability</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ IMPACT ============ -->
+  <section data-screen-label="Impact" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
+      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:24px;">Impact</div>
+      <h2 style="font:600 clamp(32px,4.4vw,60px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 clamp(50px,7vh,80px);max-width:16ch;">Easier to read, easier to trust</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;">
+        <div style="background:#0c0d11;padding:clamp(26px,2.6vw,36px);display:flex;flex-direction:column;">
+          <span style="font:600 clamp(40px,4.6vw,64px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.03em;margin-bottom:16px;">+65%</span>
+          <div style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:8px;">Map comprehension</div>
+          <div style="font:400 14px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);">Relative to the previous map.</div>
+        </div>
+        <div style="background:#0c0d11;padding:clamp(26px,2.6vw,36px);display:flex;flex-direction:column;">
+          <span style="font:600 clamp(40px,4.6vw,64px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.03em;margin-bottom:16px;">+35%</span>
+          <div style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:8px;">Usability</div>
+          <div style="font:400 14px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);">Three user groups completed tasks without any Mobile Expert support.</div>
+        </div>
+        <div style="background:#0c0d11;padding:clamp(26px,2.6vw,36px);display:flex;flex-direction:column;">
+          <span style="font:600 clamp(40px,4.6vw,64px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.03em;margin-bottom:16px;">6.2M</span>
+          <div style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:8px;">Annual visitors served</div>
+          <div style="font:400 14px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);">Across web, iOS, and Android.</div>
+        </div>
+        <div style="background:#0c0d11;padding:clamp(26px,2.6vw,36px);display:flex;flex-direction:column;">
+          <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+            <span style="font:600 clamp(28px,3vw,40px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.03em;">55%</span>
+            <span style="font:600 18px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">→</span>
+            <span style="font:400 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);">[confirm]</span>
+          </div>
+          <div style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:8px;">Churn on the map</div>
+          <div style="font:400 14px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);">Post-launch figure to confirm.</div>
+        </div>
+      </div>
+
+      <blockquote style="margin:clamp(60px,9vh,100px) 0 0;padding-left:clamp(24px,3vw,40px);border-left:3px solid rgba(243,243,241,0.55);max-width:80%;">
+        <p style="font:600 clamp(24px,3.2vw,42px)/1.22 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0;"><span style="color:rgba(243,243,241,0.4);">[Closing quote: real user or stakeholder line, confirm or replace]</span></p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="contact" style="border-top:1px solid rgba(255,255,255,0.08);padding:clamp(60px,10vh,110px) clamp(24px,5vw,80px) 40px;">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div data-reveal="" style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:clamp(50px,8vh,80px);">
+        <div>
+          <div style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:18px;">More work</div>
+          <a href="Mondrian-AI.dc.html" style="font:600 clamp(30px,4vw,52px)/1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;text-decoration:none;display:inline-flex;align-items:center;gap:16px;transition:gap .25s;" style-hover="gap:24px">Mondrian AI <span style="color:#f3f3f1;">→</span></a>
+        </div>
+        <a href="Soojin Hwang - Home.dc.html" style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:4px;transition:color .25s,border-color .25s;" style-hover="color:#f3f3f1;border-color:rgba(255,255,255,0.5)">Back to all work</a>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.08);">
+        <span style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;">Soojin Hwang</span>
+        <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;">
+          <a href="mailto:soojin.ux@gmail.com" style="font:400 13.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">soojin.ux@gmail.com</a>
+          <a href="https://www.linkedin.com/in/hwangsoojin/" target="_blank" rel="noopener" style="font:400 13.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">LinkedIn</a>
+        </div>
+        <span style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);">© 2026 · T-Mobile Coverage Map case study</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;pace&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;standard&quot;,&quot;options&quot;:[&quot;calm&quot;,&quot;standard&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
+class Component extends DCLogic {
+  rootRef = (el) => { this.root = el; };
+
+  componentDidMount() {
+    this.setupReveal();
+    this.setupParallax();
+    document.querySelectorAll('video[data-rate]').forEach((v) => { v.playbackRate = parseFloat(v.dataset.rate); });
+  }
+  componentWillUnmount() {
+    if (this._onScroll) { window.removeEventListener('scroll', this._onScroll); window.removeEventListener('resize', this._onScroll); }
+    if (this._onPar) { window.removeEventListener('scroll', this._onPar); window.removeEventListener('resize', this._onPar); }
+  }
+
+  setupReveal() {
+    const root = this.root;
+    if (!root) return;
+    const calm = this.props.pace === 'calm';
+    const els = Array.from(root.querySelectorAll('[data-reveal]'));
+    if (this.props.reduceMotion) {
+      els.forEach(el => { el.style.opacity = '1'; el.style.transform = 'none'; });
+      return;
+    }
+    const pending = [];
+    const vh0 = window.innerHeight || document.documentElement.clientHeight;
+    const dur = calm ? '1.1s' : '.85s';
+    els.forEach(el => {
+      el.style.transition = 'opacity ' + dur + ' ease, transform ' + (calm ? '1.2s' : '1s') + ' cubic-bezier(.2,.8,.2,1)';
+      el.style.willChange = 'opacity, transform';
+      const r = el.getBoundingClientRect();
+      const inView = r.top < vh0 * 0.94 && r.bottom > 0;
+      if (inView) { el.style.opacity = '1'; el.style.transform = 'none'; }
+      else { el.style.opacity = '0'; el.style.transform = 'translateY(34px)'; pending.push(el); }
+    });
+    const reveal = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      for (let i = pending.length - 1; i >= 0; i--) {
+        const el = pending[i];
+        const r = el.getBoundingClientRect();
+        if (r.top < vh * 0.9 && r.bottom > 0) {
+          el.style.opacity = '1'; el.style.transform = 'none';
+          pending.splice(i, 1);
+        }
+      }
+      if (!pending.length && this._onScroll) {
+        window.removeEventListener('scroll', this._onScroll);
+        this._onScroll = null;
+      }
+    };
+    this._onScroll = () => window.requestAnimationFrame(reveal);
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    window.addEventListener('resize', this._onScroll, { passive: true });
+  }
+
+  setupParallax() {
+    const root = this.root;
+    if (!root || this.props.reduceMotion) return;
+    const items = Array.from(root.querySelectorAll('[data-parallax]'));
+    if (!items.length) return;
+    let ticking = false;
+    const apply = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      items.forEach(el => {
+        const r = el.getBoundingClientRect();
+        const center = r.top + r.height / 2;
+        const off = (center - vh / 2) / vh;
+        el.style.transform = 'translate3d(0,' + (off * -26).toFixed(2) + 'px,0)';
+      });
+      ticking = false;
+    };
+    this._onPar = () => { if (!ticking) { ticking = true; window.requestAnimationFrame(apply); } };
+    window.addEventListener('scroll', this._onPar, { passive: true });
+    window.addEventListener('resize', this._onPar, { passive: true });
+    apply();
+  }
+
+  renderVals() {
+    return { rootRef: this.rootRef };
+  }
+}
+</script>
+</body>
+</html>
