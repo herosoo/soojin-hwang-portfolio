@@ -30,8 +30,17 @@ Code at this download and the existing clone, then:
    - `index.html`
    - `vercel.json` (clean-URL rewrites — **required for the extensionless links to work**)
    - `support.js`, `image-slot.js`
+   - `.image-slots.state.json` (**hidden dotfile** — holds every dropped case-study image as
+     embedded data. Finder/Explorer hide dotfiles by default, and some zip/copy flows skip
+     them — check "Show hidden files" or use `ls -a` / `cp -a` so it's actually included.
+     Without it, `<image-slot>` images render blank on the live site even though they show
+     fine here.)
    - every `*.dc.html` page that the live site links to
    - the whole `assets/` folder
+
+   > Do **not** ship the `uploads/` folder — it's a scratch space for reference material, not
+   > site assets. Any image a page actually uses should live under `assets/` instead (already
+   > true for everything currently linked).
 2. **Commit and push to `main`:**
 
 ```bash
