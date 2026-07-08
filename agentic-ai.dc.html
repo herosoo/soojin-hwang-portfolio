@@ -22,16 +22,20 @@
   a{color:inherit}
 </style>
 </helmet>
-<div ref="{{ rootRef }}" style="position:relative;min-height:100vh;background:#0a0b0d;color:#f3f3f1;overflow-x:hidden;font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif,sans-serif;">
+<div ref="{{ rootRef }}" style="position:relative;min-height:100vh;background:#0a0b0d;color:#f3f3f1;overflow-x:clip;font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif,sans-serif;">
 
   
 
   <!-- NAV -->
   <nav style="position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(10,11,13,0.55);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(24px,5vw,80px);">
     <div style="max-width:1280px;margin:0 auto;padding:15px 0;display:flex;align-items:center;justify-content:space-between;">
-      <a href="/" style="display:inline-flex;align-items:center;gap:9px;font:400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1"><span>←</span> All work</a>
-      <a href="/" style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;text-decoration:none;">Soojin Hwang</a>
-      <a href="#contact" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Contact</a>
+      <a href="/" style="font:600 18px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;text-decoration:none;">Soojin Hwang</a>
+      <div style="display:flex;align-items:center;gap:clamp(18px,2.4vw,32px);">
+        <a href="/#work" style="font:400 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Work</a>
+        <a href="/about" style="font:400 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">About</a>
+        <a href="https://drive.google.com/file/d/1wS5KY6bGeMACrAiQ7BWfPOluyu9D1HRZ/view?usp=sharing" target="_blank" rel="noopener" style="font:400 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Resume</a>
+        <a href="#contact" style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#0a0b0d;background:#f3f3f1;padding:9px 17px;border-radius:22px;text-decoration:none;transition:background .25s;" style-hover="background:#fff">Contact</a>
+      </div>
     </div>
   </nav>
 
@@ -104,6 +108,20 @@
     </div>
   </section>
 
+  <!-- STICKY SUBNAV -->
+  <div data-subnav="" style="position:sticky;top:65px;z-index:50;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(10,11,13,0.7);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(24px,5vw,80px);">
+    <div style="max-width:1280px;margin:0 auto;">
+      <div style="display:flex;align-items:center;gap:clamp(20px,3vw,42px);height:52px;overflow-x:auto;">
+        <a href="#problem" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Problem</a>
+        <a href="#solution" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Solution</a>
+        <a href="#results" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Results</a>
+        <a href="#evaluation" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Evaluation</a>
+        <a href="#platforms" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Platforms</a>
+        <a href="#impact" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Impact</a>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ ROLE & SCOPE ============ -->
   <section data-screen-label="Role and scope" style="padding:clamp(70px,10vh,120px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
     <div data-reveal="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.7fr 1.3fr;gap:clamp(40px,6vw,90px);align-items:start;">
@@ -125,7 +143,7 @@
   </section>
 
   <!-- ============ PROBLEM ============ -->
-  <section data-screen-label="Problem" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+  <section id="problem" data-screen-label="Problem" style="scroll-margin-top:120px;padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
     <div data-reveal="" style="max-width:1280px;margin:0 auto;">
       <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:26px;">Problem</div>
       <h2 style="font: 600 clamp(32px,4.4vw,60px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; letter-spacing: -0.03em; color: #f3f3f1; margin: 0 0 28px">Switching carriers is overwhelming</h2>
@@ -251,7 +269,7 @@
   </section>
 
   <!-- ============ SOLUTION BEATS ============ -->
-  <section data-screen-label="Solution" style="padding:clamp(40px,6vh,80px) clamp(24px,5vw,80px) clamp(20px,4vh,40px);">
+  <section id="solution" data-screen-label="Solution" style="scroll-margin-top:120px;padding:clamp(40px,6vh,80px) clamp(24px,5vw,80px) clamp(20px,4vh,40px);">
     <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(40px,6vh,70px);">
       <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:18px;">Solution</div>
       <h2 style="font:600 clamp(28px,3.4vw,44px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:24ch;">An assistant that guides, not a search box that responds</h2>
@@ -321,7 +339,7 @@
   </section>
 
   <!-- ============ BEFORE & AFTER (MVP TEST RESULTS) ============ -->
-  <section data-screen-label="Before &amp; after" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+  <section id="results" data-screen-label="Before &amp; after" style="scroll-margin-top:120px;padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
     <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(48px,7vh,80px);">
       <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:20px;">Before &amp; After</div>
       <h2 style="font:600 clamp(28px,3.6vw,46px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:20ch;">What the MVP test changed</h2>
@@ -386,7 +404,7 @@
   </section>
 
   <!-- ============ AI EVALUATION (DARK CINEMATIC) ============ -->
-  <section data-screen-label="AI evaluation" style="position:relative;background:#050507;padding:clamp(90px,14vh,170px) clamp(24px,5vw,80px);margin-top:clamp(40px,6vh,80px);overflow:hidden;border-top:1px solid rgba(255,255,255,0.06);">
+  <section id="evaluation" data-screen-label="AI evaluation" style="scroll-margin-top:120px;position:relative;background:#050507;padding:clamp(90px,14vh,170px) clamp(24px,5vw,80px);margin-top:clamp(40px,6vh,80px);overflow:hidden;border-top:1px solid rgba(255,255,255,0.06);">
     <div style="position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.12),transparent 62%);pointer-events:none;"></div>
     <div style="position:relative;max-width:1280px;margin:0 auto;">
       <div data-reveal="" style="max-width:760px;">
@@ -556,7 +574,7 @@
   </section>
 
   <!-- ============ PLATFORM BREADTH ============ -->
-  <section data-screen-label="Platforms" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+  <section id="platforms" data-screen-label="Platforms" style="scroll-margin-top:120px;padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
     <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(50px,7vh,80px);">
       <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:20px;">Platforms</div>
       <h2 style="font:600 clamp(28px,3.6vw,46px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:20ch;">One assistant, three platforms, one system</h2>
@@ -590,7 +608,7 @@
   </section>
 
   <!-- ============ IMPACT ============ -->
-  <section data-screen-label="Impact" style="padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+  <section id="impact" data-screen-label="Impact" style="scroll-margin-top:120px;padding:clamp(80px,12vh,150px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
     
     <div data-reveal="" style="max-width:1280px;margin:0 auto;">
       <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:24px;">Impact</div>
@@ -668,11 +686,13 @@ class Component extends DCLogic {
     this.setupReveal();
     this.setupParallax();
     this.setupAnno();
+    this.setupSpy();
   }
   componentWillUnmount() {
     if (this._onScroll) { window.removeEventListener('scroll', this._onScroll); window.removeEventListener('resize', this._onScroll); }
     if (this._onPar) { window.removeEventListener('scroll', this._onPar); window.removeEventListener('resize', this._onPar); }
     if (this._onAnno) { window.removeEventListener('resize', this._onAnno); }
+    if (this._spyScroll) { window.removeEventListener('scroll', this._spyScroll); window.removeEventListener('resize', this._spyScroll); }
   }
 
   setupAnno() {
@@ -751,6 +771,28 @@ class Component extends DCLogic {
     window.addEventListener('scroll', this._onPar, { passive: true });
     window.addEventListener('resize', this._onPar, { passive: true });
     apply();
+  }
+
+  setupSpy() {
+    const root = this.root;
+    if (!root) return;
+    const bar = root.querySelector('[data-subnav]');
+    if (!bar) return;
+    const links = Array.from(bar.querySelectorAll('a[href^="#"]'));
+    const pairs = links.map((a) => ({ a, sec: document.getElementById(a.getAttribute('href').slice(1)) })).filter((p) => p.sec);
+    if (!pairs.length) return;
+    const setActive = (active) => {
+      links.forEach((a) => { a.style.color = a === active ? '#f3f3f1' : 'rgba(243,243,241,0.62)'; });
+    };
+    this._spyScroll = () => {
+      const line = 130;
+      let current = null;
+      pairs.forEach((p) => { if (p.sec.getBoundingClientRect().top <= line) current = p.a; });
+      setActive(current);
+    };
+    window.addEventListener('scroll', this._spyScroll, { passive: true });
+    window.addEventListener('resize', this._spyScroll, { passive: true });
+    this._spyScroll();
   }
 
   renderVals() {
