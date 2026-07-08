@@ -28,6 +28,7 @@ Code at this download and the existing clone, then:
 1. **Copy the latest files** from this download into the existing local clone,
    overwriting what's there. Ship exactly these (see file list below):
    - `index.html`
+   - `vercel.json` (clean-URL rewrites — **required for the extensionless links to work**)
    - `support.js`, `image-slot.js`
    - every `*.dc.html` page that the live site links to
    - the whole `assets/` folder
@@ -77,23 +78,31 @@ gh api -X POST repos/herosoo/soojin-hwang-portfolio/pages \
 
 ### Case-study pages (linked from `index.html`)
 
-- `T-Mobile-Agentic-AI.dc.html`
-- `T-Mobile-Coverage-Map.dc.html`
-- `Mondrian-AI.dc.html`
-- `Mondrian AI - Dashboard.dc.html` and `Mondrian AI - Report.dc.html` (embedded as iframes on the home page)
-- `Soojin Hwang - About.dc.html` (linked from the nav)
+Files use clean slugs; the site links to them by **extensionless URL** (see `vercel.json`):
 
-> File names contain spaces. That's fine — the internal links are already URL-encoded
-> (`%20`). Keep the file names exactly as-is or the links will break.
+- `agentic-ai.dc.html`  → `/agentic-ai`
+- `coverage-map.dc.html`  → `/coverage-map`
+- `AI-enterprise.dc.html`  → `/ai-enterprise`
+- `mondrian-ai-dashboard.dc.html` and `mondrian-ai-report.dc.html` (embedded as iframes on the home page — referenced directly by filename, no rewrite needed)
+- `about.dc.html`  → `/about` (linked from the nav)
+
+> **Clean URLs are Vercel-only.** `vercel.json` rewrites `/agentic-ai` → `/agentic-ai.dc.html`, etc.
+> The internal links are absolute extensionless paths (`/agentic-ai`), so they only resolve on a host
+> that applies these rewrites. **GitHub Pages does not support this** — those absolute links will 404
+> there. Deploy via Vercel (the connected GitHub push already triggers it). If you must keep GitHub
+> Pages, the links would have to be reverted to relative `*.dc.html` form.
+
+> Keep the file names exactly as-is (they match `vercel.json` — note `AI-enterprise.dc.html` is
+> capitalized, and its rewrite destination matches that casing) or the links will break.
 
 ### Safe to delete before publishing (old backups / unused)
 
 These are not referenced by the live site:
 
-- `Mondrian-AI v1.dc.html`
-- `T-Mobile-Coverage-Map v1.dc.html`
-- `Soojin Hwang - Home.dc.html`  *(the real home is `index.html`)*
-- `screenshots/`, `publish/`, `uploads/`  *(working folders, not part of the site)*
+- `mondrian-ai-v1.dc.html`
+- `tmobile-coverage-map-v1.dc.html`
+- `home.dc.html`  *(the real home is `index.html`)*
+- `screenshots/`, `publish/`, `deploy/`, `uploads/`  *(working folders, not part of the site)*
 - `PUBLISHING.md`  *(this file)*
 
 Deleting them is optional but keeps the repo clean.

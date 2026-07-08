@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/about", "destination": "/about.dc.html" },
+    { "source": "/agentic-ai", "destination": "/agentic-ai.dc.html" },
+    { "source": "/coverage-map", "destination": "/coverage-map.dc.html" },
+    { "source": "/ai-enterprise", "destination": "/AI-enterprise.dc.html" }
+  ]
+}
