@@ -97,7 +97,7 @@
         </div>
         <div style="border:1px solid rgba(255,255,255,0.09);border-radius:16px;background:#0c0d11;padding:clamp(24px,2.8vw,34px);">
           <div style="font:600 clamp(30px,3.6vw,46px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin-bottom:10px;">6.2M</div>
-          <p style="font:400 15px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.58);margin:0;">Check the Coverage Map each year, 3.6M deciding whether to switch. <span style="color:rgba(243,243,241,0.4);">[confirm]</span></p>
+          <p style="font:400 15px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.58);margin:0;">Check the Coverage Map each year, 3.6M deciding whether to switch. </p>
         </div>
       </div>
     </div>
@@ -107,10 +107,20 @@
       <div data-parallax="" style="position:relative;display:flex;justify-content:center;">
         <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(760px,90%);height:74%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.14),rgba(255,255,255,0.03) 50%,transparent 72%);filter:blur(26px);pointer-events:none;animation:floatGlow 12s ease-in-out infinite;"></div>
         <div style="position:relative;height:min(780px,86vh);aspect-ratio:322/662;filter:drop-shadow(0 50px 90px rgba(0,0,0,0.7));">
-          <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:30px;background:#000;">
-            <video src="assets/coverage/coverage-mobile.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="The redesigned national coverage map on mobile" style="position:absolute;top:4.5%;left:0;width:100%;height:95.5%;object-fit:cover;object-position:center top;display:block;"></video>
+          <div style="position:absolute;inset:6.84% 4.65% 2.26% 4.65%;overflow:hidden;border-radius:0 0 38px 38px;background:#fff;z-index:0;">
+            <video src="assets/coverage/coverage-search.webm" data-rate="0.75" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Searching an address returns a plain-language coverage verdict" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></video>
           </div>
-          <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+          <div style="position:absolute;left:4.65%;right:4.65%;top:2.89%;height:3.95%;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:0 8%;pointer-events:none;">
+            <span style="font:600 15px -apple-system,system-ui;color:#000;letter-spacing:0.2px;">9:41</span>
+            <div style="display:flex;align-items:center;gap:6px;">
+              <svg width="18" height="11" viewBox="0 0 18 11"><rect x="0" y="6.5" width="3" height="4.5" rx="0.7" fill="#000"></rect><rect x="4.5" y="4.5" width="3" height="6.5" rx="0.7" fill="#000"></rect><rect x="9" y="2.5" width="3" height="8.5" rx="0.7" fill="#000"></rect><rect x="13.5" y="0" width="3" height="11" rx="0.7" fill="#000"></rect></svg>
+              <svg width="16" height="11" viewBox="0 0 17 12"><path d="M8.5 3.2C10.8 3.2 12.9 4.1 14.4 5.6L15.5 4.5C13.7 2.7 11.2 1.5 8.5 1.5C5.8 1.5 3.3 2.7 1.5 4.5L2.6 5.6C4.1 4.1 6.2 3.2 8.5 3.2Z" fill="#000"></path><path d="M8.5 6.8C9.9 6.8 11.1 7.3 12 8.2L13.1 7.1C11.8 5.9 10.2 5.1 8.5 5.1C6.8 5.1 5.2 5.9 3.9 7.1L5 8.2C5.9 7.3 7.1 6.8 8.5 6.8Z" fill="#000"></path><circle cx="8.5" cy="10.5" r="1.5" fill="#000"></circle></svg>
+              <svg width="25" height="12" viewBox="0 0 27 13"><rect x="0.5" y="0.5" width="23" height="12" rx="3.5" stroke="#000" stroke-opacity="0.35" fill="none"></rect><rect x="2" y="2" width="20" height="9" rx="2" fill="#000"></rect><path d="M25 4.5V8.5C25.8 8.2 26.5 7.2 26.5 6.5C26.5 5.8 25.8 4.8 25 4.5Z" fill="#000" fill-opacity="0.4"></path></svg>
+            </div>
+          </div>
+          <div style="position:absolute;top:2.6%;left:50%;transform:translateX(-50%);width:28.7%;height:4.08%;background:#000;border-radius:100px;z-index:5;pointer-events:none;"></div>
+          <img src="assets/tmobile/iphone-frame.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;z-index:4;pointer-events:none;">
+          <div style="position:absolute;bottom:2.4%;left:50%;transform:translateX(-50%);width:32%;height:5px;border-radius:100px;background:rgba(0,0,0,0.28);z-index:5;"></div>
         </div>
       </div>
     </div>
@@ -206,10 +216,10 @@
         </div>
         <div style="display:flex;justify-content:center;">
           <div style="position:relative;height:min(600px,66vh);aspect-ratio:322/662;filter:drop-shadow(0 40px 80px rgba(0,0,0,0.55));">
-            <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#000;">
+            <div style="position:absolute;inset:2.12% 4.97%;overflow:hidden;border-radius:38px;background:#000;">
               <image-slot id="cov-evo-2" style="position:absolute;top:4.5%;left:0;width:100%;height:95.5%;" shape="rect" placeholder="Drop: early iteration, first pass at readable layers · 1080×2340"></image-slot>
             </div>
-            <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+            <img src="assets/tmobile/iphone-frame.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;"><div style="position:absolute;top:3.3%;left:50%;transform:translateX(-50%);width:27%;height:3.9%;background:#000;border-radius:100px;z-index:5;pointer-events:none;"></div>
           </div>
         </div>
         <p style="font:400 14.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:22px auto 0;max-width:32ch;text-align:center;">A first pass at making the layers readable.</p>
@@ -221,10 +231,10 @@
         </div>
         <div style="display:flex;justify-content:center;">
           <div style="position:relative;height:min(600px,66vh);aspect-ratio:322/662;filter:drop-shadow(0 40px 80px rgba(0,0,0,0.55));">
-            <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#000;">
+            <div style="position:absolute;inset:2.12% 4.97%;overflow:hidden;border-radius:38px;background:#000;">
               <img src="assets/coverage/coverage-5g.png" alt="The redesigned, legible coverage map with a plain-language verdict" style="position:absolute;top:4.5%;left:0;width:100%;height:95.5%;object-fit:cover;object-position:center top;display:block;">
             </div>
-            <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+            <img src="assets/tmobile/iphone-frame.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;"><div style="position:absolute;top:3.3%;left:50%;transform:translateX(-50%);width:27%;height:3.9%;background:#000;border-radius:100px;z-index:5;pointer-events:none;"></div>
           </div>
         </div>
         <p style="font:400 14.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:22px auto 0;max-width:32ch;text-align:center;">The redesigned, legible map.</p>
@@ -257,10 +267,10 @@
           </div>
           <div style="display:flex;justify-content:center;">
             <div style="position:relative;height:min(680px,74vh);aspect-ratio:322/662;filter:drop-shadow(0 40px 80px rgba(0,0,0,0.55));">
-              <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#000;">
+              <div style="position:absolute;inset:2.12% 4.97%;overflow:hidden;border-radius:38px;background:#000;">
                 <video src="assets/coverage/coverage-search.webm" data-rate="0.75" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="The redesigned coverage map with a plain-language verdict" style="position:absolute;top:4.5%;left:0;width:100%;height:95.5%;object-fit:cover;object-position:center top;display:block;"></video>
               </div>
-              <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+              <img src="assets/tmobile/iphone-frame.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;"><div style="position:absolute;top:3.3%;left:50%;transform:translateX(-50%);width:27%;height:3.9%;background:#000;border-radius:100px;z-index:5;pointer-events:none;"></div>
             </div>
           </div>
           <p style="font:400 15px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin:24px auto 0;max-width:34ch;text-align:center;"><span style="font-weight:600;color:#f3f3f1;">A clearer map, a plain answer.</span><br><span style="font-weight:600;color:#22d39a;">+65% comprehension · +35% usability</span></p>
@@ -286,12 +296,27 @@
       <div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(28px,4vw,56px);align-items:center;">
         <!-- mobile -->
         <div style="display:flex;justify-content:center;">
-          <div data-parallax="" style="position:relative;height:min(640px,72vh);aspect-ratio:322/662;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
-            <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#000;">
-              <video src="assets/coverage/coverage-search.webm" data-rate="0.75" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Searching an address returns a plain-language coverage verdict" style="position:absolute;top:4.5%;left:0;width:100%;height:95.5%;object-fit:cover;object-position:center top;display:block;"></video>
-            </div>
-            <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
-          </div>
+          <div style="transform:scale(0.934);transform-origin:center;">
+              <div style="width:292px;height:600px;position:relative;">
+              <div style="position:absolute;top:0;left:0;width:369.7px;height:760px;transform:scale(0.789);transform-origin:top left;filter:drop-shadow(0 22px 44px rgba(0,0,0,0.5));">
+                <div style="position:absolute;left:17.2px;top:16.1px;width:334.1px;height:726.7px;background:#fff;z-index:0;border-radius:44px;"></div>
+                <div style="position:absolute;left:17.2px;top:52px;width:334.1px;height:690.8px;overflow:hidden;z-index:1;border-radius:0 0 44px 44px;">
+                  <video src="assets/coverage/coverage-search.webm" data-rate="0.75" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Searching an address returns a plain-language coverage verdict" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:top center;display:block;"></video>
+                </div>
+                <div style="position:absolute;left:17.2px;top:22px;width:334.1px;height:30px;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:0 26px;pointer-events:none;">
+                  <span style="font:600 15px -apple-system,system-ui;color:#000;letter-spacing:0.2px;">9:41</span>
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <svg width="18" height="11" viewBox="0 0 18 11"><rect x="0" y="6.5" width="3" height="4.5" rx="0.7" fill="#000"></rect><rect x="4.5" y="4.5" width="3" height="6.5" rx="0.7" fill="#000"></rect><rect x="9" y="2.5" width="3" height="8.5" rx="0.7" fill="#000"></rect><rect x="13.5" y="0" width="3" height="11" rx="0.7" fill="#000"></rect></svg>
+                    <svg width="16" height="11" viewBox="0 0 17 12"><path d="M8.5 3.2C10.8 3.2 12.9 4.1 14.4 5.6L15.5 4.5C13.7 2.7 11.2 1.5 8.5 1.5C5.8 1.5 3.3 2.7 1.5 4.5L2.6 5.6C4.1 4.1 6.2 3.2 8.5 3.2Z" fill="#000"></path><path d="M8.5 6.8C9.9 6.8 11.1 7.3 12 8.2L13.1 7.1C11.8 5.9 10.2 5.1 8.5 5.1C6.8 5.1 5.2 5.9 3.9 7.1L5 8.2C5.9 7.3 7.1 6.8 8.5 6.8Z" fill="#000"></path><circle cx="8.5" cy="10.5" r="1.5" fill="#000"></circle></svg>
+                    <svg width="25" height="12" viewBox="0 0 27 13"><rect x="0.5" y="0.5" width="23" height="12" rx="3.5" stroke="#000" stroke-opacity="0.35" fill="none"></rect><rect x="2" y="2" width="20" height="9" rx="2" fill="#000"></rect><path d="M25 4.5V8.5C25.8 8.2 26.5 7.2 26.5 6.5C26.5 5.8 25.8 4.8 25 4.5Z" fill="#000" fill-opacity="0.4"></path></svg>
+                  </div>
+                </div>
+                <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:106px;height:31px;background:#000;border-radius:100px;z-index:5;pointer-events:none;"></div>
+                <img src="assets/tmobile/iphone-frame.png" alt="" aria-hidden="true" style="position:absolute;top:0;left:0;width:369.7px;height:auto;z-index:4;pointer-events:none;">
+                <div style="position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:120px;height:5px;border-radius:100px;background:rgba(0,0,0,0.28);z-index:5;"></div>
+              </div>
+              </div>
+              </div>
         </div>
         <!-- responsive web -->
         <div>
@@ -321,10 +346,7 @@
       </div>
       <div style="display:flex;justify-content:center;">
         <div data-parallax="" style="position:relative;height:min(640px,72vh);aspect-ratio:322/662;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
-          <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;">
-            <image-slot src="assets/slots/cov-route.webp" id="cov-route" style="display:block;width:100%;height:100%;" shape="rect" placeholder="Drop: Coverage Route, signal along a journey · 1080×2340"></image-slot>
-          </div>
-          <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+          <img src="assets/coverage/coverage-navigation-framed.png" alt="Coverage along a driving route, previewed before you go" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;display:block;"><div style="position:absolute;top:3.3%;left:50%;transform:translateX(-50%);width:27%;height:3.9%;background:#000;border-radius:100px;z-index:5;pointer-events:none;"></div>
         </div>
       </div>
     </div>
@@ -338,10 +360,10 @@
       </div>
       <div style="display:flex;justify-content:center;">
         <div data-parallax="" style="position:relative;height:min(680px,74vh);aspect-ratio:322/662;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
-          <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#fff;">
+          <div style="position:absolute;inset:2.12% 4.97%;overflow:hidden;border-radius:38px;background:#fff;">
             <img src="assets/tmobile/international-roaming.gif" alt="International roaming: the Coverage tab showing enhanced service on a map" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
           </div>
-          <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+          <img src="assets/tmobile/iphone-frame.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;"><div style="position:absolute;top:3.3%;left:50%;transform:translateX(-50%);width:27%;height:3.9%;background:#000;border-radius:100px;z-index:5;pointer-events:none;"></div>
         </div>
       </div>
     </div>
@@ -357,10 +379,10 @@
       </div>
       <div style="display:flex;justify-content:center;">
         <div data-parallax="" style="position:relative;height:min(660px,74vh);aspect-ratio:322/662;filter:drop-shadow(0 44px 80px rgba(0,0,0,0.65));">
-          <div style="position:absolute;inset:1.813% 4.969% 2.115% 4.969%;overflow:hidden;border-radius:26px;background:#000;">
-            <img src="assets/coverage/coverage-people.png" alt="Coverage layered into the everyday map, read at a glance" style="position:absolute;top:4.5%;left:0;width:100%;height:95.5%;object-fit:cover;object-position:center top;display:block;">
+          <div style="position:absolute;inset:2.12% 4.97%;overflow:hidden;border-radius:38px;background:#fff;">
+            <img src="assets/coverage/coverage-people.png" alt="Coverage inside the everyday app map" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;">
           </div>
-          <img src="assets/tmobile/iphone-frame-plain.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;">
+          <img src="assets/tmobile/iphone-frame.png" alt="" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none;"><div style="position:absolute;top:3.3%;left:50%;transform:translateX(-50%);width:27%;height:3.9%;background:#000;border-radius:100px;z-index:5;pointer-events:none;"></div>
         </div>
       </div>
     </div>
