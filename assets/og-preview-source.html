@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  .grain{position:absolute;inset:0;pointer-events:none;opacity:0.4;mix-blend-mode:soft-light;background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxODAnIGhlaWdodD0nMTgwJz48ZmlsdGVyIGlkPSduJz48ZmVUdXJidWxlbmNlIHR5cGU9J2ZyYWN0YWxOb2lzZScgYmFzZUZyZXF1ZW5jeT0nMC44NScgbnVtT2N0YXZlcz0nMicgc3RpdGNoVGlsZXM9J3N0aXRjaCcvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbHRlcj0ndXJsKCNuKScgb3BhY2l0eT0nMC41NScvPjwvc3ZnPg==")}
+</style>
+</head>
+<body>
+<div style="position:relative;width:1200px;height:630px;background:#0a0b0d;color:#f3f3f1;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Inter',system-ui,sans-serif;overflow:hidden;">
+
+  <!-- radial glow -->
+  <div style="position:absolute;top:-18%;right:-12%;width:720px;height:720px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.16),rgba(255,255,255,0.04) 50%,transparent 72%);filter:blur(30px);"></div>
+
+  <div class="grain"></div>
+
+  <div style="position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;padding:0 88px;">
+
+    <!-- name / role -->
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:34px;">
+      <span style="font:600 26px 'SF Pro Display',-apple-system,system-ui,sans-serif;letter-spacing:-0.02em;color:#f3f3f1;">Soojin Hwang</span>
+      <span style="width:5px;height:5px;border-radius:50%;background:rgba(243,243,241,0.32);"></span>
+      <span style="font:400 17px 'SF Pro Text',-apple-system,system-ui,sans-serif;color:rgba(243,243,241,0.55);">Senior Product Designer</span>
+    </div>
+
+    <!-- headline -->
+    <h1 style="font:600 58px/1.08 'SF Pro Display',-apple-system,system-ui,sans-serif;letter-spacing:-0.035em;color:#f3f3f1;margin:0;max-width:15ch;">I design where AI meets human intuition<span style="color:rgba(243,243,241,0.5);">—for everyone.</span></h1>
+
+    <!-- tag row -->
+    <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-top:52px;padding-top:28px;border-top:1px solid rgba(255,255,255,0.1);font:400 15px 'SF Pro Text',-apple-system,system-ui,sans-serif;letter-spacing:0.08em;text-transform:uppercase;color:rgba(243,243,241,0.5);">
+      <span>Agentic AI</span>
+      <span style="width:3px;height:3px;border-radius:50%;background:rgba(243,243,241,0.3);"></span>
+      <span>0→1 Product</span>
+      <span style="width:3px;height:3px;border-radius:50%;background:rgba(243,243,241,0.3);"></span>
+      <span>Consumer Craft</span>
+      <span style="width:3px;height:3px;border-radius:50%;background:rgba(243,243,241,0.3);"></span>
+      <span>Enterprise AI Tooling</span>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
