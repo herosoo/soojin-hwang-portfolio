@@ -3,90 +3,109 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yennefer, an enterprise AI platform · Soojin Hwang</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="theme-color" content="#0a0b0d">
 <script src="./support.js"></script>
-<!-- Vercel Web Analytics -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 <x-dc>
 <helmet>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
 <style>
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
-  body{background:#0a0b0d;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{background:#0a0b0d;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Inter',system-ui,sans-serif}
   ::selection{background:rgba(255,255,255,0.35);color:#fff}
-  @keyframes floatGlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-16px)}}
   a{color:inherit}
+  a:hover{color:#fff}
+  img,video{max-width:100%}
+  blockquote{margin:0}
+  [data-navtoggle],[data-navpanel]{display:none}
+  [data-navtoggle]>span{display:block;width:20px;height:1.5px;background:#f3f3f1;border-radius:2px;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+  [data-navtoggle][data-open="true"]>span:nth-child(1){transform:translateY(3.8px) rotate(45deg)}
+  [data-navtoggle][data-open="true"]>span:nth-child(2){transform:translateY(-3.8px) rotate(-45deg)}
+  [data-subnav] div::-webkit-scrollbar{display:none}
+  [data-subnav] div{scrollbar-width:none}
+  @media (max-width:1100px){
+    [data-lifecycle]{grid-template-columns:repeat(4,1fr)!important}
+  }
+  @media (max-width:1000px){
+    [data-g2]{grid-template-columns:1fr!important;gap:32px!important}
+    [data-g2b]{grid-template-columns:1fr!important;gap:28px!important}
+  }
+  @media (max-width:900px){
+    [data-meta4]{grid-template-columns:repeat(2,1fr)!important}
+    [data-g3]{grid-template-columns:1fr!important}
+    [data-g4]{grid-template-columns:repeat(2,1fr)!important}
+  }
+  @media (max-width:760px){
+    [data-navlinks]{display:none!important}
+    [data-navtoggle]{display:flex!important}
+    [data-navpanel][data-open="true"]{display:flex!important}
+    [data-2up]{grid-template-columns:1fr!important}
+    [data-lifecycle]{grid-template-columns:repeat(2,1fr)!important}
+  }
+  @media (max-width:600px){
+    [data-meta4],[data-g4]{grid-template-columns:1fr!important}
+    [data-row3]{grid-template-columns:1fr!important;gap:4px!important}
+  }
 </style>
 </helmet>
-<div ref="{{ rootRef }}" style="position:relative;min-height:100vh;background:#0a0b0d;color:#f3f3f1;overflow-x:clip;font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif,sans-serif;">
+<div ref="{{ rootRef }}" style="position:relative;min-height:100vh;background:#0a0b0d;color:#f3f3f1;overflow-x:clip;">
 
-  <div style="position: fixed; inset: 0; pointer-events: none; z-index: 90; opacity: 0.4; mix-blend-mode: soft-light; background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E&quot;); left: -835px; top: 9px"></div>
-
-  <!-- NAV -->
   <nav style="position:fixed;top:0;left:0;right:0;z-index:60;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(10,11,13,0.55);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(24px,5vw,80px);">
     <div style="max-width:1280px;margin:0 auto;padding:15px 0;display:flex;align-items:center;justify-content:space-between;">
-      <a href="/" style="font:600 18px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;text-decoration:none;">Soojin Hwang</a>
-      <div style="display:flex;align-items:center;gap:clamp(18px,2.4vw,32px);">
-        <a href="/#work" style="font:400 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Work</a>
-        <a href="/about" style="font:400 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">About</a>
-        <a href="https://drive.google.com/file/d/1wS5KY6bGeMACrAiQ7BWfPOluyu9D1HRZ/view?usp=sharing" target="_blank" rel="noopener" style="font:400 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Resume</a>
-        <a href="#contact" style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#0a0b0d;background:#f3f3f1;padding:9px 17px;border-radius:22px;text-decoration:none;transition:background .25s;" style-hover="background:#fff">Contact</a>
+      <a href="/" style="font-weight:600;font-size:18px;letter-spacing:-0.02em;text-decoration:none;">Soojin Hwang</a>
+      <div data-navlinks="" style="display:flex;align-items:center;gap:clamp(18px,2.4vw,32px);">
+        <a href="/#work" style="font-size:14px;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Work</a>
+        <a href="/about" style="font-size:14px;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">About</a>
+        <a href="https://drive.google.com/file/d/1dnrvu87tVuw1TLyG3_vc8qFv4BHjEqUZ/view?usp=drive_link" target="_blank" rel="noopener" style="font-size:14px;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Resume</a>
+        <a href="#contact" style="font-weight:600;font-size:14px;color:#0a0b0d;background:#f3f3f1;padding:9px 17px;border-radius:22px;text-decoration:none;transition:background .25s;" style-hover="background:#fff">Contact</a>
       </div>
+      <button type="button" data-navtoggle="" data-open="{{ menuOpen }}" aria-label="Menu" onClick="{{ toggleMenu }}" style="width:34px;height:34px;margin-right:-6px;padding:0;border:0;background:transparent;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div data-navpanel="" data-open="{{ menuOpen }}" style="max-width:1280px;margin:0 auto;flex-direction:column;padding:4px 0 16px;border-top:1px solid rgba(255,255,255,0.07);">
+      <a href="/#work" onClick="{{ closeMenu }}" style="font-weight:500;font-size:16px;color:rgba(243,243,241,0.72);text-decoration:none;padding:14px 0;">Work</a>
+      <a href="/about" onClick="{{ closeMenu }}" style="font-weight:500;font-size:16px;color:rgba(243,243,241,0.72);text-decoration:none;padding:14px 0;">About</a>
+      <a href="https://drive.google.com/file/d/1dnrvu87tVuw1TLyG3_vc8qFv4BHjEqUZ/view?usp=drive_link" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="font-weight:500;font-size:16px;color:rgba(243,243,241,0.72);text-decoration:none;padding:14px 0;">Resume</a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="margin-top:12px;font-weight:600;font-size:15px;color:#0a0b0d;background:#f3f3f1;padding:14px 18px;border-radius:26px;text-decoration:none;text-align:center;">Contact</a>
     </div>
   </nav>
 
-  <!-- ============ HERO ============ -->
   <section data-screen-label="Hero" style="position:relative;padding:clamp(120px,16vh,180px) clamp(24px,5vw,80px) clamp(50px,7vh,80px);">
     <div style="max-width:1280px;margin:0 auto;">
-      <div data-reveal="" style="display:flex;align-items:center;gap:12px;margin-bottom:30px;">
-        <span style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.2em;text-transform:uppercase;color:#f3f3f1;">Mondrian AI · Yennefer Suite</span>
-      </div>
+      <div data-reveal="" style="font-weight:700;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:30px;">Mondrian AI · Yennefer</div>
 
-      <h1 data-reveal="" style="font:600 clamp(44px,7vw,96px)/1.0 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.045em;color:#f3f3f1;margin:0 0 34px;max-width:16ch;">AI Enterprise Suite</h1>
+      <h1 data-reveal="" style="font-weight:600;font-size:clamp(36px,5.4vw,74px);line-height:1.04;letter-spacing:-0.045em;margin:0 0 30px;max-width:24ch;text-wrap:pretty;">From an engineering concept to a connected enterprise AI platform</h1>
 
-      <p data-reveal="" style="font: 400 clamp(18px,1.7vw,24px)/1.55 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.66); margin: 0; max-width: 60ch; display: none">As the founding and only designer, I led 0→1 UX for Yennefer Suite, a 5-in-1 enterprise AI platform for running AI search across massive datasets and managing an organization's AI projects. I owned the entire experience from research to launch, and built the design system, UX foundations, and brand identity from nothing.</p>
+      <p data-reveal="" style="font-size:clamp(17px,1.6vw,21px);line-height:1.55;color:rgba(243,243,241,0.62);margin:0;max-width:64ch;">Defining a 0→1 enterprise AI platform around the real research lifecycle, from data discovery to experimentation to infrastructure governance.</p>
 
-      <!-- META ROW -->
-      <div data-reveal="" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-top:56px;">
+      <div data-reveal="" data-meta4="" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;margin-top:52px;">
         <div style="background:#0c0d11;padding:24px 26px;">
-          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Role</div>
-          <div style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;line-height:1.3;">Founding Product Designer</div>
-          <div style="font: 400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.45); margin-top: 5px; display: none">Sole designer, 0→1</div>
+          <div style="font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Role</div>
+          <div style="font-weight:600;font-size:17px;line-height:1.3;">Founding product designer</div>
         </div>
         <div style="background:#0c0d11;padding:24px 26px;">
-          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Platforms</div>
-          <div style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;line-height:1.3;">AI enterprise SaaS</div>
-          <div style="font: 400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.45); margin-top: 5px; display: none">B2B enterprise SaaS</div>
+          <div style="font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Timeline</div>
+          <div style="font-weight:600;font-size:17px;line-height:1.3;">12 months, concept to launch</div>
         </div>
         <div style="background:#0c0d11;padding:24px 26px;">
-          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Timeline</div>
-          <div style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;line-height:1.3;">1 year</div>
-          <div style="font: 400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.45); margin-top: 5px; display: none">[confirm dates]</div>
+          <div style="font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Team</div>
+          <div style="font-weight:600;font-size:17px;line-height:1.3;">Founders, 4 engineers, no PM</div>
         </div>
         <div style="background:#0c0d11;padding:24px 26px;">
-          <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">company revenue growth</div>
-          <div style="display:flex;align-items:center;gap:8px;">
-            <span style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">↑</span>
-            <span style="font:600 22px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.02em;">300%</span>
-            <span style="font:600 17px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">revenue</span>
-          </div>
-          <div style="font: 400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; color: rgba(243,243,241,0.32); margin-top: 7px; display: none">company revenue growth</div>
+          <div style="font-size:11px;letter-spacing:0.13em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:14px;">Scope</div>
+          <div style="font-weight:600;font-size:17px;line-height:1.3;">Enterprise AI / MLOps, 0→1 product strategy and design</div>
         </div>
       </div>
 
-      <!-- HERO SCREEN -->
-      <div data-reveal="" style="max-width:1180px;margin:clamp(56px,8vh,90px) auto 0;position:relative;">
-        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(920px,95%);height:540px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.14),rgba(255,255,255,0) 70%);pointer-events:none;"></div>
+      <div data-reveal="" style="max-width:1180px;margin:clamp(52px,8vh,86px) auto 0;position:relative;">
         <div data-parallax="" style="position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 60px 130px -44px rgba(0,0,0,0.9);">
           <div style="height:42px;display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:1px solid rgba(255,255,255,0.07);background:#15161c;">
             <div style="display:flex;gap:7px;flex:none;">
@@ -94,432 +113,772 @@
               <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
               <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
             </div>
-            <div style="flex:1;max-width:340px;margin:0 auto;background:#0a0b0f;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:6px 14px;font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);text-align:center;">app.mondrian.ai / studio</div>
+            <div style="flex:1;max-width:340px;margin:0 auto;background:#0a0b0f;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:6px 14px;font-size:11px;color:rgba(243,243,241,0.4);text-align:center;">app.mondrian.ai / studio</div>
             <div style="width:40px;flex:none;"></div>
           </div>
-          <div style="overflow:hidden;">
-            <img src="assets/mondrian/studio-home-full.webp" alt="The redesigned Yennefer Studio home, unified and coherent" style="display:block;width:100%;height:auto;">
-          </div>
+          <img src="assets/mondrian/studio-home-full.webp" alt="The shipped Yennefer Studio home, projects and status first" style="display:block;width:100%;height:auto;">
         </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;">
+          <span style="font-size:12.5px;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:7px 14px;">Data Catalog · Discover</span>
+          <span style="font-size:12.5px;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:7px 14px;">Studio · Build</span>
+          <span style="font-size:12.5px;color:rgba(243,243,241,0.7);border:1px solid rgba(255,255,255,0.14);border-radius:20px;padding:7px 14px;">Admin · Govern</span>
+        </div>
+        <div style="font-size:13px;color:rgba(243,243,241,0.42);margin-top:12px;">Three product surfaces, one platform. Studio home, shipped.</div>
       </div>
     </div>
   </section>
 
-  <!-- STICKY SUBNAV -->
   <div data-subnav="" style="position:sticky;top:65px;z-index:50;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(10,11,13,0.7);border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06);padding:0 clamp(24px,5vw,80px);">
     <div style="max-width:1280px;margin:0 auto;">
       <div style="display:flex;align-items:center;gap:clamp(20px,3vw,42px);height:52px;overflow-x:auto;">
-        <a href="#problem" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Problem</a>
-        <a href="#solution" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Solution</a>
-        <a href="#system" style="display:none;font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Design System</a>
-        <a href="#impact" style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.02em;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Impact</a>
+        <a href="#context" style="font-weight:600;font-size:13px;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Context</a>
+        <a href="#framing" style="font-weight:600;font-size:13px;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Problem</a>
+        <a href="#decisions" style="font-weight:600;font-size:13px;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Decisions</a>
+        <a href="#impact" style="font-weight:600;font-size:13px;color:rgba(243,243,241,0.62);text-decoration:none;white-space:nowrap;transition:color .25s;" style-hover="color:#f3f3f1">Impact</a>
       </div>
     </div>
   </div>
 
-  <!-- ============ ROLE & SCOPE ============ -->
-  <section data-screen-label="Role and scope" style="padding:clamp(70px,10vh,120px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
-    <div data-reveal="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.7fr 1.3fr;gap:clamp(40px,6vw,90px);align-items:start;">
-      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;padding-top:8px;">Role &amp; scope</div>
+  <section id="context" data-screen-label="Context" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" data-g2="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.8fr 1.2fr;gap:clamp(36px,6vw,90px);align-items:start;">
+      <div style="font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;padding-top:10px;">Context</div>
       <div style="min-width:0;">
-        <h2 style="font:600 clamp(30px,3.6vw,46px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 28px;max-width:20ch;">Founding designer, 0→1 across the entire suite</h2>
-        <p style="font:400 clamp(17px,1.5vw,20px)/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0 0 40px;max-width:60ch;">As the founding and only designer at Mondrian AI, I owned the entire Yennefer Suite experience — research, UX, UI, and launch — across all five modules. I also built the design system, UX foundations, and brand identity from nothing, so a small team could ship a consistent product fast.</p>
-        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:12px;overflow:hidden;max-width:560px;">
-          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">0→1 product design</div>
-          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">UX research</div>
-          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">Design system &amp; brand identity</div>
-          <div style="background:#0c0d11;padding:18px 22px;font:600 14.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.85);">Enterprise AI workflows</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PROBLEM ============ -->
-  <section id="problem" data-screen-label="Problem" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
-    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(50px,7vh,80px);">
-      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:20px;">Problem</div>
-      <h2 style="font:600 clamp(30px,4vw,52px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 24px;max-width:22ch;">Strong AI capability, built without understanding its users</h2>
-      <p style="font:400 clamp(16px,1.5vw,19px)/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;max-width:64ch;">AI researchers were stuck with irrelevant, un-personalized results, overwhelming information, and no easy way to manage limited computing resources — all spread across a half-built prototype.</p>
-    </div>
-
-    <!-- BEFORE / AFTER SLIDER -->
-    <div data-reveal="" style="max-width:1180px;margin:0 auto;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:22px;">
-        <span style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.5);">Before &amp; after</span>
-        <span style="height:1px;flex:1;background:rgba(255,255,255,0.1);"></span>
-        <span style="font:400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.45);">Drag to compare the inherited prototype with the shipped Studio</span>
-      </div>
-      <div data-ba="" style="position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 50px 110px -46px rgba(0,0,0,0.85);cursor:ew-resize;touch-action:none;user-select:none;-webkit-user-select:none;">
-        <img src="assets/mondrian/ba-after.webp" alt="After — the shipped Yennefer Studio home" draggable="{{ false }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;">
-        <div data-ba-before="" style="position:absolute;inset:0;clip-path:inset(0 50% 0 0);background:#f4f6fb;container-type:size;overflow:hidden;">
-          <div aria-label="Before — the inherited AI Playground prototype" style="position:absolute;top:0;left:0;width:177.78cqh;height:100%;display:flex;flex-direction:column;font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#1a2033;">
-            <!-- top bar -->
-            <div style="height:6.4cqh;flex:none;background:#fff;border-bottom:1px solid #e7ebf3;display:flex;align-items:center;justify-content:space-between;padding:0 2.4cqh;">
-              <div style="display:flex;align-items:center;gap:0.9cqh;">
-                <span style="width:2.2cqh;height:2.2cqh;border-radius:0.5cqh;background:#4b6bff;"></span>
-                <span style="font-weight:700;font-size:1.5cqh;letter-spacing:0.04em;color:#2a3350;">AI PLAYGROUND</span>
-              </div>
-              <span style="font-size:1.3cqh;color:#8a93a8;">sysadm ▾</span>
-            </div>
-            <!-- sub header -->
-            <div style="flex:none;background:#fff;border-bottom:1px solid #eef1f7;display:flex;align-items:center;justify-content:space-between;padding:1.4cqh 2.4cqh;">
-              <span style="font-size:1.7cqh;font-weight:600;color:#2a3350;">Resource Management</span>
-              <span style="font-size:1.1cqh;color:#aab2c5;">Mondrian Database › Resources · Updated 2019-05-20 · Refresh</span>
-            </div>
-            <!-- body -->
-            <div style="flex:1;display:flex;min-height:0;">
-              <!-- rail -->
-              <div style="width:5cqh;flex:none;background:#fff;border-right:1px solid #eef1f7;display:flex;flex-direction:column;align-items:center;gap:2.6cqh;padding-top:2.4cqh;">
-                <span style="width:1.8cqh;height:1.8cqh;border-radius:0.4cqh;background:#4b6bff;"></span>
-                <span style="width:1.8cqh;height:1.8cqh;border-radius:0.4cqh;background:#d6dcea;"></span>
-                <span style="width:1.8cqh;height:1.8cqh;border-radius:0.4cqh;background:#d6dcea;"></span>
-                <span style="width:1.8cqh;height:1.8cqh;border-radius:0.4cqh;background:#d6dcea;"></span>
-              </div>
-              <!-- content -->
-              <div style="flex:1;min-width:0;padding:2.4cqh;display:flex;flex-direction:column;gap:2cqh;">
-                <!-- stat cards -->
-                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.6cqh;">
-                  <div style="background:#fff;border:1px solid #e7ebf3;border-radius:1cqh;padding:1.6cqh;display:flex;align-items:flex-start;justify-content:space-between;">
-                    <div><div style="font-size:1.1cqh;color:#9aa3b6;margin-bottom:0.7cqh;">Active Pods</div><div style="font-size:2.2cqh;font-weight:700;color:#2a3350;">N/A</div></div>
-                    <span style="width:1.8cqh;height:1.8cqh;border-radius:50%;border:0.35cqh solid #ff5c7a;"></span>
-                  </div>
-                  <div style="background:#fff;border:1px solid #e7ebf3;border-radius:1cqh;padding:1.6cqh;display:flex;align-items:flex-start;justify-content:space-between;">
-                    <div><div style="font-size:1.1cqh;color:#9aa3b6;margin-bottom:0.7cqh;">CPU Usage</div><div style="font-size:2.2cqh;font-weight:700;color:#2a3350;">7.94%</div></div>
-                    <span style="width:1.8cqh;height:1.8cqh;border-radius:50%;background:#4b6bff;"></span>
-                  </div>
-                  <div style="background:#fff;border:1px solid #e7ebf3;border-radius:1cqh;padding:1.6cqh;display:flex;align-items:flex-start;justify-content:space-between;">
-                    <div><div style="font-size:1.1cqh;color:#9aa3b6;margin-bottom:0.7cqh;">Memory Usage</div><div style="font-size:2.2cqh;font-weight:700;color:#2a3350;">18.20%</div></div>
-                    <span style="width:1.8cqh;height:1.8cqh;border-radius:0.3cqh;background:#ffb020;"></span>
-                  </div>
-                  <div style="background:#fff;border:1px solid #e7ebf3;border-radius:1cqh;padding:1.6cqh;display:flex;align-items:flex-start;justify-content:space-between;">
-                    <div><div style="font-size:1.1cqh;color:#9aa3b6;margin-bottom:0.7cqh;">Disk Usage</div><div style="font-size:2.2cqh;font-weight:700;color:#2a3350;">0.07%</div></div>
-                    <span style="width:1.8cqh;height:1.8cqh;border-radius:0.3cqh;background:#12b5a5;"></span>
-                  </div>
-                </div>
-                <!-- list card -->
-                <div style="background:#fff;border:1px solid #e7ebf3;border-radius:1cqh;padding:1.8cqh 2cqh;">
-                  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.6cqh;">
-                    <div><div style="font-size:1.5cqh;font-weight:600;color:#2a3350;">List</div><div style="font-size:1.05cqh;color:#aab2c5;margin-top:0.3cqh;">Resource list</div></div>
-                    <div style="display:flex;gap:0.9cqh;">
-                      <span style="font-size:1.1cqh;font-weight:600;color:#fff;background:#4b6bff;padding:0.7cqh 1.4cqh;border-radius:0.6cqh;">Start All</span>
-                      <span style="font-size:1.1cqh;font-weight:600;color:#fff;background:#ff5c7a;padding:0.7cqh 1.4cqh;border-radius:0.6cqh;">Stop All</span>
-                    </div>
-                  </div>
-                  <div style="display:grid;grid-template-columns:1.2fr 1.4fr 1fr 1fr 1fr 1.6fr;gap:1cqh;padding-bottom:1.1cqh;border-bottom:1px solid #eef1f7;">
-                    <span style="font-size:1.05cqh;color:#9aa3b6;">User</span>
-                    <span style="font-size:1.05cqh;color:#9aa3b6;">Last Seen</span>
-                    <span style="font-size:1.05cqh;color:#9aa3b6;">CPU Usage</span>
-                    <span style="font-size:1.05cqh;color:#9aa3b6;">Memory Usage</span>
-                    <span style="font-size:1.05cqh;color:#9aa3b6;">Disk Usage</span>
-                    <span style="font-size:1.05cqh;color:#9aa3b6;">Running</span>
-                  </div>
-                  <div style="display:grid;grid-template-columns:1.2fr 1.4fr 1fr 1fr 1fr 1.6fr;gap:1cqh;align-items:center;padding-top:1.3cqh;">
-                    <span style="font-size:1.15cqh;color:#3a445c;">sysadm</span>
-                    <span style="font-size:1.15cqh;color:#8a93a8;">2019-05-20 10:30:00</span>
-                    <span style="font-size:1.15cqh;color:#8a93a8;">n/a</span>
-                    <span style="font-size:1.15cqh;color:#8a93a8;">n/a</span>
-                    <span style="font-size:1.15cqh;color:#8a93a8;">n/a</span>
-                    <div style="display:flex;gap:0.8cqh;">
-                      <span style="font-size:1.05cqh;font-weight:600;color:#fff;background:#4b6bff;padding:0.6cqh 1.1cqh;border-radius:0.5cqh;">start server</span>
-                      <span style="font-size:1.05cqh;font-weight:600;color:#fff;background:#4b6bff;padding:0.6cqh 1.1cqh;border-radius:0.5cqh;">access server</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- footer -->
-            <div style="flex:none;padding:1.2cqh 2.4cqh;background:#eef1f7;font-size:1cqh;color:#aab2c5;">© 2019 Mondrian AI. All Rights Reserved.</div>
-          </div>
-        </div>
-        <span style="position:absolute;top:18px;left:18px;z-index:3;font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.12em;padding:8px 15px;border-radius:100px;background:rgba(10,11,13,0.55);color:#f3f3f1;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);pointer-events:none;">BEFORE</span>
-        <span style="position:absolute;top:18px;right:18px;z-index:3;font:700 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.12em;padding:8px 15px;border-radius:100px;background:rgba(10,11,13,0.55);color:#f3f3f1;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);pointer-events:none;">AFTER</span>
-        <div data-ba-handle="" style="position:absolute;top:0;bottom:0;left:50%;z-index:2;width:0;pointer-events:none;">
-          <div style="position:absolute;top:0;bottom:0;left:-1px;width:2px;background:#fff;box-shadow:0 0 18px rgba(0,0,0,0.5);"></div>
-          <div style="position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;gap:3px;">
-            <span style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#0a0b0d;">‹</span>
-            <span style="font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#0a0b0d;">›</span>
-          </div>
-        </div>
+        <h2 style="font-weight:600;font-size:clamp(28px,3.6vw,46px);line-height:1.1;letter-spacing:-0.03em;margin:0 0 26px;max-width:26ch;text-wrap:pretty;">Working infrastructure, but no product model</h2>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0 0 20px;max-width:60ch;">Engineering had already validated the technical infrastructure. What the company had not yet defined was who the core users were, how their workflows connected, where the product should begin and end, and what success looked like.</p>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0;max-width:60ch;">I joined as the founding product designer, working directly with the founders and four engineers. There was no dedicated PM or researcher, so my role began with defining the product problem before designing any interface.</p>
       </div>
     </div>
 
-  </section>
-
-  <!-- ============ SOLUTION ============ -->
-  <section id="solution" data-screen-label="Solution" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
-    <div data-reveal="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(40px,6vw,90px);align-items:center;">
-      <div style="min-width:0;">
-        <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:22px;">Solution</div>
-        <h2 style="font:600 clamp(28px,3.4vw,44px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 24px;max-width:16ch;">Five scattered tools, one coherent product</h2>
-        <p style="font:400 clamp(16px,1.5vw,19px)/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;max-width:52ch;">I unified the workflow into one place — from finding data to running research to managing resources — so five scattered tools became one coherent suite researchers could actually adopt.</p>
+    <div data-reveal="" data-g4="" style="max-width:1280px;margin:clamp(44px,6vh,72px) auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;">
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.42);margin-bottom:14px;">Undefined</div>
+        <div style="font-weight:600;font-size:17px;line-height:1.35;">Who the core users were</div>
       </div>
-
-      <!-- simple mental-model diagram -->
-      <div style="min-width:0;">
-        <div style="display:flex;align-items:center;gap:clamp(16px,2.4vw,34px);">
-          <div style="display:grid;gap:10px;flex:1;">
-            <div style="background:#0c0d11;border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:12px 16px;font:600 13.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);">Find data</div>
-            <div style="background:#0c0d11;border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:12px 16px;font:600 13.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);">Build models</div>
-            <div style="background:#0c0d11;border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:12px 16px;font:600 13.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);">Run research</div>
-            <div style="background:#0c0d11;border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:12px 16px;font:600 13.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);">Manage compute</div>
-            <div style="background:#0c0d11;border:1px solid rgba(255,255,255,0.09);border-radius:10px;padding:12px 16px;font:600 13.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.7);">Share reports</div>
-          </div>
-          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;flex:none;color:#f3f3f1;">
-            <span style="font:400 26px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;">→</span>
-          </div>
-          <div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:220px;border:1px solid rgba(255,255,255,0.35);border-radius:16px;background:radial-gradient(circle at 50% 40%,rgba(255,255,255,0.14),transparent 70%);padding:26px 20px;text-align:center;">
-            <div>
-              <div style="font:600 20px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;">Yennefer Suite</div>
-              <div style="font:400 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);margin-top:6px;">One workflow, end to end</div>
-            </div>
-          </div>
-        </div>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.42);margin-bottom:14px;">Undefined</div>
+        <div style="font-weight:600;font-size:17px;line-height:1.35;">How their workflows connected</div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ THE SUITE ============ -->
-  <section id="suite" data-screen-label="Suite" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
-    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(50px,7vh,80px);">
-      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:20px;">The suite</div>
-      <h2 style="font: 600 clamp(30px,4vw,52px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif; letter-spacing: -0.03em; color: #f3f3f1; margin: 0">Five modules, one place to work</h2>
-    </div>
-
-    <!-- MODULE 01 · Studio (real screen, large) -->
-    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(70px,10vh,120px);">
-      <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:26px;">
-        <span style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">01</span>
-        <h3 style="font:600 clamp(22px,2.6vw,32px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0;">Yennefer Studio</h3>
-        <p style="font:400 clamp(15px,1.4vw,18px)/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);margin:0;max-width:52ch;">A single home where teams scan every AI project's status at a glance.</p>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.42);margin-bottom:14px;">Undefined</div>
+        <div style="font-weight:600;font-size:17px;line-height:1.35;">Where the product began and ended</div>
       </div>
-      <div data-parallax="" style="position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 60px 130px -44px rgba(0,0,0,0.9);">
-        <div style="height:42px;display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:1px solid rgba(255,255,255,0.07);background:#15161c;">
-          <div style="display:flex;gap:7px;flex:none;">
-            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
-          </div>
-          <div style="flex:1;max-width:340px;margin:0 auto;background:#0a0b0f;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:6px 14px;font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);text-align:center;">app.mondrian.ai / studio</div>
-          <div style="width:40px;flex:none;"></div>
-        </div>
-        <video src="assets/mondrian/studio-home.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Yennefer Studio home walkthrough" style="display:block;width:100%;height:auto;"></video>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.42);margin-bottom:14px;">Undefined</div>
+        <div style="font-weight:600;font-size:17px;line-height:1.35;">What success looked like</div>
       </div>
     </div>
 
-    <!-- MODULES 02–04 (placeholders, big & readable) -->
-    <div data-reveal="" style="display:none;max-width:1280px;margin:0 auto clamp(70px,10vh,120px);">
-      <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:26px;">
-        <span style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">02</span>
-        <h3 style="font:600 clamp(22px,2.6vw,32px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0;">Data Catalog</h3>
-        <p style="font:400 clamp(15px,1.4vw,18px)/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);margin:0;max-width:52ch;">Fast, organized access to the data behind every project.</p>
+    <div data-reveal="" style="max-width:1180px;margin:clamp(44px,6vh,72px) auto 0;">
+      <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 40px 90px -46px rgba(0,0,0,0.85);">
+        <img src="assets/mondrian/before-home.png" alt="The inherited prototype home: a profile banner, a Start My Server button, and four cards reading Off, N/A, N/A, N/A" style="display:block;width:100%;height:auto;">
       </div>
-      <div style="position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 50px 110px -46px rgba(0,0,0,0.85);">
-        <div style="height:42px;display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:1px solid rgba(255,255,255,0.07);background:#15161c;">
-          <div style="display:flex;gap:7px;flex:none;">
-            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
-          </div>
-          <div style="flex:1;max-width:340px;margin:0 auto;background:#0a0b0f;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:6px 14px;font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);text-align:center;">app.mondrian.ai / catalog</div>
-          <div style="width:40px;flex:none;"></div>
-        </div>
-        <image-slot id="mon-catalog" style="display:block;width:100%;height:auto;aspect-ratio:292/362;" fit="cover" shape="rect" placeholder="Drop: Data Catalog, enlarged &amp; readable · 1920×1080"></image-slot>
+      <div style="display:flex;gap:14px;align-items:baseline;margin-top:14px;">
+        <span style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.45);flex:none;">Inherited</span>
+        <span style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);">The prototype I joined. It opened on server state, CPU, memory and disk. Nothing on it belonged to a piece of research.</span>
       </div>
     </div>
 
-    <div data-reveal="" style="display:none;max-width:1280px;margin:0 auto clamp(70px,10vh,120px);">
-      <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:26px;">
-        <span style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">03</span>
-        <h3 style="font:600 clamp(22px,2.6vw,32px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0;">AI Dev Tool</h3>
-        <p style="font:400 clamp(15px,1.4vw,18px)/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);margin:0;max-width:52ch;">A focused workspace for building and running AI research.</p>
-      </div>
-      <div style="position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 50px 110px -46px rgba(0,0,0,0.85);">
-        <div style="height:42px;display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:1px solid rgba(255,255,255,0.07);background:#15161c;">
-          <div style="display:flex;gap:7px;flex:none;">
-            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
-          </div>
-          <div style="flex:1;max-width:340px;margin:0 auto;background:#0a0b0f;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:6px 14px;font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);text-align:center;">app.mondrian.ai / studio / dev</div>
-          <div style="width:40px;flex:none;"></div>
-        </div>
-        <image-slot id="mon-dev" style="display:block;width:100%;height:auto;aspect-ratio:631/1200;" fit="cover" shape="rect" placeholder="Drop: AI Dev Tool workspace, enlarged &amp; readable · 1920×1080"></image-slot>
-      </div>
-    </div>
-
-    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(70px,10vh,120px);">
-      <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:26px;">
-        <span style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">02</span>
-        <h3 style="font:600 clamp(22px,2.6vw,32px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0;">Resource Dashboard</h3>
-        <p style="font:400 clamp(15px,1.4vw,18px)/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);margin:0;max-width:52ch;">Clear visualization of computing resources, so teams manage limited capacity with confidence.</p>
-      </div>
-      <div style="position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 50px 110px -46px rgba(0,0,0,0.85);">
-        <div style="height:42px;display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:1px solid rgba(255,255,255,0.07);background:#15161c;">
-          <div style="display:flex;gap:7px;flex:none;">
-            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
-          </div>
-          <div style="flex:1;max-width:340px;margin:0 auto;background:#0a0b0f;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:6px 14px;font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);text-align:center;">app.mondrian.ai / resources</div>
-          <div style="width:40px;flex:none;"></div>
-        </div>
-        <image-slot src="assets/slots/mon-resource-hd.png" id="mon-resource" style="display:block;width:100%;height:auto;aspect-ratio:991/1200;" fit="cover" shape="rect" placeholder="Drop: Resource Dashboard, enlarged &amp; readable · 1920×1080"></image-slot>
-      </div>
-    </div>
-
-    <!-- MODULE 05 · Data Hub (real report+comments screen) -->
-    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
-      <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:26px;">
-        <span style="font:700 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">03</span>
-        <h3 style="font:600 clamp(22px,2.6vw,32px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0;">AI Dev tool</h3>
-        <p style="font:400 clamp(15px,1.4vw,18px)/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);margin:0;max-width:52ch;">A shared space that keeps sources and documentation in one place, with published reports and inline discussion.</p>
-      </div>
-      <div data-parallax="" style="position:relative;border-radius:16px;background:linear-gradient(180deg,#eef1f6,#dfe4ee);border:1px solid rgba(255,255,255,0.08);box-shadow:0 60px 130px -44px rgba(0,0,0,0.9);padding:clamp(28px,4vw,56px);display:flex;justify-content:center;">
-        <img src="assets/mondrian/report-comments.webp" alt="A published Yennefer report with inline comments and discussion" style="display:block;width:100%;max-width:1000px;height:auto;filter:drop-shadow(0 30px 60px rgba(0,0,0,0.25));">
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ DESIGN DECISION ============ -->
-  <section data-screen-label="Design decision" style="padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
-    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,70px);">
-      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:20px;">Design decision</div>
-      <h2 style="font:600 clamp(28px,3.6vw,46px)/1.1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 24px;max-width:20ch;">A resource view people could actually read</h2>
-      <p style="font:400 clamp(16px,1.5vw,19px)/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;max-width:64ch;">For the computing-resource dashboard I explored three chart layouts and tested them against real use. The winning direction aligned data with its charts, used a wider chart for scannable history, and followed an F-pattern reading flow, so researchers could read resource status at a glance instead of decoding it.</p>
-    </div>
-
-    <!-- exploration row -->
-    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(36px,5vh,56px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,26px);">
-      <div style="border: 1px solid rgba(255,255,255,0.09); border-radius: 14px; overflow: hidden; background: #0c0d11; align-self: flex-start; width: 100%">
-        <image-slot src="assets/slots/mon-opt-a.webp" id="mon-opt-a" style="display: block; width: 100%; aspect-ratio: 4/3; height: 100%" shape="rect" placeholder="Option A · 1200×900"></image-slot>
-        <div style="padding:14px 18px;font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);">Option A · stacked</div>
-      </div>
-      <div style="border:1px solid rgba(255,255,255,0.09);border-radius:14px;overflow:hidden;background:#0c0d11;">
-        <image-slot src="assets/slots/mon-opt-b.webp" id="mon-opt-b" style="display: block; aspect-ratio: 4/3; height: auto; width: 100%" shape="rect" placeholder="Option B · 1200×900"></image-slot>
-        <div style="padding:14px 18px;font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);">Option B · split</div>
-      </div>
-      <div style="border: 1.5px solid #f3f3f1; border-radius: 14px; overflow: hidden; background: #0c0d11; position: relative; box-shadow: 0 0 0 4px rgba(255,255,255,0.12); align-self: flex-start">
-        <div style="position:absolute;top:12px;left:12px;z-index:2;font:700 10px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.1em;text-transform:uppercase;color:#0a0b0d;background:#f3f3f1;padding:5px 10px;border-radius:20px;">Chosen</div>
-        <image-slot src="assets/slots/mon-opt-c.webp" id="mon-opt-c" style="display: block; width: 100%; aspect-ratio: 4/3; height: 100%" shape="rect" placeholder="Option C · chosen · 1200×900"></image-slot>
-        <div style="padding:14px 18px;font:600 13px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">Option C · aligned, F-pattern</div>
-      </div>
-    </div>
-
-    <!-- chosen layout large -->
-    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
-      <div style="position: relative; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); background: #101116; box-shadow: 0 60px 130px -44px rgba(0,0,0,0.9); height: auto">
-        <div style="display: flex; align-items: center; gap: 14px; padding: 0 18px; border-bottom: 1px solid rgba(255,255,255,0.07); background: #15161c; height: 42px">
-          <div style="display:flex;gap:7px;flex:none;">
-            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
-            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
-          </div>
-          <div style="flex:1;max-width:340px;margin:0 auto;background:#0a0b0f;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:6px 14px;font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);text-align:center;">app.mondrian.ai / resources</div>
-          <div style="width:40px;flex:none;"></div>
-        </div>
-        <image-slot src="assets/slots/mon-resource-final-hd.png" id="mon-resource-final" style="display: block; width: 100%; aspect-ratio: 1200/1017; height: auto" fit="contain" shape="rect" placeholder="Drop: chosen resource-dashboard layout, large &amp; readable · 1920×1080"></image-slot>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ DESIGN SYSTEM + BRAND ============ -->
-  <section id="system" data-screen-label="Design system" style="display:none;scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
-    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(50px,7vh,80px);">
-      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:20px;">Design system + brand</div>
-      <h2 style="font:600 clamp(30px,4vw,52px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 22px;max-width:18ch;">A system and a brand, built from zero</h2>
-      <p style="font:400 clamp(16px,1.5vw,19px)/1.6 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.62);margin:0;max-width:56ch;">As the sole designer I created the design system, UX foundations, and brand identity, so a small team could ship a consistent product fast.</p>
-    </div>
-
-    <!-- big system overview -->
-    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(24px,3vh,36px);">
-      <image-slot id="mon-system" style="display:block;width:100%;aspect-ratio:16/9;border:1px solid rgba(255,255,255,0.08);" shape="rounded" radius="16" placeholder="Drop: design-system overview · components, states, type, color · 1920×1080"></image-slot>
-    </div>
-
-    <!-- tiles -->
-    <div data-reveal="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,24px);">
-      <div style="border:1px solid rgba(255,255,255,0.09);border-radius:16px;overflow:hidden;background:#0c0d11;display:flex;flex-direction:column;">
-        <image-slot id="mon-brand" style="display:block;width:100%;aspect-ratio:4/3;" shape="rect" placeholder="Logo &amp; brand identity · 1200×900"></image-slot>
-        <div style="padding:18px 22px;">
-          <div style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:5px;">Brand identity</div>
-          <div style="font:400 13.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);">The Yennefer wordmark, logo, and visual language.</div>
-        </div>
-      </div>
-      <div style="border:1px solid rgba(255,255,255,0.09);border-radius:16px;overflow:hidden;background:#0c0d11;display:flex;flex-direction:column;">
-        <image-slot id="mon-components" style="display:block;width:100%;aspect-ratio:4/3;" shape="rect" placeholder="Components &amp; states · 1200×900"></image-slot>
-        <div style="padding:18px 22px;">
-          <div style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:5px;">Components</div>
-          <div style="font:400 13.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);">Reusable patterns and states for a small team to ship fast.</div>
-        </div>
-      </div>
-      <div style="border:1px solid rgba(255,255,255,0.09);border-radius:16px;overflow:hidden;background:#0c0d11;display:flex;flex-direction:column;">
-        <div style="aspect-ratio:4/3;background:#0e1730;display:flex;align-items:flex-end;padding:22px;">
-          <div style="display:flex;gap:10px;width:100%;">
-            <div style="flex:1;height:64px;border-radius:9px;background:#0e1730;border:1px solid rgba(255,255,255,0.14);"></div>
-            <div style="flex:1;height:64px;border-radius:9px;background:#1b2540;"></div>
-            <div style="flex:1;height:64px;border-radius:9px;background:#12b5a5;"></div>
-            <div style="flex:1;height:64px;border-radius:9px;background:#e6ebf3;"></div>
-          </div>
-        </div>
-        <div style="padding:18px 22px;">
-          <div style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:5px;">Palette</div>
-          <div style="font:400 13.5px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.55);">Deep navy grounding with a single teal accent for action.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ IMPACT ============ -->
-  <section id="impact" data-screen-label="Impact" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
-    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
-      <div style="font:700 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:24px;">Impact</div>
-      <h2 style="font:600 clamp(32px,4.4vw,60px)/1.08 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0 0 clamp(50px,7vh,80px);max-width:16ch;">Complex tooling, made calm and usable</h2>
-
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;">
-        <div style="background:#0c0d11;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;">
-          <span style="font:600 clamp(44px,5.2vw,72px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.03em;margin-bottom:16px;">300%</span>
-          <div style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:8px;">Revenue growth</div>
-          <div style="font:400 14px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);">The company's growth over the period.</div>
-        </div>
-        <div style="background:#0c0d11;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;">
-          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
-            <span style="font:600 clamp(44px,5.2vw,72px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.03em;">76%</span>
-            <span style="font:600 clamp(28px,3vw,40px) -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">→</span>
-            <span style="font:600 clamp(44px,5.2vw,72px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.03em;">91%</span>
-          </div>
-          <div style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:8px;">AI research efficiency</div>
-          <div style="font:400 14px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);">Researchers found and acted on insights faster.</div>
-        </div>
-        <div style="background:#0c0d11;padding:clamp(28px,3vw,40px);display:flex;flex-direction:column;">
-          <span style="font:600 clamp(44px,5.2vw,72px) -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;color:#f3f3f1;letter-spacing:-0.03em;margin-bottom:16px;">9</span>
-          <div style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;margin-bottom:8px;">Enterprise organizations</div>
-          <div style="font:400 14px/1.5 -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.5);">Including Samsung Display, KT Telecom, and Hyundai.</div>
-        </div>
-      </div>
-
-      <blockquote style="margin:clamp(60px,9vh,100px) 0 0;padding-left:clamp(24px,3vw,40px);border-left:3px solid rgba(243,243,241,0.55);max-width:80%;">
-        <p style="font:600 clamp(24px,3.2vw,42px)/1.24 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;margin:0;">Building this 0→1, alone, taught me to hold the whole product in my head: the system, the brand, and the one researcher trying to get their work done.</p>
-        <cite style="display:block;margin-top:20px;font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.08em;text-transform:uppercase;color:rgba(243,243,241,0.5);font-style:normal;">Soojin Hwang · Founding designer</cite>
+    <div data-reveal="" style="max-width:1280px;margin:clamp(48px,7vh,80px) auto 0;">
+      <blockquote style="padding-left:clamp(20px,2.4vw,32px);border-left:3px solid rgba(243,243,241,0.55);">
+        <p style="font-weight:600;font-size:clamp(22px,3vw,38px);line-height:1.2;letter-spacing:-0.025em;margin:0;max-width:38ch;">My job was not to redesign an existing product. It was to help define what the product should become.</p>
       </blockquote>
     </div>
   </section>
 
-  <!-- ============ FOOTER ============ -->
+  <section id="research" data-screen-label="Research" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);background:#08090b;">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);">
+      <div style="font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;">Research</div>
+      <h2 style="font-weight:600;font-size:clamp(30px,4.2vw,56px);line-height:1.06;letter-spacing:-0.035em;margin:0 0 26px;max-width:24ch;text-wrap:pretty;">Researchers were losing time before an experiment even started</h2>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0;max-width:64ch;">I proposed and led the research myself: 10+ user interviews, 10+ domain reports, and 20+ competitive products. One AI engineer described spending roughly two weeks just collecting usable data: asking colleagues, searching shared drives, downloading files, discovering inconsistent labels or licensing restrictions, and starting again.</p>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(36px,5vh,52px);">
+      <button type="button" onClick="{{ toggleResearch }}" aria-expanded="{{ researchExpanded }}" style="display:inline-flex;align-items:center;gap:12px;font-family:inherit;font-weight:600;font-size:14px;color:#f3f3f1;background:transparent;border:1px solid rgba(255,255,255,0.22);border-radius:24px;padding:12px 20px;cursor:pointer;transition:background .25s,border-color .25s;" style-hover="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.45)">
+        <span>{{ researchLabel }}</span>
+        <span style="font-size:15px;line-height:1;color:rgba(243,243,241,0.6);">{{ researchSign }}</span>
+      </button>
+    </div>
+
+    <sc-if value="{{ researchOpen }}" hint-placeholder-val="{{ false }}">
+    <div data-reveal="" data-g4="" style="max-width:1280px;margin:0 auto clamp(48px,7vh,80px);display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;">
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:clamp(30px,3.4vw,42px);letter-spacing:-0.03em;margin-bottom:10px;">10+</div>
+        <div style="font-size:14px;color:rgba(243,243,241,0.55);">interviews with researchers and administrators</div>
+      </div>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:clamp(30px,3.4vw,42px);letter-spacing:-0.03em;margin-bottom:10px;">10+</div>
+        <div style="font-size:14px;color:rgba(243,243,241,0.55);">domain and industry reports synthesized</div>
+      </div>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:clamp(30px,3.4vw,42px);letter-spacing:-0.03em;margin-bottom:10px;">20+</div>
+        <div style="font-size:14px;color:rgba(243,243,241,0.55);">competitive products taken apart, feature by feature</div>
+      </div>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:clamp(30px,3.4vw,42px);letter-spacing:-0.03em;margin-bottom:10px;">2</div>
+        <div style="font-size:14px;color:rgba(243,243,241,0.55);">documents the team had been building without: the IA and the product requirements</div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(40px,6vh,64px);">
+      <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:20px;">The research lifecycle</div>
+      <div data-lifecycle="" style="display:grid;grid-template-columns:repeat(7,1fr);gap:10px;">
+        <div style="border:1px dashed rgba(255,255,255,0.28);border-radius:12px;background:#0c0d11;padding:18px 16px;">
+          <div style="font-weight:600;font-size:15px;margin-bottom:10px;">Discover</div>
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(243,243,241,0.45);">Outside</div>
+        </div>
+        <div style="border:1px dashed rgba(255,255,255,0.28);border-radius:12px;background:#0c0d11;padding:18px 16px;">
+          <div style="font-weight:600;font-size:15px;margin-bottom:10px;">Evaluate</div>
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(243,243,241,0.45);">Outside</div>
+        </div>
+        <div style="border:1px dashed rgba(255,255,255,0.28);border-radius:12px;background:#0c0d11;padding:18px 16px;">
+          <div style="font-weight:600;font-size:15px;margin-bottom:10px;">Prepare</div>
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(243,243,241,0.45);">Outside</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.4);border-radius:12px;background:radial-gradient(circle at 30% 0%,rgba(255,255,255,0.07),transparent 70%),#0c0d11;padding:18px 16px;">
+          <div style="font-weight:600;font-size:15px;margin-bottom:10px;">Build</div>
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(243,243,241,0.7);">In product</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.4);border-radius:12px;background:radial-gradient(circle at 30% 0%,rgba(255,255,255,0.07),transparent 70%),#0c0d11;padding:18px 16px;">
+          <div style="font-weight:600;font-size:15px;margin-bottom:10px;">Run</div>
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(243,243,241,0.7);">In product</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.4);border-radius:12px;background:radial-gradient(circle at 30% 0%,rgba(255,255,255,0.07),transparent 70%),#0c0d11;padding:18px 16px;">
+          <div style="font-weight:600;font-size:15px;margin-bottom:10px;">Monitor</div>
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(243,243,241,0.7);">In product</div>
+        </div>
+        <div style="border:1px dashed rgba(255,255,255,0.28);border-radius:12px;background:#0c0d11;padding:18px 16px;">
+          <div style="font-weight:600;font-size:15px;margin-bottom:10px;">Share</div>
+          <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(243,243,241,0.45);">Partial</div>
+        </div>
+      </div>
+      <div style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);margin-top:16px;">Solid outline: inside the original product boundary. Dashed: happening in shared drives, chat threads and email.</div>
+    </div>
+    </sc-if>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
+      <blockquote style="padding-left:clamp(20px,2.4vw,32px);border-left:3px solid rgba(243,243,241,0.55);">
+        <p style="font-weight:600;font-size:clamp(22px,3vw,38px);line-height:1.2;letter-spacing:-0.025em;margin:0;max-width:36ch;">The infrastructure worked. The research lifecycle around it was fragmented.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="tension" data-screen-label="User tension" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);">
+      <div style="font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;">User tension</div>
+      <h2 style="font-weight:600;font-size:clamp(30px,4.2vw,56px);line-height:1.06;letter-spacing:-0.035em;margin:0 0 26px;max-width:24ch;text-wrap:pretty;">Researchers optimized for velocity. Administrators optimized for control.</h2>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0;max-width:62ch;">Both were core users of the same enterprise platform, but their jobs pulled in opposite directions. The solution could not be one generic interface.</p>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(36px,5vh,52px);">
+      <button type="button" onClick="{{ toggleTension }}" aria-expanded="{{ tensionExpanded }}" style="display:inline-flex;align-items:center;gap:12px;font-family:inherit;font-weight:600;font-size:14px;color:#f3f3f1;background:transparent;border:1px solid rgba(255,255,255,0.22);border-radius:24px;padding:12px 20px;cursor:pointer;transition:background .25s,border-color .25s;" style-hover="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.45)">
+        <span>{{ tensionLabel }}</span>
+        <span style="font-size:15px;line-height:1;color:rgba(243,243,241,0.6);">{{ tensionSign }}</span>
+      </button>
+    </div>
+
+    <sc-if value="{{ tensionOpen }}" hint-placeholder-val="{{ false }}">
+
+    <div data-reveal="" data-g2b="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,28px);">
+      <div style="border:1px solid rgba(255,255,255,0.1);border-radius:20px;background:#0c0d11;padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:22px;">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);">AI researchers</div>
+        <div style="font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.25;letter-spacing:-0.02em;">Optimized for velocity</div>
+        <div style="display:grid;gap:10px;">
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Start work quickly</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Preserve context between sessions</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Reduce infrastructure decisions</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Access the compute needed to experiment</div>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);border-radius:20px;background:#0c0d11;padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:22px;">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);">Administrators</div>
+        <div style="font-weight:600;font-size:clamp(20px,2.2vw,27px);line-height:1.25;letter-spacing:-0.02em;">Optimized for control</div>
+        <div style="display:grid;gap:10px;">
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Understand usage</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Allocate scarce compute</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Maintain accountability</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Govern resources and permissions</div>
+        </div>
+      </div>
+    </div>
+    </sc-if>
+
+    <div data-reveal="" style="max-width:1280px;margin:clamp(40px,6vh,64px) auto 0;">
+      <div style="border:1px solid rgba(255,255,255,0.16);border-radius:18px;background:#0c0d11;padding:clamp(26px,3vw,40px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:14px;">Key principle</div>
+        <div style="font-weight:600;font-size:clamp(24px,3vw,36px);line-height:1.2;letter-spacing:-0.025em;">Different jobs. Shared system.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="framing" data-screen-label="Problem framing" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);background:#08090b;">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(48px,7vh,80px);">
+      <div style="font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;">Problem framing</div>
+      <h2 style="font-weight:600;font-size:clamp(32px,4.6vw,62px);line-height:1.05;letter-spacing:-0.035em;margin:0 0 26px;max-width:22ch;text-wrap:pretty;">The prototype solved infrastructure. The product had to solve the research lifecycle.</h2>
+      <p style="font-size:clamp(17px,1.6vw,20px);line-height:1.6;color:rgba(243,243,241,0.66);margin:0;max-width:60ch;">Research led me to frame three systemic problems. They became the structure of the product, and of every decision after.</p>
+    </div>
+
+    <div data-reveal="" data-g3="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;">
+      <div style="background:#0c0d11;padding:clamp(28px,3.2vw,44px);">
+        <div style="font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:22px;">01</div>
+        <h3 style="font-weight:600;font-size:clamp(24px,2.8vw,34px);line-height:1.1;letter-spacing:-0.03em;margin:0 0 16px;">Discover</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:rgba(243,243,241,0.62);margin:0;">Finding and evaluating reusable data happened entirely outside the platform.</p>
+      </div>
+      <div style="background:#0c0d11;padding:clamp(28px,3.2vw,44px);">
+        <div style="font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:22px;">02</div>
+        <h3 style="font-weight:600;font-size:clamp(24px,2.8vw,34px);line-height:1.1;letter-spacing:-0.03em;margin:0 0 16px;">Build</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:rgba(243,243,241,0.62);margin:0;">Researchers had to reconstruct context around machines and environments instead of returning to their work.</p>
+      </div>
+      <div style="background:#0c0d11;padding:clamp(28px,3.2vw,44px);">
+        <div style="font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:22px;">03</div>
+        <h3 style="font-weight:600;font-size:clamp(24px,2.8vw,34px);line-height:1.1;letter-spacing:-0.03em;margin:0 0 16px;">Govern</h3>
+        <p style="font-size:15.5px;line-height:1.6;color:rgba(243,243,241,0.62);margin:0;">Administrators could inspect usage, but the interface did not support meaningful resource-allocation decisions.</p>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:clamp(28px,4vh,40px) auto 0;">
+      <div style="border:1px solid rgba(255,255,255,0.1);border-radius:14px;background:#0c0d11;padding:clamp(22px,2.4vw,30px);font-size:clamp(16px,1.5vw,19px);line-height:1.55;color:rgba(243,243,241,0.8);">Collaboration and shared context connected all three.</div>
+    </div>
+  </section>
+
+  <section id="decisions" data-screen-label="Decision 01" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" data-g2="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);display:grid;grid-template-columns:0.32fr 0.68fr;gap:clamp(28px,5vw,70px);align-items:start;">
+      <div>
+        <div style="font-weight:700;font-size:13px;margin-bottom:12px;">01</div>
+        <div style="font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(243,243,241,0.5);">Design decision</div>
+      </div>
+      <div style="min-width:0;">
+        <h2 style="font-weight:600;font-size:clamp(26px,3.4vw,44px);line-height:1.08;letter-spacing:-0.03em;margin:0 0 24px;max-width:24ch;text-wrap:pretty;">Expand the product boundary: the workflow broke before execution started</h2>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0 0 18px;max-width:58ch;">The original product boundary began at infrastructure execution: launch an environment, provision compute, run an experiment. Research showed users were already struggling before reaching that point.</p>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0 0 18px;max-width:58ch;">So I recommended expanding the product upstream, making data discovery and evaluation part of the platform.</p>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:#f3f3f1;margin:0;max-width:58ch;">This increased scope and engineering effort. It also meant solving the actual end-to-end workflow rather than optimizing only the middle of it.</p>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g2b="" style="max-width:1280px;margin:0 auto clamp(40px,6vh,64px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,28px);">
+      <div style="border:1px solid rgba(255,255,255,0.1);border-radius:18px;background:#0c0d11;padding:clamp(24px,2.6vw,34px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:20px;">Before</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.75);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:9px 14px;">Build</span>
+          <span style="color:rgba(243,243,241,0.35);">→</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.75);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:9px 14px;">Run</span>
+          <span style="color:rgba(243,243,241,0.35);">→</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.75);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:9px 14px;">Monitor</span>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.3);border-radius:18px;background:radial-gradient(circle at 25% 0%,rgba(255,255,255,0.07),transparent 70%),#0c0d11;padding:clamp(24px,2.6vw,34px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:20px;">After</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-size:13.5px;font-weight:600;color:#0a0b0d;background:#f3f3f1;border-radius:8px;padding:9px 14px;">Discover</span>
+          <span style="color:rgba(243,243,241,0.35);">→</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.85);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:9px 14px;">Build</span>
+          <span style="color:rgba(243,243,241,0.35);">→</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.85);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:9px 14px;">Run</span>
+          <span style="color:rgba(243,243,241,0.35);">→</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.85);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:9px 14px;">Monitor</span>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(56px,8vh,90px);">
+      <div style="border:1px solid rgba(255,255,255,0.16);border-radius:18px;background:#0c0d11;padding:clamp(24px,2.8vw,36px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:14px;">Product decision</div>
+        <div style="font-weight:600;font-size:clamp(20px,2.4vw,30px);line-height:1.25;letter-spacing:-0.02em;">Move the platform boundary upstream, to where the work actually begins.</div>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g2="" style="max-width:1280px;margin:0 auto clamp(40px,6vh,64px);display:grid;grid-template-columns:0.32fr 0.68fr;gap:clamp(28px,5vw,70px);align-items:start;">
+      <div>
+        <div style="font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(243,243,241,0.5);">Solution · Data Catalog</div>
+      </div>
+      <div style="min-width:0;">
+        <h3 style="font-weight:600;font-size:clamp(24px,3vw,38px);line-height:1.1;letter-spacing:-0.03em;margin:0 0 24px;max-width:24ch;text-wrap:pretty;">Connect discovery directly to experimentation</h3>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0 0 26px;max-width:56ch;">Instead of building another isolated repository, I designed the catalog around one connected workflow.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.75);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:9px 14px;">Find</span>
+          <span style="color:rgba(243,243,241,0.35);">→</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.75);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:9px 14px;">Evaluate</span>
+          <span style="color:rgba(243,243,241,0.35);">→</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.75);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:9px 14px;">Collaborate</span>
+          <span style="color:rgba(243,243,241,0.35);">→</span>
+          <span style="font-size:13.5px;font-weight:600;color:#0a0b0d;background:#f3f3f1;border-radius:8px;padding:9px 14px;">Import into Studio</span>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g2b="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,28px);align-items:start;">
+      <div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 40px 90px -46px rgba(0,0,0,0.85);">
+          <img src="assets/mondrian/cat-discover-hd.png" alt="Data Catalog search: one million datasets found, filtered by organization and topic, sorted by relevance" style="display:block;width:100%;height:auto;">
+        </div>
+        <div style="display:flex;gap:12px;align-items:baseline;margin-top:14px;">
+          <span style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.45);flex:none;">Find</span>
+          <span style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);">Search across indexed public and organization sources, filtered by organization and topic.</span>
+        </div>
+      </div>
+      <div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 40px 90px -46px rgba(0,0,0,0.85);">
+          <img src="assets/mondrian/cat-evaluate-hd.png" alt="A dataset detail page with description, publisher, update date, tags and an activate server action" style="display:block;width:100%;height:auto;">
+        </div>
+        <div style="display:flex;gap:12px;align-items:baseline;margin-top:14px;">
+          <span style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.45);flex:none;">Evaluate</span>
+          <span style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);">Source, licensing and freshness before a researcher commits time to a dataset.</span>
+        </div>
+      </div>
+      <div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 40px 90px -46px rgba(0,0,0,0.85);">
+          <img src="assets/mondrian/cat-collaborate-hd.png" alt="A comment thread on a dataset page with replies" style="display:block;width:100%;height:auto;">
+        </div>
+        <div style="display:flex;gap:12px;align-items:baseline;margin-top:14px;">
+          <span style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.45);flex:none;">Collaborate</span>
+          <span style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);">The discussion sits on the artifact, so evaluation knowledge stays with the data.</span>
+        </div>
+      </div>
+      <div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 40px 90px -46px rgba(0,0,0,0.85);">
+          <img src="assets/mondrian/cat-import-hd.png" alt="Import into an existing Studio project: a dataset card with a project selector" style="display:block;width:100%;height:auto;">
+        </div>
+        <div style="display:flex;gap:12px;align-items:baseline;margin-top:14px;">
+          <span style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.45);flex:none;">Import</span>
+          <span style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);">Straight into an existing Studio project, so discovery ends inside the work, not in a download folder.</span>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g2="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start;">
+      <div style="min-width:0;">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:18px;">Key decisions</div>
+        <div style="display:grid;gap:12px;">
+          <div style="font-size:16px;line-height:1.55;color:rgba(243,243,241,0.75);">Show licensing before users commit to a dataset</div>
+          <div style="font-size:16px;line-height:1.55;color:rgba(243,243,241,0.75);">Support public, organization and project-level visibility</div>
+          <div style="font-size:16px;line-height:1.55;color:rgba(243,243,241,0.75);">Import directly into an existing Studio project</div>
+          <div style="font-size:16px;line-height:1.55;color:rgba(243,243,241,0.75);">Design for incomplete or inconsistent metadata</div>
+        </div>
+      </div>
+      <div style="min-width:0;border:1px solid rgba(255,255,255,0.1);border-radius:18px;background:#0c0d11;padding:clamp(24px,2.8vw,36px);">
+        <h4 style="font-weight:600;font-size:clamp(19px,2.1vw,25px);line-height:1.25;letter-spacing:-0.02em;margin:0 0 16px;max-width:26ch;">The catalog had to provide value before asking users to contribute</h4>
+        <p style="font-size:15.5px;line-height:1.6;color:rgba(243,243,241,0.62);margin:0;">A new catalog risks being empty on day one. So the experience was seeded with indexed public sources and designed to stay useful when metadata quality was incomplete.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="studio" data-screen-label="Decision 02" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);background:#08090b;">
+    <div data-reveal="" data-g2="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);display:grid;grid-template-columns:0.32fr 0.68fr;gap:clamp(28px,5vw,70px);align-items:start;">
+      <div>
+        <div style="font-weight:700;font-size:13px;margin-bottom:12px;">02</div>
+        <div style="font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(243,243,241,0.5);">Design decision · Studio</div>
+      </div>
+      <div style="min-width:0;">
+        <h2 style="font-weight:600;font-size:clamp(26px,3.4vw,44px);line-height:1.08;letter-spacing:-0.03em;margin:0 0 24px;max-width:24ch;text-wrap:pretty;">Researchers returned to projects, not machines</h2>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0 0 18px;max-width:58ch;">The original Studio home centered the experience on infrastructure: servers, machines, environment status. Users came back with a different mental model.</p>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:#f3f3f1;margin:0;max-width:58ch;">So I changed the primary object from server to project.</p>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1180px;margin:0 auto clamp(44px,6vh,72px);">
+      <blockquote style="padding-left:clamp(20px,2.4vw,30px);border-left:3px solid rgba(243,243,241,0.55);">
+        <p style="font-weight:600;font-size:clamp(20px,2.6vw,32px);line-height:1.3;letter-spacing:-0.02em;margin:0 0 16px;max-width:44ch;"><i>“I want to see overall projects’ status and latest projects, rather than data and AI model resources, on the main page.”</i></p>
+        <cite style="font-size:12px;letter-spacing:0.08em;text-transform:uppercase;color:rgba(243,243,241,0.5);font-style:normal;">AI researcher · usability testing</cite>
+      </blockquote>
+    </div>
+
+    <div data-reveal="" data-g4="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;">
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:16px;line-height:1.4;">Project became the entry point</div>
+      </div>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:16px;line-height:1.4;">Run state visible at the project level</div>
+      </div>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:16px;line-height:1.4;">Shared work became part of the main workflow</div>
+      </div>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:16px;line-height:1.4;">Infrastructure moved into supporting context</div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1180px;margin:0 auto clamp(28px,4vh,40px);">
+      <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 40px 90px -46px rgba(0,0,0,0.85);">
+        <img src="assets/mondrian/before-home.png" alt="Before: Studio home built around server state, with CPU, memory and disk cards" style="display:block;width:100%;height:auto;">
+      </div>
+      <div style="display:flex;gap:14px;align-items:baseline;margin-top:14px;">
+        <span style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.45);flex:none;">Before</span>
+        <span style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);">Server first. To resume work, a researcher had to remember which machine it lived on.</span>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1180px;margin:0 auto;">
+      <div data-parallax="" style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 60px 130px -44px rgba(0,0,0,0.9);">
+        <div style="height:42px;display:flex;align-items:center;gap:14px;padding:0 18px;border-bottom:1px solid rgba(255,255,255,0.07);background:#15161c;">
+          <div style="display:flex;gap:7px;flex:none;">
+            <span style="width:11px;height:11px;border-radius:50%;background:#ff5f57;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#febc2e;"></span>
+            <span style="width:11px;height:11px;border-radius:50%;background:#28c840;"></span>
+          </div>
+          <div style="flex:1;max-width:340px;margin:0 auto;background:#0a0b0f;border:1px solid rgba(255,255,255,0.06);border-radius:8px;padding:6px 14px;font-size:11px;color:rgba(243,243,241,0.4);text-align:center;">app.mondrian.ai / studio</div>
+          <div style="width:40px;flex:none;"></div>
+        </div>
+        <video src="assets/mondrian/studio-home.webm" autoPlay="{{ true }}" loop="{{ true }}" muted="{{ true }}" playsInline="{{ true }}" aria-label="Walkthrough of the shipped Studio home" style="display:block;width:100%;height:auto;"></video>
+      </div>
+      <div style="display:flex;gap:14px;align-items:baseline;margin-top:14px;">
+        <span style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.45);flex:none;">After</span>
+        <span style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);">Project status, ownership, collaborators and last modified time, before anything about infrastructure.</span>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:clamp(48px,7vh,80px) auto 0;">
+      <div style="border:1px solid rgba(255,255,255,0.16);border-radius:18px;background:#0c0d11;padding:clamp(24px,2.8vw,36px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:14px;">Design principle</div>
+        <div style="font-weight:600;font-size:clamp(20px,2.4vw,30px);line-height:1.25;letter-spacing:-0.02em;">Organize around the user’s work, not the implementation model.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="admin" data-screen-label="Decision 03" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" data-g2="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);display:grid;grid-template-columns:0.32fr 0.68fr;gap:clamp(28px,5vw,70px);align-items:start;">
+      <div>
+        <div style="font-weight:700;font-size:13px;margin-bottom:12px;">03</div>
+        <div style="font-weight:700;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(243,243,241,0.5);">Design decision · Admin</div>
+      </div>
+      <div style="min-width:0;">
+        <h2 style="font-weight:600;font-size:clamp(26px,3.4vw,44px);line-height:1.08;letter-spacing:-0.03em;margin:0 0 24px;max-width:24ch;text-wrap:pretty;">Manage scarce capacity, not individual people</h2>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0 0 18px;max-width:58ch;">The original dashboard centered each row on a person, and the main action was stopping that person’s server. But the administrator’s real job was not monitoring people.</p>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:#f3f3f1;margin:0;max-width:58ch;">It was answering one question: how should scarce compute be allocated across important work?</p>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g4="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden;">
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:16px;line-height:1.4;">GPU and resources became first-class</div>
+      </div>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:16px;line-height:1.4;">Project became the unit of analysis</div>
+      </div>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:16px;line-height:1.4;">Owner became supporting context</div>
+      </div>
+      <div style="background:#0c0d11;padding:26px;">
+        <div style="font-weight:600;font-size:16px;line-height:1.4;">Infrastructure terms translated into work terms</div>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g2b="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,28px);align-items:start;">
+      <div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 40px 90px -46px rgba(0,0,0,0.85);">
+          <img src="assets/mondrian/before-admin-2.png" alt="Before: the inherited dashboard: a user profile banner, one default server, and CPU, memory and disk figures" style="display:block;width:100%;height:auto;">
+        </div>
+        <div style="display:flex;gap:12px;align-items:baseline;margin-top:14px;">
+          <span style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.45);flex:none;">Before</span>
+          <span style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);">One user, one default server, three numbers. No project anywhere on the page.</span>
+        </div>
+      </div>
+      <div>
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);background:#101116;box-shadow:0 40px 90px -46px rgba(0,0,0,0.85);">
+          <img src="assets/slots/mon-resource-final-hd.png" alt="The shipped admin dashboard: gauges with absolute values, a shared-axis usage trend, the GPU usage table, and a project table with actions in each row" style="display:block;width:100%;height:auto;">
+        </div>
+        <div style="display:flex;gap:12px;align-items:baseline;margin-top:14px;">
+          <span style="font-weight:700;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.45);flex:none;">After</span>
+          <span style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);">Capacity, trend, cause and action, top to bottom, every row keyed to a project.</span>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g2="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px);align-items:start;">
+      <div style="min-width:0;">
+        <h3 style="font-weight:600;font-size:clamp(20px,2.4vw,28px);line-height:1.2;letter-spacing:-0.025em;margin:0 0 18px;max-width:26ch;">In a shared GPU pool, the waste is capacity that is held and never used</h3>
+        <p style="font-size:16px;line-height:1.6;color:rgba(243,243,241,0.66);margin:0 0 16px;max-width:52ch;">Someone finishes a run, leaves the session open and goes home. Total utilization never catches it, because the GPU looks busy. Any one number on its own lies.</p>
+        <p style="font-size:16px;line-height:1.6;color:#f3f3f1;margin:0;max-width:52ch;">So state, time held and actual usage sit in one row, sorted by longest held, with the owner right there, so the admin has an option other than killing someone’s job.</p>
+      </div>
+      <div style="min-width:0;">
+        <div style="border-radius:14px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 40px 90px -46px rgba(0,0,0,0.85);">
+          <img src="assets/mondrian/gpu-table-hd.png" alt="The GPU usage table: GPU ID, occupied state, occupied for, project ID, project owner and usage in one row, sorted by occupied for" style="display:block;width:100%;height:auto;">
+        </div>
+        <div style="font-size:13.5px;line-height:1.5;color:rgba(243,243,241,0.5);margin-top:14px;">One row per GPU: state, time held, project, owner, actual usage.</div>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g2b="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,28px);">
+      <div style="border:1px solid rgba(255,255,255,0.16);border-radius:18px;background:#0c0d11;padding:clamp(24px,2.8vw,36px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:14px;">What changed</div>
+        <div style="font-weight:600;font-size:clamp(18px,2.1vw,25px);line-height:1.3;letter-spacing:-0.02em;">From a monitoring surface into a resource-allocation tool.</div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);border-radius:18px;background:#0c0d11;padding:clamp(24px,2.8vw,36px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:14px;">Tradeoff</div>
+        <div style="font-size:16px;line-height:1.6;color:rgba(243,243,241,0.7);">Making projects and resources primary made “which person should I contact?” less immediate. Owner stayed in the row, but it is no longer the way in.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="viz" data-screen-label="Data visualization" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);background:#08090b;">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);">
+      <div style="font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;">Deep dive · Data visualization</div>
+      <h2 style="font-weight:600;font-size:clamp(30px,4.2vw,56px);line-height:1.06;letter-spacing:-0.035em;margin:0 0 26px;max-width:24ch;text-wrap:pretty;">The visualization followed the decision, not the available data</h2>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0 0 26px;max-width:60ch;">The administrator needed three things in a single scan.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <span style="font-size:13.5px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:9px 16px;">Which resource is constrained?</span>
+        <span style="font-size:13.5px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:9px 16px;">Is the problem temporary or persistent?</span>
+        <span style="font-size:13.5px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.16);border-radius:20px;padding:9px 16px;">Which work is consuming it?</span>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g3="" style="max-width:1280px;margin:0 auto clamp(40px,6vh,64px);display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,22px);align-items:start;">
+      <div style="border:1px solid rgba(255,255,255,0.1);border-radius:18px;background:#0c0d11;padding:clamp(20px,2.2vw,26px);">
+        <div style="font-weight:600;font-size:18px;letter-spacing:-0.02em;margin-bottom:10px;">A · Detailed trends</div>
+        <div style="font-size:14.5px;line-height:1.55;color:rgba(243,243,241,0.6);margin-bottom:20px;">Deep diagnosis, weak cross-resource comparison.</div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);">
+          <img src="assets/mondrian/viz-option-a.png" alt="Option A: four gauges above four separate full-width trend charts" style="display:block;width:100%;height:auto;">
+        </div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);border-radius:18px;background:#0c0d11;padding:clamp(20px,2.2vw,26px);">
+        <div style="font-weight:600;font-size:18px;letter-spacing:-0.02em;margin-bottom:10px;">B · Dense comparison</div>
+        <div style="font-size:14.5px;line-height:1.55;color:rgba(243,243,241,0.6);margin-bottom:20px;">Fast horizontal scan, insufficient detail for diagnosis.</div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);">
+          <img src="assets/mondrian/viz-option-b.png" alt="Option B: four narrow columns, each a gauge above a small trend chart" style="display:block;width:100%;height:auto;">
+        </div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.34);border-radius:18px;background:radial-gradient(circle at 30% 0%,rgba(255,255,255,0.07),transparent 70%),#0c0d11;padding:clamp(20px,2.2vw,26px);">
+        <div style="display:flex;align-items:baseline;gap:10px;margin-bottom:10px;">
+          <span style="font-weight:600;font-size:18px;letter-spacing:-0.02em;">C · Current state + trend</span>
+          <span style="font-weight:700;font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:#0a0b0d;background:#f3f3f1;border-radius:20px;padding:4px 9px;">Chosen</span>
+        </div>
+        <div style="font-size:14.5px;line-height:1.55;color:rgba(243,243,241,0.6);margin-bottom:20px;">Supports comparison and diagnosis, at the cost of vertical space.</div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);">
+          <img src="assets/mondrian/viz-option-c.png" alt="Option C: one row per resource, gauge on the left and its trend chart on the right" style="display:block;width:100%;height:auto;">
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
+      <blockquote style="padding-left:clamp(20px,2.4vw,32px);border-left:3px solid rgba(243,243,241,0.55);">
+        <p style="font-weight:600;font-size:clamp(22px,3vw,38px);line-height:1.2;letter-spacing:-0.025em;margin:0;max-width:36ch;">I chose C because it was the only layout that supported the allocation decision, not because it showed the most data.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="platform" data-screen-label="Platform system" style="display:none;scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);">
+      <div style="font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;">Platform system</div>
+      <h2 style="font-weight:600;font-size:clamp(30px,4.2vw,56px);line-height:1.06;letter-spacing:-0.035em;margin:0 0 26px;max-width:26ch;text-wrap:pretty;">Different workflows required different applications. Context still had to move across them.</h2>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0;max-width:62ch;">Yennefer was one enterprise platform composed of several specialized applications, sitting on a shared model of users, organizations, projects, permissions, datasets and compute.</p>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(40px,6vh,64px);">
+      <div data-g3="" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,20px);margin-bottom:clamp(14px,1.8vw,20px);">
+        <div style="border:1px solid rgba(255,255,255,0.16);border-radius:16px;background:#0c0d11;padding:clamp(22px,2.4vw,30px);">
+          <div style="font-weight:600;font-size:19px;letter-spacing:-0.02em;margin-bottom:8px;">Data Catalog</div>
+          <div style="font-size:13.5px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(243,243,241,0.5);">Discover</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.16);border-radius:16px;background:#0c0d11;padding:clamp(22px,2.4vw,30px);">
+          <div style="font-weight:600;font-size:19px;letter-spacing:-0.02em;margin-bottom:8px;">Studio</div>
+          <div style="font-size:13.5px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(243,243,241,0.5);">Build and collaborate</div>
+        </div>
+        <div style="border:1px solid rgba(255,255,255,0.16);border-radius:16px;background:#0c0d11;padding:clamp(22px,2.4vw,30px);">
+          <div style="font-weight:600;font-size:19px;letter-spacing:-0.02em;margin-bottom:8px;">Admin</div>
+          <div style="font-size:13.5px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(243,243,241,0.5);">Govern</div>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);border-radius:18px;background:#0c0d11;padding:clamp(24px,2.8vw,34px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:20px;">Shared platform model</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:9px 14px;">Users</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:9px 14px;">Organizations</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:9px 14px;">Projects</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:9px 14px;">Permissions</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:9px 14px;">Datasets</span>
+          <span style="font-size:13.5px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.14);border-radius:8px;padding:9px 14px;">Compute resources</span>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);">
+      <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:18px;">Connected workflow</div>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;">
+        <span style="font-size:13.5px;color:rgba(243,243,241,0.85);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:10px 15px;">Dataset</span>
+        <span style="color:rgba(243,243,241,0.35);">→</span>
+        <span style="font-size:13.5px;color:rgba(243,243,241,0.85);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:10px 15px;">Studio project</span>
+        <span style="color:rgba(243,243,241,0.35);">→</span>
+        <span style="font-size:13.5px;color:rgba(243,243,241,0.85);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:10px 15px;">Compute usage</span>
+        <span style="color:rgba(243,243,241,0.35);">→</span>
+        <span style="font-size:13.5px;color:rgba(243,243,241,0.85);border:1px solid rgba(255,255,255,0.18);border-radius:8px;padding:10px 15px;">Admin allocation</span>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g2b="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,2.4vw,28px);">
+      <div style="border:1px solid rgba(255,255,255,0.16);border-radius:18px;background:#0c0d11;padding:clamp(24px,2.8vw,36px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:20px;">What I connected</div>
+        <div style="display:grid;gap:12px;">
+          <div style="font-size:16px;line-height:1.5;color:rgba(243,243,241,0.78);">Shared concepts</div>
+          <div style="font-size:16px;line-height:1.5;color:rgba(243,243,241,0.78);">Direct workflows between applications</div>
+          <div style="font-size:16px;line-height:1.5;color:rgba(243,243,241,0.78);">Common product language</div>
+          <div style="font-size:16px;line-height:1.5;color:rgba(243,243,241,0.78);">Component and design consistency</div>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(255,255,255,0.1);border-radius:18px;background:#0c0d11;padding:clamp(24px,2.8vw,36px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:20px;">What remained fragmented</div>
+        <div style="display:grid;gap:12px;">
+          <div style="font-size:16px;line-height:1.5;color:rgba(243,243,241,0.55);">Navigation across applications</div>
+          <div style="font-size:16px;line-height:1.5;color:rgba(243,243,241,0.55);">Some overlapping object models</div>
+          <div style="font-size:16px;line-height:1.5;color:rgba(243,243,241,0.55);">Application boundaries</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="impact" data-screen-label="Impact" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);background:#08090b;">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(40px,6vh,64px);">
+      <div style="font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;">Impact</div>
+      <h2 style="font-weight:600;font-size:clamp(30px,4.2vw,56px);line-height:1.06;letter-spacing:-0.035em;margin:0 0 26px;max-width:24ch;text-wrap:pretty;">What we knew at launch</h2>
+    </div>
+
+    <div data-reveal="" data-g3="" style="max-width:1280px;margin:0 auto clamp(28px,4vh,40px);display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;">
+      <div style="background:#0c0d11;padding:clamp(28px,3.2vw,44px);">
+        <div style="font-weight:600;font-size:clamp(40px,5.4vw,72px);line-height:1;letter-spacing:-0.045em;margin-bottom:20px;">12 mo</div>
+        <div style="font-weight:600;font-size:clamp(16px,1.6vw,19px);line-height:1.35;letter-spacing:-0.015em;margin-bottom:8px;">Concept to launch</div>
+        <div style="font-size:14px;line-height:1.5;color:rgba(243,243,241,0.5);">Three applications shipped on one platform model.</div>
+      </div>
+      <div style="background:#0c0d11;padding:clamp(28px,3.2vw,44px);">
+        <div style="font-weight:600;font-size:clamp(40px,5.4vw,72px);line-height:1;letter-spacing:-0.045em;margin-bottom:20px;">15+</div>
+        <div style="font-weight:600;font-size:clamp(16px,1.6vw,19px);line-height:1.35;letter-spacing:-0.015em;margin-bottom:8px;">Enterprise and education customers</div>
+        <div style="font-size:14px;line-height:1.5;color:rgba(243,243,241,0.5);">Including Samsung Display, KT, Hyundai and Seoul National University.</div>
+      </div>
+      <div style="background:#0c0d11;padding:clamp(28px,3.2vw,44px);">
+        <div style="font-weight:600;font-size:clamp(40px,5.4vw,72px);line-height:1;letter-spacing:-0.045em;margin-bottom:20px;">70 → 91%</div>
+        <div style="font-weight:600;font-size:clamp(16px,1.6vw,19px);line-height:1.35;letter-spacing:-0.015em;margin-bottom:8px;">Company-reported task efficiency</div>
+        <div style="font-size:14px;line-height:1.5;color:rgba(243,243,241,0.5);">Reported internally after the rebuild. Methodology not independently validated by me.</div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(64px,9vh,110px);">
+      <div style="font-size:14px;line-height:1.6;color:rgba(243,243,241,0.45);">These are the outcomes the project material supports. The framework below is how I would measure the platform today.</div>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(32px,5vh,48px);">
+      <h3 style="font-weight:600;font-size:clamp(24px,3.2vw,40px);line-height:1.08;letter-spacing:-0.03em;margin:0 0 24px;max-width:26ch;text-wrap:pretty;">Measurement framework I would establish today</h3>
+      <div style="border:1px solid rgba(255,255,255,0.3);border-radius:18px;background:radial-gradient(circle at 25% 0%,rgba(255,255,255,0.07),transparent 70%),#0c0d11;padding:clamp(26px,3vw,40px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:16px;">North star</div>
+        <div style="font-weight:600;font-size:clamp(24px,3vw,38px);line-height:1.15;letter-spacing:-0.03em;margin-bottom:18px;">Time to first successful experiment</div>
+        <div style="font-size:16px;line-height:1.6;color:rgba(243,243,241,0.66);max-width:60ch;">It is the only metric that spans the whole model: discovery, setup, compute access, and successful execution.</div>
+      </div>
+    </div>
+
+    <div data-reveal="" data-g3="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:16px;overflow:hidden;">
+      <div style="background:#0c0d11;padding:clamp(24px,2.8vw,34px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:20px;">Researcher</div>
+        <div style="display:grid;gap:11px;">
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Discovery to import completion</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Environment readiness time</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Resume-task success</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Experiment abandonment</div>
+        </div>
+      </div>
+      <div style="background:#0c0d11;padding:clamp(24px,2.8vw,34px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:20px;">Administrator</div>
+        <div style="display:grid;gap:11px;">
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">GPU utilization</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Idle held capacity</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Time to resolve allocation issues</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Successful allocation changes</div>
+        </div>
+      </div>
+      <div style="background:#0c0d11;padding:clamp(24px,2.8vw,34px);">
+        <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:20px;">Business</div>
+        <div style="display:grid;gap:11px;">
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Pilot to paid conversion</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Expansion and renewal</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Onboarding time</div>
+          <div style="font-size:15.5px;line-height:1.5;color:rgba(243,243,241,0.72);">Support burden</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reflection" data-screen-label="Reflection" style="scroll-margin-top:120px;padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(44px,6vh,72px);">
+      <div style="font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:22px;">Reflection</div>
+      <h2 style="font-weight:600;font-size:clamp(30px,4.2vw,56px);line-height:1.06;letter-spacing:-0.035em;margin:0 0 26px;max-width:26ch;text-wrap:pretty;">I got the core objects right. I did not always design for attention.</h2>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(243,243,241,0.66);margin:0;max-width:60ch;">Each surface answered “what exists” well. Three of them should have answered “what matters now”.</p>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto clamp(48px,7vh,80px);display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.08);border-radius:18px;overflow:hidden;">
+      <div data-g2="" style="display:grid;grid-template-columns:0.42fr 0.58fr;gap:clamp(12px,3vw,40px);background:#0c0d11;padding:clamp(24px,2.8vw,36px) clamp(24px,3vw,38px);">
+        <div>
+          <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:12px;">Studio</div>
+          <h4 style="font-weight:600;font-size:clamp(19px,2.2vw,26px);line-height:1.2;letter-spacing:-0.02em;margin:0;">Inventory → attention</h4>
+        </div>
+        <div>
+          <p style="font-size:15.5px;line-height:1.6;color:rgba(243,243,241,0.62);margin:0 0 16px;max-width:52ch;">Sorting 68 projects by recency is an inventory. What a returning researcher needs is the exception.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="font-size:13px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:8px 13px;">1 failed overnight</span>
+            <span style="font-size:13px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:8px 13px;">3 running</span>
+            <span style="font-size:13px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:8px 13px;">2 completed since you left</span>
+          </div>
+        </div>
+      </div>
+      <div data-g2="" style="display:grid;grid-template-columns:0.42fr 0.58fr;gap:clamp(12px,3vw,40px);background:#0c0d11;padding:clamp(24px,2.8vw,36px) clamp(24px,3vw,38px);">
+        <div>
+          <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:12px;">Admin</div>
+          <h4 style="font-weight:600;font-size:clamp(19px,2.2vw,26px);line-height:1.2;letter-spacing:-0.02em;margin:0;">State → action</h4>
+        </div>
+        <div>
+          <p style="font-size:15.5px;line-height:1.6;color:rgba(243,243,241,0.62);margin:0 0 16px;max-width:52ch;">The dashboard reported the situation accurately. It should have carried the decision further.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="font-size:13px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:8px 13px;">Thresholds</span>
+            <span style="font-size:13px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:8px 13px;">Alerts</span>
+            <span style="font-size:13px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:8px 13px;">Cost context</span>
+            <span style="font-size:13px;color:rgba(243,243,241,0.8);border:1px solid rgba(255,255,255,0.16);border-radius:8px;padding:8px 13px;">Recommended next actions</span>
+          </div>
+        </div>
+      </div>
+      <div data-g2="" style="display:grid;grid-template-columns:0.42fr 0.58fr;gap:clamp(12px,3vw,40px);background:#0c0d11;padding:clamp(24px,2.8vw,36px) clamp(24px,3vw,38px);">
+        <div>
+          <div style="font-weight:700;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(243,243,241,0.45);margin-bottom:12px;">Discovery</div>
+          <h4 style="font-weight:600;font-size:clamp(19px,2.2vw,26px);line-height:1.2;letter-spacing:-0.02em;margin:0;">Search → intent</h4>
+        </div>
+        <div>
+          <p style="font-size:15.5px;line-height:1.6;color:rgba(243,243,241,0.62);margin:0 0 16px;max-width:52ch;">Search and filters assume the researcher can name what they want. Often the real request is comparative.</p>
+          <div style="font-size:15.5px;line-height:1.5;color:#f3f3f1;border:1px solid rgba(255,255,255,0.2);border-radius:10px;padding:14px 16px;max-width:52ch;"><i>“Find a dataset like this one that allows commercial use.”</i></div>
+        </div>
+      </div>
+    </div>
+
+    <div data-reveal="" style="max-width:1280px;margin:0 auto;">
+      <blockquote style="padding-left:clamp(20px,2.4vw,32px);border-left:3px solid rgba(243,243,241,0.55);">
+        <p style="font-weight:600;font-size:clamp(22px,3vw,38px);line-height:1.2;letter-spacing:-0.025em;margin:0;max-width:36ch;">A product surface should help users understand what matters next, not just show what exists.</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <section data-screen-label="Takeaway" style="padding:clamp(80px,12vh,140px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);background:#08090b;">
+    <div data-reveal="" data-g2="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.8fr 1.2fr;gap:clamp(36px,6vw,90px);align-items:start;">
+      <div style="font-weight:700;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;padding-top:10px;">What this project taught me</div>
+      <div style="min-width:0;">
+        <p style="font-size:clamp(17px,1.7vw,22px);line-height:1.55;color:rgba(243,243,241,0.7);margin:0 0 32px;max-width:56ch;">Designing complex enterprise products often starts before the interface. The decisions that mattered most here were:</p>
+        <div style="display:grid;gap:16px;margin-bottom:clamp(40px,6vh,64px);">
+          <div style="font-size:16.5px;line-height:1.55;color:rgba(243,243,241,0.78);border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;">Expanding the product boundary when research exposed the wrong scope</div>
+          <div style="font-size:16.5px;line-height:1.55;color:rgba(243,243,241,0.78);border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;">Designing different experiences for different jobs without fragmenting the platform</div>
+          <div style="font-size:16.5px;line-height:1.55;color:rgba(243,243,241,0.78);border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;">Choosing product objects that match how users think about their work</div>
+          <div style="font-size:16.5px;line-height:1.55;color:rgba(243,243,241,0.78);border-top:1px solid rgba(255,255,255,0.1);padding-top:16px;">Connecting design decisions to measurable user and business outcomes</div>
+        </div>
+        <p style="font-weight:600;font-size:clamp(22px,2.8vw,36px);line-height:1.2;letter-spacing:-0.025em;margin:0;max-width:34ch;">My role was not to design three applications. It was to define an end-to-end product model around the AI research lifecycle, and translate it into a connected enterprise platform.</p>
+      </div>
+    </div>
+  </section>
+
   <footer id="contact" style="border-top:1px solid rgba(255,255,255,0.08);padding:clamp(60px,10vh,110px) clamp(24px,5vw,80px) 40px;">
     <div style="max-width:1280px;margin:0 auto;">
       <div data-reveal="" style="display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:clamp(50px,8vh,80px);">
         <div>
-          <div style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f3f3f1;margin-bottom:18px;">More work</div>
-          <a href="/agentic-ai" style="font:600 clamp(30px,4vw,52px)/1 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;text-decoration:none;display:inline-flex;align-items:center;gap:16px;transition:gap .25s;" style-hover="gap:24px">T-Mobile Agentic AI <span style="color:#f3f3f1;">→</span></a>
+          <div style="font-size:12px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:18px;">More work</div>
+          <a href="/agentic-ai" style="font-weight:600;font-size:clamp(30px,4vw,52px);line-height:1;letter-spacing:-0.03em;text-decoration:none;display:inline-flex;align-items:center;gap:16px;transition:gap .25s;" style-hover="gap:24px">T-Mobile Agentic AI <span>→</span></a>
         </div>
-        <a href="/" style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:4px;transition:color .25s,border-color .25s;" style-hover="color:#f3f3f1;border-color:rgba(255,255,255,0.5)">Back to all work</a>
+        <a href="/" style="font-weight:600;font-size:14px;color:rgba(243,243,241,0.6);text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.2);padding-bottom:4px;transition:color .25s,border-color .25s;" style-hover="color:#f3f3f1;border-color:rgba(255,255,255,0.5)">Back to all work</a>
       </div>
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.08);">
-        <span style="font:600 16px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;">Soojin Hwang</span>
+        <span style="font-weight:600;font-size:16px;letter-spacing:-0.02em;">Soojin Hwang</span>
         <div style="display:flex;align-items:center;gap:22px;flex-wrap:wrap;">
-          <a href="mailto:soojin.ux@gmail.com" style="font:400 13.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">soojin.ux@gmail.com</a>
-          <a href="https://www.linkedin.com/in/hwangsoojin/" target="_blank" rel="noopener" style="font:400 13.5px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">LinkedIn</a>
+          <a href="mailto:soojin.ux@gmail.com" style="font-size:13.5px;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">soojin.ux@gmail.com</a>
+          <a href="https://www.linkedin.com/in/hwangsoojin/" target="_blank" rel="noopener" style="font-size:13.5px;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">LinkedIn</a>
         </div>
-        <span style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.4);">© 2026 · Mondrian AI case study</span>
+        <span style="font-size:12px;color:rgba(243,243,241,0.4);">© 2026 · Mondrian AI case study</span>
       </div>
     </div>
   </footer>
@@ -528,45 +887,57 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;pace&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;standard&quot;,&quot;options&quot;:[&quot;calm&quot;,&quot;standard&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
 class Component extends DCLogic {
+  state = { menuOpen: false, researchOpen: false, tensionOpen: false };
   rootRef = (el) => { this.root = el; };
+  toggleMenu = () => this.setState((s) => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => { if (this.state.menuOpen) this.setState({ menuOpen: false }); };
+  toggleResearch = () => this.setState((s) => ({ researchOpen: !s.researchOpen }));
+  toggleTension = () => this.setState((s) => ({ tensionOpen: !s.tensionOpen }));
+
+  setupVideos() {
+    const vids = Array.from(document.querySelectorAll('video'));
+    if (!vids.length) return;
+    const kick = (v) => {
+      v.muted = true; v.defaultMuted = true;
+      v.setAttribute('muted', ''); v.setAttribute('playsinline', ''); v.setAttribute('autoplay', '');
+      if (v.paused) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+    };
+    const near = (v) => { const r = v.getBoundingClientRect(); return r.bottom > -600 && r.top < window.innerHeight + 600; };
+    vids.forEach((v) => {
+      v.preload = near(v) ? 'auto' : 'metadata';
+      ['loadedmetadata', 'loadeddata', 'canplay', 'playing', 'stalled'].forEach((ev) => v.addEventListener(ev, () => { if (v.dataset.eager !== '0') kick(v); }));
+      if (near(v)) { v.dataset.eager = '1'; kick(v); }
+    });
+    if (window.IntersectionObserver) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          const v = e.target;
+          if (e.isIntersecting) { v.dataset.eager = '1'; v.preload = 'auto'; kick(v); }
+          else { v.dataset.eager = '0'; if (!v.paused) v.pause(); }
+        });
+      }, { rootMargin: '400px' });
+      vids.forEach((v) => io.observe(v));
+      this._vidIO = io;
+    }
+    const retry = () => vids.forEach((v) => { if (v.dataset.eager !== '0' && v.paused) kick(v); });
+    this._vidRetry = retry;
+    this._vidPoll = setInterval(retry, 600);
+    this._vidStop = setTimeout(() => clearInterval(this._vidPoll), 30000);
+    document.addEventListener('visibilitychange', retry);
+    ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach((ev) => window.addEventListener(ev, retry, { passive: true }));
+  }
 
   componentDidMount() {
+    this.setupVideos();
     this.setupReveal();
     this.setupParallax();
-    this.setupBeforeAfter();
     this.setupSpy();
   }
-
-  setupBeforeAfter() {
-    const root = this.root;
-    if (!root) return;
-    const wrap = root.querySelector('[data-ba]');
-    if (!wrap || wrap._baInit) return;
-    wrap._baInit = true;
-    const before = wrap.querySelector('[data-ba-before]');
-    const handle = wrap.querySelector('[data-ba-handle]');
-    const set = (pct) => {
-      pct = Math.max(3, Math.min(97, pct));
-      before.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
-      handle.style.left = pct + '%';
-    };
-    const fromEvent = (e) => {
-      const r = wrap.getBoundingClientRect();
-      set(((e.clientX - r.left) / r.width) * 100);
-    };
-    let dragging = false;
-    wrap.addEventListener('pointerdown', (e) => {
-      dragging = true;
-      if (wrap.setPointerCapture) { try { wrap.setPointerCapture(e.pointerId); } catch (err) {} }
-      fromEvent(e);
-    });
-    wrap.addEventListener('pointermove', (e) => { if (dragging) fromEvent(e); });
-    const up = () => { dragging = false; };
-    wrap.addEventListener('pointerup', up);
-    wrap.addEventListener('pointercancel', up);
-    set(50);
-  }
   componentWillUnmount() {
+    if (this._vidPoll) clearInterval(this._vidPoll);
+    if (this._vidStop) clearTimeout(this._vidStop);
+    if (this._vidIO) this._vidIO.disconnect();
+    if (this._vidRetry) document.removeEventListener('visibilitychange', this._vidRetry);
     if (this._onScroll) { window.removeEventListener('scroll', this._onScroll); window.removeEventListener('resize', this._onScroll); }
     if (this._onPar) { window.removeEventListener('scroll', this._onPar); window.removeEventListener('resize', this._onPar); }
     if (this._spyScroll) { window.removeEventListener('scroll', this._spyScroll); window.removeEventListener('resize', this._spyScroll); }
@@ -588,8 +959,7 @@ class Component extends DCLogic {
       el.style.transition = 'opacity ' + dur + ' ease, transform ' + (calm ? '1.2s' : '1s') + ' cubic-bezier(.2,.8,.2,1)';
       el.style.willChange = 'opacity, transform';
       const r = el.getBoundingClientRect();
-      const inView = r.top < vh0 * 0.94 && r.bottom > 0;
-      if (inView) { el.style.opacity = '1'; el.style.transform = 'none'; }
+      if (r.top < vh0 * 0.94 && r.bottom > 0) { el.style.opacity = '1'; el.style.transform = 'none'; }
       else { el.style.opacity = '0'; el.style.transform = 'translateY(34px)'; pending.push(el); }
     });
     const reveal = () => {
@@ -597,15 +967,9 @@ class Component extends DCLogic {
       for (let i = pending.length - 1; i >= 0; i--) {
         const el = pending[i];
         const r = el.getBoundingClientRect();
-        if (r.top < vh * 0.9 && r.bottom > 0) {
-          el.style.opacity = '1'; el.style.transform = 'none';
-          pending.splice(i, 1);
-        }
+        if (r.top < vh * 0.9 && r.bottom > 0) { el.style.opacity = '1'; el.style.transform = 'none'; pending.splice(i, 1); }
       }
-      if (!pending.length && this._onScroll) {
-        window.removeEventListener('scroll', this._onScroll);
-        this._onScroll = null;
-      }
+      if (!pending.length && this._onScroll) { window.removeEventListener('scroll', this._onScroll); this._onScroll = null; }
     };
     this._onScroll = () => window.requestAnimationFrame(reveal);
     window.addEventListener('scroll', this._onScroll, { passive: true });
@@ -622,8 +986,7 @@ class Component extends DCLogic {
       const vh = window.innerHeight || document.documentElement.clientHeight;
       items.forEach(el => {
         const r = el.getBoundingClientRect();
-        const center = r.top + r.height / 2;
-        const off = (center - vh / 2) / vh;
+        const off = (r.top + r.height / 2 - vh / 2) / vh;
         el.style.transform = 'translate3d(0,' + (off * -20).toFixed(2) + 'px,0)';
       });
       ticking = false;
@@ -642,14 +1005,21 @@ class Component extends DCLogic {
     const links = Array.from(bar.querySelectorAll('a[href^="#"]'));
     const pairs = links.map((a) => ({ a, sec: document.getElementById(a.getAttribute('href').slice(1)) })).filter((p) => p.sec);
     if (!pairs.length) return;
-    const setActive = (active) => {
-      links.forEach((a) => { a.style.color = a === active ? '#f3f3f1' : 'rgba(243,243,241,0.62)'; });
+    bar.style.transition = 'opacity .35s ease, transform .35s ease';
+    const reveal = () => {
+      const stuck = bar.getBoundingClientRect().top <= 67;
+      bar.style.opacity = stuck ? '1' : '0';
+      bar.style.transform = stuck ? 'none' : 'translateY(-8px)';
+      bar.style.pointerEvents = stuck ? 'auto' : 'none';
     };
+    this._spyReveal = reveal;
+    window.addEventListener('scroll', reveal, { passive: true });
+    window.addEventListener('resize', reveal, { passive: true });
+    reveal();
     this._spyScroll = () => {
-      const line = 130;
       let current = null;
-      pairs.forEach((p) => { if (p.sec.getBoundingClientRect().top <= line) current = p.a; });
-      setActive(current);
+      pairs.forEach((p) => { if (p.sec.getBoundingClientRect().top <= 130) current = p.a; });
+      links.forEach((a) => { a.style.color = a === current ? '#f3f3f1' : 'rgba(243,243,241,0.62)'; });
     };
     window.addEventListener('scroll', this._spyScroll, { passive: true });
     window.addEventListener('resize', this._spyScroll, { passive: true });
@@ -657,7 +1027,22 @@ class Component extends DCLogic {
   }
 
   renderVals() {
-    return { rootRef: this.rootRef };
+    return {
+      rootRef: this.rootRef,
+      menuOpen: this.state.menuOpen ? 'true' : 'false',
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
+      researchOpen: this.state.researchOpen,
+      researchExpanded: this.state.researchOpen ? 'true' : 'false',
+      researchLabel: this.state.researchOpen ? 'Hide the research detail' : 'See the research and the lifecycle map',
+      researchSign: this.state.researchOpen ? '\u2212' : '+',
+      toggleResearch: this.toggleResearch,
+      tensionOpen: this.state.tensionOpen,
+      tensionExpanded: this.state.tensionOpen ? 'true' : 'false',
+      tensionLabel: this.state.tensionOpen ? 'Hide what each user optimized for' : 'See what each user optimized for',
+      tensionSign: this.state.tensionOpen ? '\u2212' : '+',
+      toggleTension: this.toggleTension
+    };
   }
 }
 </script>

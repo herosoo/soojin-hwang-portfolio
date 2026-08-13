@@ -26,6 +26,26 @@
   ::selection{background:rgba(255,255,255,0.32);color:#fff}
   @keyframes floatGlow{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
   a{color:inherit}
+  a:hover{color:#fff}
+  img,video{max-width:100%}
+  [data-navtoggle],[data-navpanel]{display:none}
+  [data-navtoggle]>span{display:block;width:20px;height:1.5px;background:#f3f3f1;border-radius:2px;transition:transform .28s cubic-bezier(.2,.8,.2,1)}
+  [data-navtoggle][data-open="true"]>span:nth-child(1){transform:translateY(3.8px) rotate(45deg)}
+  [data-navtoggle][data-open="true"]>span:nth-child(2){transform:translateY(-3.8px) rotate(-45deg)}
+  @media (max-width:900px){
+    [data-intro]{grid-template-columns:1fr!important;gap:36px!important}
+    [data-intro]>div:last-child image-slot{aspect-ratio:4/5!important;max-width:380px}
+    [data-2col]{grid-template-columns:1fr!important;gap:30px!important}
+  }
+  @media (max-width:760px){
+    [data-navlinks]{display:none!important}
+    [data-navtoggle]{display:flex!important}
+    [data-navpanel][data-open="true"]{display:flex!important}
+  }
+  @media (max-width:560px){
+    [data-2col]>div:last-child>div{flex-direction:column;align-items:flex-start!important;gap:6px}
+    [data-2col]>div:last-child>div>span:last-child{align-self:flex-start!important}
+  }
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="position:relative;min-height:100vh;background:#0a0b0d;color:#f3f3f1;overflow-x:hidden;font-family:-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif,sans-serif;">
@@ -37,12 +57,21 @@
     <div style="padding:0 clamp(24px,5vw,80px);">
     <div style="max-width:1280px;margin:0 auto;padding:15px 0;display:flex;align-items:center;justify-content:space-between;">
       <a href="/" style="font:600 18px -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.02em;color:#f3f3f1;text-decoration:none;">Soojin Hwang</a>
-      <div style="display:flex;align-items:center;gap:clamp(18px,2.4vw,32px);">
+      <div data-navlinks="" style="display:flex;align-items:center;gap:clamp(18px,2.4vw,32px);">
         <a href="/#work" style="font:400 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Work</a>
         <a href="#top" style="font:400 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;text-decoration:none;transition:color .25s;">About</a>
-        <a href="https://drive.google.com/file/d/1wS5KY6bGeMACrAiQ7BWfPOluyu9D1HRZ/view?usp=sharing" target="_blank" rel="noopener" style="font:400 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Resume</a>
+        <a href="https://drive.google.com/file/d/1dnrvu87tVuw1TLyG3_vc8qFv4BHjEqUZ/view?usp=drive_link" target="_blank" rel="noopener" style="font:400 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Resume</a>
         <a href="#contact" style="font:600 14px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#0a0b0d;background:#f3f3f1;padding:9px 17px;border-radius:22px;text-decoration:none;transition:background .25s;" style-hover="background:#fff">Contact</a>
       </div>
+      <button type="button" data-navtoggle="" data-open="{{ menuOpen }}" aria-label="Menu" onClick="{{ toggleMenu }}" style="width:34px;height:34px;margin-right:-6px;padding:0;border:0;background:transparent;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div data-navpanel="" data-open="{{ menuOpen }}" style="max-width:1280px;margin:0 auto;flex-direction:column;padding:4px 0 16px;border-top:1px solid rgba(255,255,255,0.07);">
+      <a href="/#work" onClick="{{ closeMenu }}" style="font:500 16px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.72);text-decoration:none;padding:14px 0;">Work</a>
+      <a href="#top" onClick="{{ closeMenu }}" style="font:500 16px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.72);text-decoration:none;padding:14px 0;">About</a>
+      <a href="https://drive.google.com/file/d/1dnrvu87tVuw1TLyG3_vc8qFv4BHjEqUZ/view?usp=drive_link" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="font:500 16px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:rgba(243,243,241,0.72);text-decoration:none;padding:14px 0;">Resume</a>
+      <a href="#contact" onClick="{{ closeMenu }}" style="margin-top:12px;font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#0a0b0d;background:#f3f3f1;padding:14px 18px;border-radius:26px;text-decoration:none;text-align:center;">Contact</a>
     </div>
     </div>
   </nav>
@@ -50,7 +79,7 @@
   <!-- INTRO -->
   <section id="top" style="position:relative;padding:clamp(120px,16vh,180px) clamp(24px,5vw,80px) clamp(60px,9vh,110px);">
     <div style="position:absolute;top:8%;right:-8%;width:560px;height:560px;max-width:80%;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,0.13),rgba(255,255,255,0.03) 52%,transparent 72%);filter:blur(30px);pointer-events:none;animation:floatGlow 11s ease-in-out infinite;"></div>
-    <div style="position:relative;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.25fr 0.75fr;gap:clamp(40px,6vw,88px);align-items:center;">
+    <div data-intro="" style="position:relative;max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1.25fr 0.75fr;gap:clamp(40px,6vw,88px);align-items:center;">
       <div data-reveal="" style="min-width:0;">
         <div style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f4f4f2;margin-bottom:22px;">About</div>
         <h1 style="font:600 clamp(38px,5.4vw,64px)/1.05 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.035em;color:#f3f3f1;margin:0 0 26px;">Hi, I'm Soojin <span style="display:inline-block;">{{ wave }}</span></h1>
@@ -59,7 +88,7 @@
         <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap;">
           <a href="mailto:soojin.ux@gmail.com" style="display:inline-flex;align-items:center;gap:8px;font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:4px;transition:border-color .25s;" style-hover="border-color:rgba(255,255,255,0.6)">Email <span>→</span></a>
           <a href="https://www.linkedin.com/in/hwangsoojin/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:4px;transition:border-color .25s;" style-hover="border-color:rgba(255,255,255,0.6)">LinkedIn <span>→</span></a>
-          <a href="https://drive.google.com/file/d/1wS5KY6bGeMACrAiQ7BWfPOluyu9D1HRZ/view?usp=sharing" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:4px;transition:border-color .25s;" style-hover="border-color:rgba(255,255,255,0.6)">Resume <span>↗</span></a>
+          <a href="https://drive.google.com/file/d/1dnrvu87tVuw1TLyG3_vc8qFv4BHjEqUZ/view?usp=drive_link" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;font:600 15px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:4px;transition:border-color .25s;" style-hover="border-color:rgba(255,255,255,0.6)">Resume <span>↗</span></a>
         </div>
       </div>
       <div data-reveal="" style="min-width: 0; display: flex; justify-content: center">
@@ -70,7 +99,7 @@
 
   <!-- MY STORY -->
   <section style="padding:clamp(60px,9vh,110px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
-    <div data-reveal="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:start;">
+    <div data-reveal="" data-2col="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:start;">
       <div style="min-width:0;">
         <div style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f4f4f2;margin-bottom:22px;">My story</div>
         <h2 style="font:600 clamp(26px,3vw,38px)/1.14 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:16ch;">From research to pixels, and everything between.</h2>
@@ -130,7 +159,7 @@
 
   <!-- EXPERIENCE -->
   <section style="padding:clamp(60px,9vh,110px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
-    <div data-reveal="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:start;">
+    <div data-reveal="" data-2col="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:start;">
       <div style="min-width:0;">
         <div style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f4f4f2;margin-bottom:22px;">Experience</div>
         <h2 style="font:600 clamp(26px,3vw,38px)/1.14 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:14ch;">Ten years, eight rooms.</h2>
@@ -174,7 +203,7 @@
 
   <!-- RECOGNITION -->
   <section style="padding:clamp(60px,9vh,110px) clamp(24px,5vw,80px);border-top:1px solid rgba(255,255,255,0.08);">
-    <div data-reveal="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:start;">
+    <div data-reveal="" data-2col="" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:0.85fr 1.15fr;gap:clamp(40px,6vw,80px);align-items:start;">
       <div style="min-width:0;">
         <div style="font:400 12px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.18em;text-transform:uppercase;color:#f4f4f2;margin-bottom:22px;">Recognition</div>
         <h2 style="font:600 clamp(26px,3vw,38px)/1.14 -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', system-ui, sans-serif;letter-spacing:-0.03em;color:#f3f3f1;margin:0;max-width:15ch;">A little proof, and a lot of teaching.</h2>
@@ -208,7 +237,7 @@
           <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:12px;">LinkedIn</div>
           <div style="font:600 clamp(16px,1.5vw,19px) -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">in/hwangsoojin</div>
         </a>
-        <a href="https://drive.google.com/file/d/1wS5KY6bGeMACrAiQ7BWfPOluyu9D1HRZ/view?usp=sharing" target="_blank" rel="noopener" style="display:block;padding:26px 28px;background:#0c0d11;text-decoration:none;transition:background .25s;" style-hover="background:#121419">
+        <a href="https://drive.google.com/file/d/1dnrvu87tVuw1TLyG3_vc8qFv4BHjEqUZ/view?usp=drive_link" target="_blank" rel="noopener" style="display:block;padding:26px 28px;background:#0c0d11;text-decoration:none;transition:background .25s;" style-hover="background:#121419">
           <div style="font:400 11px -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;letter-spacing:0.12em;text-transform:uppercase;color:rgba(243,243,241,0.4);margin-bottom:12px;">Resume</div>
           <div style="display:flex;align-items:center;gap:8px;font:600 clamp(16px,1.5vw,19px) -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif;color:#f3f3f1;">Download PDF <span style="color:#f4f4f2;">↗</span></div>
         </a>
@@ -233,7 +262,10 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;showWave&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;}}">
 class Component extends DCLogic {
+  state = { menuOpen: false };
   rootRef = (el) => { this.root = el; };
+  toggleMenu = () => this.setState((s) => ({ menuOpen: !s.menuOpen }));
+  closeMenu = () => { if (this.state.menuOpen) this.setState({ menuOpen: false }); };
 
   componentDidMount() {
     this.setupReveal();
@@ -294,6 +326,9 @@ class Component extends DCLogic {
   renderVals() {
     return {
       rootRef: this.rootRef,
+      menuOpen: this.state.menuOpen ? 'true' : 'false',
+      toggleMenu: this.toggleMenu,
+      closeMenu: this.closeMenu,
       wave: (this.props.showWave ?? true) ? '👋' : ''
     };
   }
