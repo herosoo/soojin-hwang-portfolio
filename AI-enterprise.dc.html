@@ -64,7 +64,7 @@
         <a href="/#work" style="font-size:14px;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Work</a>
         <a href="/about" style="font-size:14px;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">About</a>
         <a href="https://drive.google.com/file/d/1dnrvu87tVuw1TLyG3_vc8qFv4BHjEqUZ/view?usp=drive_link" target="_blank" rel="noopener" style="font-size:14px;color:rgba(243,243,241,0.6);text-decoration:none;transition:color .25s;" style-hover="color:#f3f3f1">Resume</a>
-        <a href="#contact" style="font-weight:600;font-size:14px;color:#0a0b0d;background:#f3f3f1;padding:9px 17px;border-radius:22px;text-decoration:none;transition:background .25s;" style-hover="background:#fff">Contact</a>
+        <a href="mailto:soojin.ux@gmail.com" style="font-weight:600;font-size:14px;color:#0a0b0d;background:#f3f3f1;padding:9px 17px;border-radius:22px;text-decoration:none;transition:background .25s;" style-hover="background:#fff">Contact</a>
       </div>
       <button type="button" data-navtoggle="" data-open="{{ menuOpen }}" aria-label="Menu" onClick="{{ toggleMenu }}" style="width:34px;height:34px;margin-right:-6px;padding:0;border:0;background:transparent;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
         <span></span><span></span>
@@ -74,7 +74,7 @@
       <a href="/#work" onClick="{{ closeMenu }}" style="font-weight:500;font-size:16px;color:rgba(243,243,241,0.72);text-decoration:none;padding:14px 0;">Work</a>
       <a href="/about" onClick="{{ closeMenu }}" style="font-weight:500;font-size:16px;color:rgba(243,243,241,0.72);text-decoration:none;padding:14px 0;">About</a>
       <a href="https://drive.google.com/file/d/1dnrvu87tVuw1TLyG3_vc8qFv4BHjEqUZ/view?usp=drive_link" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="font-weight:500;font-size:16px;color:rgba(243,243,241,0.72);text-decoration:none;padding:14px 0;">Resume</a>
-      <a href="#contact" onClick="{{ closeMenu }}" style="margin-top:12px;font-weight:600;font-size:15px;color:#0a0b0d;background:#f3f3f1;padding:14px 18px;border-radius:26px;text-decoration:none;text-align:center;">Contact</a>
+      <a href="mailto:soojin.ux@gmail.com" onClick="{{ closeMenu }}" style="margin-top:12px;font-weight:600;font-size:15px;color:#0a0b0d;background:#f3f3f1;padding:14px 18px;border-radius:26px;text-decoration:none;text-align:center;">Contact</a>
     </div>
   </nav>
 
@@ -883,6 +883,10 @@
     </div>
   </footer>
 
+  <button data-to-top="" onClick="{{ scrollTop }}" aria-label="Scroll back to top" title="Back to top" style="position:fixed;right:clamp(18px,2.6vw,34px);bottom:clamp(18px,2.6vw,34px);z-index:80;width:52px;height:52px;border-radius:999px;border:1px solid rgba(255,255,255,0.22);background:rgba(12,13,17,0.68);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,0.35);color:#f3f3f1;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;opacity:0;transform:translateY(14px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,background .25s,border-color .25s,color .25s;" style-hover="background:#f3f3f1;border-color:#f3f3f1;color:#0c0d11">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 15V3"></path><path d="M3.5 8.5 9 3l5.5 5.5"></path></svg>
+  </button>
+
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;reduceMotion&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;pace&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;standard&quot;,&quot;options&quot;:[&quot;calm&quot;,&quot;standard&quot;],&quot;tsType&quot;:&quot;string&quot;}}">
@@ -932,12 +936,15 @@ class Component extends DCLogic {
     this.setupReveal();
     this.setupParallax();
     this.setupSpy();
+    this.setupToTop();
   }
   componentWillUnmount() {
     if (this._vidPoll) clearInterval(this._vidPoll);
     if (this._vidStop) clearTimeout(this._vidStop);
     if (this._vidIO) this._vidIO.disconnect();
     if (this._vidRetry) document.removeEventListener('visibilitychange', this._vidRetry);
+    if (this._topPoll) clearInterval(this._topPoll);
+    if (this._onTop) { window.removeEventListener('scroll', this._onTop); window.removeEventListener('resize', this._onTop); }
     if (this._onScroll) { window.removeEventListener('scroll', this._onScroll); window.removeEventListener('resize', this._onScroll); }
     if (this._onPar) { window.removeEventListener('scroll', this._onPar); window.removeEventListener('resize', this._onPar); }
     if (this._spyScroll) { window.removeEventListener('scroll', this._spyScroll); window.removeEventListener('resize', this._spyScroll); }
@@ -1026,9 +1033,30 @@ class Component extends DCLogic {
     this._spyScroll();
   }
 
+
+  scrollTop = () => { try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); } };
+  setupToTop() {
+    const apply = () => {
+      const btn = document.querySelector('[data-to-top]');
+      if (!btn) return;
+      const max = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const on = ((window.scrollY || window.pageYOffset || 0) / max) >= 0.62;
+      btn.style.setProperty('opacity', on ? '1' : '0', 'important');
+      btn.style.setProperty('transform', on ? 'translateY(0)' : 'translateY(14px)', 'important');
+      btn.style.setProperty('pointer-events', on ? 'auto' : 'none', 'important');
+      btn.style.setProperty('visibility', 'visible', 'important');
+    };
+    this._onTop = apply;
+    window.addEventListener('scroll', this._onTop, { passive: true });
+    window.addEventListener('resize', this._onTop, { passive: true });
+    this._topPoll = setInterval(apply, 400);
+    apply();
+  }
+
   renderVals() {
     return {
       rootRef: this.rootRef,
+      scrollTop: this.scrollTop,
       menuOpen: this.state.menuOpen ? 'true' : 'false',
       toggleMenu: this.toggleMenu,
       closeMenu: this.closeMenu,
